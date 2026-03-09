@@ -1,4 +1,4 @@
-package com.calt.coffeeshop.w1crud_maven.controller;
+package com.calt.coffeeshop.w1crud_maven.exception;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
