@@ -1,6 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.controller;
 
-import com.calt.coffeeshop.w1crud_maven.dto.RequestCategory;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.RequestCategory;
 import com.calt.coffeeshop.w1crud_maven.entity.Category;
 import com.calt.coffeeshop.w1crud_maven.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;

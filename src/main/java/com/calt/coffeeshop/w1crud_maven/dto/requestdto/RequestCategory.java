@@ -1,4 +1,4 @@
-package com.calt.coffeeshop.w1crud_maven.dto;
+package com.calt.coffeeshop.w1crud_maven.dto.requestdto;
 
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
 

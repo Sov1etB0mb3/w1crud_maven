@@ -1,6 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.controller;
 
-import com.calt.coffeeshop.w1crud_maven.dto.RequestProduct;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.RequestProduct;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
 import com.calt.coffeeshop.w1crud_maven.service.ProductService;
 import io.swagger.v3.oas.annotations.tags.Tag;
