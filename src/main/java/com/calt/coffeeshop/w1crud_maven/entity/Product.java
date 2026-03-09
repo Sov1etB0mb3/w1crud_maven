@@ -1,6 +1,7 @@
 package com.calt.coffeeshop.w1crud_maven.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
@@ -8,14 +9,14 @@ import jakarta.validation.constraints.NotNull;
 public class Product {
     @Id
     @Column(name="ID", columnDefinition = "CHAR(10)")
-    @NotNull
+
     private String id;
     @Column(name="Name", columnDefinition = "VARCHAR(20)",nullable = false)
-//    @NotBlank(message = "Name is required!")
+
     private String name;
 
     @Column(name="Quantity", nullable = false)
-//    @NotBlank(message = "Quantity is required!!!!!!")
+
     private int quantity;
     @Column(name="Price")
     private double price;

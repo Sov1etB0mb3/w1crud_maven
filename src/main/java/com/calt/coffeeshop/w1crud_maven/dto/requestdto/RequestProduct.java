@@ -1,13 +1,16 @@
 package com.calt.coffeeshop.w1crud_maven.dto.requestdto;
 
 import com.calt.coffeeshop.w1crud_maven.entity.Category;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 
 public class RequestProduct {
-
+    @NotNull
     private String id;
-
+    @NotBlank(message = "Name is required!")
     private String name;
+    @NotBlank(message = "Quantity is required!!!!!!")
     private int quantity;
     private double price;
     private Category category;
