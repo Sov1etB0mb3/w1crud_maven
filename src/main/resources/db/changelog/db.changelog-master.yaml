@@ -1,0 +1,16 @@
+databaseChangeLog:
+
+  - include:
+      file: 09-01-changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: 09-02-changelog.yaml
+      relativeToChangelogFile: true
+##  - changeSet:
+##      id: 0
+##      author: admin
+##      changes:
+##        -
+#  - include:
+#      file: 09-01-changelog.yaml
+#      relativeToChangelogFile: true

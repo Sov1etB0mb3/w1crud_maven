@@ -1,0 +1,22 @@
+databaseChangeLog:
+- changeSet:
+    id: 1773041873543-1
+    author: khanhnt (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: hihi
+            type: INTEGER
+        tableName: Product
+- changeSet:
+    id: 1773041873543-2
+    author: khanhnt (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: test
+            type: VARCHAR(255)
+        tableName: Category
+

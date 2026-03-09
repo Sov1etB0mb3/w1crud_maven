@@ -1,0 +1,79 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1773040672357-1
+      author: khanhnt
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createSequence:
+            incrementBy: 50
+            sequenceName: category_seq
+            startValue: 1
+  - changeSet:
+      id: 1773040672357-2
+      author: khanhnt
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_category
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: VARCHAR(50)
+              - column:
+                  name: test
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(100)
+            tableName: category
+  - changeSet:
+      id: 1773040672357-3
+      author: khanhnt
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_product
+                  name: id
+                  type: CHAR(10)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: VARCHAR(20)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: quantity
+                  type: INT
+              - column:
+                  name: price
+                  type: DOUBLE
+              - column:
+                  name: cateid
+                  type: BIGINT
+            tableName: product
+  - changeSet:
+      id: 1773040672357-4
+      author: khanhnt
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: cateid
+            baseTableName: product
+            constraintName: FK_PRODUCT_ON_CATEID
+            referencedColumnNames: id
+            referencedTableName: category
+

@@ -1,0 +1,21 @@
+#services:
+#  postgres:
+#    image: postgres:latest
+#    container_name: postgres-db
+#    restart: always
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: 25251325
+#      POSTGRES_DB: hsf302
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - postgres_db_data:/var/lib/postgresql
+#    networks:
+#      - postgres_net
+#
+#volumes:
+#  postgres_db_data:
+#
+#networks:
+#  postgres_net:
