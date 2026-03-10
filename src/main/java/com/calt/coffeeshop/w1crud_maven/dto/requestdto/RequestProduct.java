@@ -10,7 +10,7 @@ public class RequestProduct {
     private String id;
     @NotBlank(message = "Name is required!")
     private String name;
-    @NotBlank(message = "Quantity is required!!!!!!")
+//    @NotBlank(message = "Quantity is required!!!!!!")
     private int quantity;
     private double price;
     private Category category;

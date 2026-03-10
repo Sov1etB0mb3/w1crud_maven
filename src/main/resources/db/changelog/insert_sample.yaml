@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0
+      author: admin
+      changes:
+        - insert:
+            tableName: tbl_User
+            columns:
+              - column:
+                  name: Username
+                  value: "admin"
+              - column:
+                  name: Password
+                  value: "123"

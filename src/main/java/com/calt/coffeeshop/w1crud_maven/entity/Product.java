@@ -18,6 +18,9 @@ public class Product {
     @Column(name="Quantity", nullable = false)
 
     private int quantity;
+
+//    @Column(name="testcol")
+//    private int testcol;
     @Column(name="Price")
     private double price;
     @ManyToOne

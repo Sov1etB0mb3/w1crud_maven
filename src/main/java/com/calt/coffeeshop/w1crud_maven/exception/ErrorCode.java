@@ -1,7 +1,9 @@
 package com.calt.coffeeshop.w1crud_maven.exception;
 
 public enum ErrorCode {
-    EXISTED(707,"Existed");
+    EXISTED(707,"Existed"),
+    USER_NOT_FOUND(704,"User not found!");
+
     private int code;
     private String message;
     ErrorCode(int code, String message){

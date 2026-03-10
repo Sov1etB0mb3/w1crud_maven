@@ -3,6 +3,7 @@ package com.calt.coffeeshop.w1crud_maven.controller;
 import com.calt.coffeeshop.w1crud_maven.dto.requestdto.RequestProduct;
 import com.calt.coffeeshop.w1crud_maven.dto.responsedto.ApiResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
+import com.calt.coffeeshop.w1crud_maven.exception.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.service.ProductService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -17,8 +18,8 @@ import static java.util.Objects.isNull;
 
 @RestController
 @RequestMapping("/api/products")
-@CrossOrigin("http://localhost:xxx")//let domain http://localhost:xxx access resut of api to avoid CORS
-@Tag(name = "API coffee store", description = "ALl endpoint to manipulate product, category CRUD")
+//@CrossOrigin("http://localhost:xxx")//let domain http://localhost:xxx access resut of api to avoid CORS
+@Tag(name = "Product Controller", description = "")
 public class ProductController {
     @Autowired
     private ProductService productService;
@@ -26,9 +27,9 @@ public class ProductController {
     //return String becase the whole html site are Strings!!!
     public ApiResponse<List<Product>> getProduct(){
         //List<Product> productList= productService.getAllProducts();
-        ApiResponse apiResponse= new ApiResponse();
+        ApiResponse apiResponse= ApiResponse.builder().build();
         apiResponse.setResult(productService.getAllProducts());
-        apiResponse.setCode(3003);
+        apiResponse.setCode(703);
         apiResponse.setMessage("GOT!");
 
         return apiResponse;
@@ -37,10 +38,11 @@ public class ProductController {
     //return String becase the whole html site are Strings!!!
     public ApiResponse<Product> getProduct(@PathVariable("id") String id){
 
-        ApiResponse apiResponse = new ApiResponse();
+        ApiResponse apiResponse = ApiResponse.builder().build();
         apiResponse.setResult(productService.getProductByID(id));
+
         //Product rProduct= productService.getProductByID(id);
-        apiResponse.setCode(3003);
+        apiResponse.setCode(703);
         apiResponse.setMessage("GOT!");
 //        if(isNull( productService.getProductByID(id))){
 //            return ResponseEntity.noContent().build();
@@ -63,7 +65,7 @@ public class ProductController {
 //    }
     @PatchMapping("/{id}")
     public ApiResponse<Product> updateProduct(@PathVariable("id") String id,@RequestBody RequestProduct rProduct){
-        ApiResponse apiResponse = new ApiResponse();
+        ApiResponse apiResponse = ApiResponse.builder().build();
         apiResponse.setCode(222);
         apiResponse.setMessage("updated!");
         apiResponse.setResult(productService.updateProduct(id,rProduct));
@@ -72,7 +74,7 @@ public class ProductController {
     @PostMapping("")
 
     public ApiResponse<Product> addProduct(@RequestBody @Valid RequestProduct productDto){
-        ApiResponse<Product> apiResponse = new ApiResponse<>();
+        ApiResponse apiResponse = ApiResponse.builder().build();
         apiResponse.setResult( productService.saveProductfromDTO(productDto));
             return apiResponse;
     }

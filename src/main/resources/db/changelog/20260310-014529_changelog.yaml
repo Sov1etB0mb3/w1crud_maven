@@ -1,0 +1,12 @@
+databaseChangeLog:
+- changeSet:
+    id: 1773107138077-1
+    author: khanhnt (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: testcol
+            type: INTEGER
+        tableName: Product
+

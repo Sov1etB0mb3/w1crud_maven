@@ -13,7 +13,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ApiResponse> handleConflict(DataIntegrityViolationException e){
-        ApiResponse apiResponse = new ApiResponse();
+        ApiResponse apiResponse =  ApiResponse.builder().build();
         apiResponse.setCode(7);
         apiResponse.setMessage(e.getMessage());
     return ResponseEntity.status(HttpStatus.CONFLICT).body(apiResponse);
@@ -21,14 +21,14 @@ public class GlobalExceptionHandler {
     }
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<ApiResponse> handleRuntime(RuntimeException e){
-        ApiResponse apiResponse = new ApiResponse();
+        ApiResponse apiResponse =  ApiResponse.builder().build();
         apiResponse.setCode(6);
         apiResponse.setMessage(e.getMessage());
         return ResponseEntity.badRequest().body(apiResponse);
     }
     @ExceptionHandler(AppException.class)
     public ResponseEntity<ApiResponse> handleAppException(AppException e){
-        ApiResponse apiResponse = new ApiResponse();
+        ApiResponse apiResponse =  ApiResponse.builder().build();
         ErrorCode errorCode= e.getErrorCode();
         apiResponse.setCode(errorCode.getCode());
         apiResponse.setMessage(errorCode.getMessage());
@@ -36,7 +36,7 @@ public class GlobalExceptionHandler {
     }
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     public ResponseEntity<ApiResponse> handleValidation(MethodArgumentNotValidException e){
-        ApiResponse apiResponse = new ApiResponse();
+        ApiResponse apiResponse = ApiResponse.builder().build();
         apiResponse.setCode(5);
         apiResponse.setMessage(e.getMessage());
         return ResponseEntity.badRequest().body(apiResponse);

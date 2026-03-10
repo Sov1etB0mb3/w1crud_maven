@@ -2,6 +2,7 @@ package com.calt.coffeeshop.w1crud_maven.config;
 
 import com.calt.coffeeshop.w1crud_maven.entity.Category;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
+import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.service.CategoryService;
 import com.calt.coffeeshop.w1crud_maven.service.ProductService;
 import org.springframework.boot.CommandLineRunner;
@@ -20,6 +21,7 @@ public class DataInitializer implements CommandLineRunner {
     public DataInitializer(CategoryService categoryService, ProductService productService) {
         this.categoryService = categoryService;
         this.productService = productService;
+
     }
 
     @Override
@@ -41,6 +43,7 @@ public class DataInitializer implements CommandLineRunner {
 
         productService.saveProduct(product2);
         productService.saveProduct(product3);
+
     }
 
 

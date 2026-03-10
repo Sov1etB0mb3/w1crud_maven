@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0
+      author: admin
+      changes:
+        - update:
+            tableName: tbl_User
+            columns:
+              - column:
+                  name: Password
+                  value: "$2a$10$Bg/oZxOlHsZ9.eAFE46om.3DjLc98M2YH/PskMVhGmemFFJ74/oee"
+            where: '"Username"=''admin'''
+

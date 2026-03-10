@@ -1,0 +1,31 @@
+databaseChangeLog:
+- changeSet:
+    id: 1773117227378-1
+    author: khanhnt (generated)
+    changes:
+    - createSequence:
+        incrementBy: 50
+        sequenceName: tbl_User_SEQ
+        startValue: 1
+- changeSet:
+    id: 1773117227378-2
+    author: khanhnt (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: tbl_UserPK
+            name: Id
+            type: INTEGER
+        - column:
+            name: Password
+            type: VARCHAR(255)
+        - column:
+            name: Username
+            type: VARCHAR(255)
+        tableName: tbl_User
+

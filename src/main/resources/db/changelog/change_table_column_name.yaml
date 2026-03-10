@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: rename-user-table
+      author: admin
+      changes:
+        - renameTable:
+            oldTableName: tbl_User
+            newTableName: tbl_user
+
+  - changeSet:
+      id: rename-username-column
+      author: admin
+      changes:
+        - renameColumn:
+            tableName: tbl_user
+            oldColumnName: "Username"
+            newColumnName: username
+
+
+  - changeSet:
+      id: rename-password-column
+      author: admin
+      changes:
+        - renameColumn:
+            tableName: tbl_user
+            oldColumnName: "Password"
+            newColumnName: password
+
+  - changeSet:
+      id: rename-id-column
+      author: admin
+      changes:
+        - renameColumn:
+            tableName: tbl_user
+            oldColumnName: "Id"
+            newColumnName: id
+

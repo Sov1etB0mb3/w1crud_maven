@@ -1,11 +1,20 @@
 databaseChangeLog:
-
-  - include:
-      file: 09-01-changelog.yaml
-      relativeToChangelogFile: true
-  - include:
-      file: 09-02-changelog.yaml
-      relativeToChangelogFile: true
+#
+#  - include:
+#      file: 09-01-changelog.yaml
+#      relativeToChangelogFile: true
+#  - include:
+#      file: 20260310-043341_changelog.yaml
+#      relativeToChangelogFile: true
+#  - include:
+#      file: insert_sample.yaml
+#      relativeToChangelogFile: true
+#  - include:
+#      file: updatevalue.yaml
+#      relativeToChangelogFile: true
+#  - include:
+#      file: 09-02-changelog.yaml
+#      relativeToChangelogFile: true
 ##  - changeSet:
 ##      id: 0
 ##      author: admin
@@ -13,4 +22,7 @@ databaseChangeLog:
 ##        -
 #  - include:
 #      file: 09-01-changelog.yaml
+#      relativeToChangelogFile: true
+#  - include:
+#      file: change_table_column_name.yaml
 #      relativeToChangelogFile: true
