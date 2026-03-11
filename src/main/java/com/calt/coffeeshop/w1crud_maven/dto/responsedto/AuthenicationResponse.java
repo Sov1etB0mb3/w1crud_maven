@@ -6,7 +6,7 @@ import lombok.experimental.FieldDefaults;
 @Data
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class AuthenicationResponseDto {
+public class AuthenicationResponse {
     String token;
     boolean authenicated;
 }

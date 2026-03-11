@@ -1,7 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.dto.requestdto;
 
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import java.time.Instant;
@@ -12,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter @Setter
 @ToString
-public class CategoryRequestDto {
+public class CategoryRequest {
 
     private Long id;
 
@@ -22,7 +21,7 @@ public class CategoryRequestDto {
     private Instant updated_at;
     List<Product> listProduct = new ArrayList<>();
 
-    public CategoryRequestDto(String name, String description) {
+    public CategoryRequest(String name, String description) {
         this.name = name;
         this.description = description;
     }

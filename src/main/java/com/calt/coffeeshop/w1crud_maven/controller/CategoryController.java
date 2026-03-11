@@ -1,6 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.controller;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.CategoryRequestDto;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.CategoryRequest;
 import com.calt.coffeeshop.w1crud_maven.entity.Category;
 import com.calt.coffeeshop.w1crud_maven.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,9 +50,9 @@ public class CategoryController {
 
     @PostMapping("")
 
-    public ResponseEntity<String> addProduct(@RequestBody CategoryRequestDto categoryRequestDto){
+    public ResponseEntity<String> addProduct(@RequestBody CategoryRequest categoryRequest){
 
-        categoryService.saveCategoryfromDTO(categoryRequestDto);
+        categoryService.saveCategoryfromDTO(categoryRequest);
         return ResponseEntity.status(201).body("Created!");
 
 

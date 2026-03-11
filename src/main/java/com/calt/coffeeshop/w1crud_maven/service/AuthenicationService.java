@@ -1,13 +1,16 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.AuthRequestDto;
-import com.calt.coffeeshop.w1crud_maven.dto.responsedto.AuthenicationResponseDto;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.AuthRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.IntrospectRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.responsedto.AuthenicationResponse;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
 import com.nimbusds.jose.*;
 import com.nimbusds.jose.crypto.MACSigner;
+import com.nimbusds.jose.crypto.MACVerifier;
 import com.nimbusds.jwt.JWTClaimsSet;
+import com.nimbusds.jwt.SignedJWT;
 import lombok.experimental.NonFinal;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,15 +31,22 @@ public class AuthenicationService {
     @NonFinal
     @Value("${jwt}")
     protected String key;
-    public AuthenicationResponseDto authenicate(AuthRequestDto authRequestDto){
-    var user = userRepository.findUserByUsername(authRequestDto.getUsername()).orElseThrow(()-> new AppException(ErrorCode.USER_NOT_FOUND));
+    public AuthenicationResponse authenicate(AuthRequest authRequest){
+    var user = userRepository.findUserByUsername(authRequest.getUsername()).orElseThrow(()-> new AppException(ErrorCode.USER_NOT_FOUND));
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
-        boolean authenicated = passwordEncoder.matches(authRequestDto.getPassword(), user.getPassword());
+        boolean authenicated = passwordEncoder.matches(authRequest.getPassword(), user.getPassword());
         if(!authenicated)
             throw new AppException(ErrorCode.UNAUTHENICATED);
-        var token=generateToken(authRequestDto.getUsername());
-        return AuthenicationResponseDto.builder().token(token).authenicated(true).build();
+        var token=generateToken(authRequest.getUsername());
+        return AuthenicationResponse.builder().token(token).authenicated(true).build();
     }
+//    public IntrospectResponse(IntrospectRequest introspectRequest){
+//        var token =  introspectRequest.getToken();
+//        JWSVerifier jwsVerifier= new MACVerifier(key.getBytes());
+//        SignedJWT signedJWT = SignedJWT.parse(token);
+//        signedJWT.verify(jwsVerifier);
+//
+//    }
     private String generateToken(String username){
         JWSHeader jweHeader = new JWSHeader(JWSAlgorithm.HS512);
         // claim("customClaim","Custom")

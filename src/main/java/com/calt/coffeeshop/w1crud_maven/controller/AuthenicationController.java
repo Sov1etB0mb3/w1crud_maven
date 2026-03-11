@@ -1,8 +1,8 @@
 package com.calt.coffeeshop.w1crud_maven.controller;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.AuthRequestDto;
-import com.calt.coffeeshop.w1crud_maven.dto.responsedto.ApiResponseDto;
-import com.calt.coffeeshop.w1crud_maven.dto.responsedto.AuthenicationResponseDto;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.AuthRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.responsedto.ApiResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.responsedto.AuthenicationResponse;
 import com.calt.coffeeshop.w1crud_maven.service.AuthenicationService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -21,12 +21,12 @@ public class AuthenicationController {
     AuthenicationService authenicationService;
 
     @PostMapping("/login")
-     public ApiResponseDto<AuthenicationResponseDto> login(@RequestBody AuthRequestDto authRequestDto) {
-        var result = authenicationService.authenicate(authRequestDto);
+     public ApiResponse<AuthenicationResponse> login(@RequestBody AuthRequest authRequest) {
+        var result = authenicationService.authenicate(authRequest);
 
-        return ApiResponseDto.<AuthenicationResponseDto>builder().
+        return ApiResponse.<AuthenicationResponse>builder().
                 result(
-                        AuthenicationResponseDto.builder().
+                        AuthenicationResponse.builder().
                                 authenicated(result.isAuthenicated()).
                                 token(result.getToken()).
                                 build()).
@@ -34,4 +34,5 @@ public class AuthenicationController {
 
 
     }
+
 }

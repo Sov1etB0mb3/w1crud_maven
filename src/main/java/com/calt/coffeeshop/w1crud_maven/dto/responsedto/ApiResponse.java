@@ -7,7 +7,7 @@ import lombok.*;
 @Getter @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 
-public class ApiResponseDto<T> {
+public class ApiResponse<T> {
     @Builder.Default
     private int code=700;
     private String message;
