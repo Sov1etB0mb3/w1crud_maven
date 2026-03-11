@@ -12,6 +12,4 @@ import lombok.NoArgsConstructor;
 
 public class IntrospectRequest {
     private String token;
-    private boolean valid;
-
 }

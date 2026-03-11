@@ -3,6 +3,7 @@ package com.calt.coffeeshop.w1crud_maven.service;
 import com.calt.coffeeshop.w1crud_maven.dto.requestdto.AuthRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.requestdto.IntrospectRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.responsedto.AuthenicationResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.responsedto.IntrospectResponse;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
@@ -19,6 +20,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -31,6 +33,7 @@ public class AuthenicationService {
     @NonFinal
     @Value("${jwt}")
     protected String key;
+
     public AuthenicationResponse authenicate(AuthRequest authRequest){
     var user = userRepository.findUserByUsername(authRequest.getUsername()).orElseThrow(()-> new AppException(ErrorCode.USER_NOT_FOUND));
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
@@ -40,13 +43,18 @@ public class AuthenicationService {
         var token=generateToken(authRequest.getUsername());
         return AuthenicationResponse.builder().token(token).authenicated(true).build();
     }
-//    public IntrospectResponse(IntrospectRequest introspectRequest){
-//        var token =  introspectRequest.getToken();
-//        JWSVerifier jwsVerifier= new MACVerifier(key.getBytes());
-//        SignedJWT signedJWT = SignedJWT.parse(token);
-//        signedJWT.verify(jwsVerifier);
-//
-//    }
+
+    public IntrospectResponse introspect(IntrospectRequest introspectRequest) throws JOSEException, ParseException {
+        var token =  introspectRequest.getToken();
+        JWSVerifier jwsVerifier= new MACVerifier(key.getBytes());
+        SignedJWT signedJWT = SignedJWT.parse(token);
+        Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();
+        var verified = signedJWT.verify(jwsVerifier);
+        return IntrospectResponse.builder()
+                .valid(verified&&expiryTime.after(new Date()))
+                .build();
+
+    }
     private String generateToken(String username){
         JWSHeader jweHeader = new JWSHeader(JWSAlgorithm.HS512);
         // claim("customClaim","Custom")
