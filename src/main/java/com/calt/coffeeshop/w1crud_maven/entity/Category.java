@@ -1,70 +1,53 @@
 package com.calt.coffeeshop.w1crud_maven.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Getter @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name="Category")
+@Table(name="tbl_category")
 
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Long id;
-    @Column(name = "Name",columnDefinition = "VARCHAR(50)",nullable = false)
+    @Column(name = "name",columnDefinition = "VARCHAR(50)",nullable = false)
 //    @NotBlank(message = "Name is a must have!")
     private String name;
 
-    @Column(name = "Description",columnDefinition = "VARCHAR(100)")
+    @Column(name = "description",columnDefinition = "VARCHAR(100)")
     private String description;
+    @Column(name="created_at",updatable = false)
+    private Instant created_at;
+    @Column(name="updated_at")
+    private Instant updated_at;
+    @JsonIgnore
     @OneToMany(mappedBy = "category",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     List<Product> listProduct = new ArrayList<>();
-    public Category() {
+    public Category( String name, String description, Instant createdAt, Instant updatedAt) {
+        this.name = name;
+        this.description = description;
+        this.created_at = createdAt;
+        this.updated_at = updatedAt;
     }
 
-    public Category( String name, String description) {
+    public Category(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "Category{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
     public void addProduct(Product product){
         this.listProduct.add(product);
         product.setCategory(this);

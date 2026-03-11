@@ -1,61 +1,32 @@
 package com.calt.coffeeshop.w1crud_maven.dto.requestdto;
 
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.*;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-//@NoArgsConstructor
-//@AllArgsConstructor
-
-
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter @Setter
+@ToString
 public class CategoryRequestDto {
 
     private Long id;
 
     private String name;
     private String description;
+    private Instant created_at;
+    private Instant updated_at;
     List<Product> listProduct = new ArrayList<>();
-    public CategoryRequestDto() {
-    }
 
     public CategoryRequestDto(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "Category{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
 //    public void addProduct(Product product){
 //        this.listProduct.add(product);
 //        product.setCategory(this);

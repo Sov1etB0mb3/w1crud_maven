@@ -10,6 +10,8 @@ import com.calt.coffeeshop.w1crud_maven.repository.CategoryRepository;
 import com.calt.coffeeshop.w1crud_maven.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -44,8 +46,8 @@ public class ProductService {
     public void saveProduct(Product rProduct) {
             productRepository.save(rProduct);
     }
-    public List<Product> getAllProducts(){
-        return productRepository.findAll();
+    public Page<Product> getAllProducts(Pageable pageable){
+        return productRepository.findAll(pageable);
     }
     public Product getProductByID(String id){
         return productRepository.findById(id).orElseThrow(()->new RuntimeException("Product not found!"));
@@ -62,7 +64,8 @@ public class ProductService {
     }
     public Product updateProduct(String id, ProductRequestDto request){
         Product product=getProductByID(id);
-        Category category = categoryService.getCategoryByID(request.getCategory());
+        Category category = categoryService.getCategoryByName(request.getCategory());
+//        request.setCreated_at(product.getCreated_at());
         productMapper.updateProduct(product,request);
         product.setCategory(category);
         return productRepository.save(product);

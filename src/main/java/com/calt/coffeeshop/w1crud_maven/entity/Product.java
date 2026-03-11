@@ -1,95 +1,53 @@
 package com.calt.coffeeshop.w1crud_maven.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.*;
 
+import java.time.Instant;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
-@Table(name="Product")
+@Getter @Setter
+@Table(name="tbl_product")
 public class Product {
     @Id
-    @Column(name="ID", columnDefinition = "CHAR(10)")
+    @Column(name="id", columnDefinition = "CHAR(10)")
 
     private String id;
-    @Column(name="Name", columnDefinition = "VARCHAR(20)",nullable = false)
+    @Column(name="name", columnDefinition = "VARCHAR(20)",nullable = false)
 
     private String name;
 
-    @Column(name="Quantity", nullable = false)
+    @Column(name="quantity", nullable = false)
 
     private int quantity;
 
+
 //    @Column(name="testcol")
 //    private int testcol;
-    @Column(name="Price")
+    @Column(name="price")
     private double price;
+    @Column(name="created_at",updatable = false)
+    private Instant created_at;
+    @Column(name="updated_at")
+    private Instant updated_at;
     @ManyToOne
-    @JoinColumn(name = "CateID")
+    @JoinColumn(name = "categoryid")
     private Category category;
-    public Product() {
-    }
 
-    public Product(String id, String name, int quantity, double price) {
+
+
+    public Product(String id, String name, int quantity, double price, Instant createdAt, Instant updatedAt) {
         this.id = id;
         this.name = name;
         this.quantity = quantity;
         this.price = price;
-
-    }
-
-    public Product(String id, String name, double price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-    // one Product has only one category. One category has more than 1 Product
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                '}';
+        this.created_at = createdAt;
+        this.updated_at = updatedAt;
     }
 }

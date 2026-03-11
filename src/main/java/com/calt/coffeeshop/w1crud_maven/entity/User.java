@@ -4,8 +4,11 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.id.IncrementGenerator;
 
+import java.time.Instant;
+
 @Getter @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "tbl_user")
 public class User {
@@ -17,6 +20,10 @@ public class User {
     private String username;
     @Column(name="password")
     private String password;
+    @Column(name="created_at",updatable = false)
+    private Instant created_at;
+    @Column(name="updated_at")
+    private Instant updated_at;
 
     public User(String username, String password) {
         this.username = username;

@@ -1,0 +1,62 @@
+databaseChangeLog:
+- changeSet:
+    id: 1773216655630-1
+    author: khanhnt (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: "createdAt"
+            type: TIMESTAMP(6) WITH TIME ZONE
+        tableName: tbl_user
+- changeSet:
+    id: 1773216655630-2
+    author: khanhnt (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: created_at
+            type: TIMESTAMP(6) WITH TIME ZONE
+        tableName: tbl_category
+- changeSet:
+    id: 1773216655630-3
+    author: khanhnt (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: created_at
+            type: TIMESTAMP(6) WITH TIME ZONE
+        tableName: tbl_product
+- changeSet:
+    id: 1773216655630-4
+    author: khanhnt (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: "updatedAt"
+            type: TIMESTAMP(6) WITH TIME ZONE
+        tableName: tbl_user
+- changeSet:
+    id: 1773216655630-5
+    author: khanhnt (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: updated_at
+            type: TIMESTAMP(6) WITH TIME ZONE
+        tableName: tbl_category
+- changeSet:
+    id: 1773216655630-6
+    author: khanhnt (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: updated_at
+            type: TIMESTAMP(6) WITH TIME ZONE
+        tableName: tbl_product
+

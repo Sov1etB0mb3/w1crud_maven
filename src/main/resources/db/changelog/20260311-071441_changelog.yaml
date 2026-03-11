@@ -1,0 +1,106 @@
+databaseChangeLog:
+- changeSet:
+    id: 1773213287183-5
+    author: khanhnt (generated)
+    changes:
+    - dropForeignKeyConstraint:
+        baseTableName: product
+        constraintName: fk_product_on_cateid
+- changeSet:
+    id: 1773213287183-1
+    author: khanhnt (generated)
+    changes:
+    - createSequence:
+        incrementBy: 50
+        sequenceName: tbl_category_SEQ
+        startValue: 1
+- changeSet:
+    id: 1773213287183-2
+    author: khanhnt (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: tbl_categoryPK
+            name: id
+            type: BIGINT
+        - column:
+            name: description
+            type: VARCHAR(100)
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR(50)
+        tableName: tbl_category
+- changeSet:
+    id: 1773213287183-3
+    author: khanhnt (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: tbl_productPK
+            name: id
+            type: CHAR(10)
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR(20)
+        - column:
+            name: price
+            type: FLOAT(53)
+        - column:
+            constraints:
+              nullable: false
+            name: quantity
+            type: INTEGER
+        - column:
+            name: categoryid
+            type: BIGINT
+        tableName: tbl_product
+- changeSet:
+    id: 1773213287183-4
+    author: khanhnt (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: categoryid
+        baseTableName: tbl_product
+        constraintName: FKkwcmxfbd3ukpimruossrwyscm
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: tbl_category
+        validate: true
+- changeSet:
+    id: 1773213287183-6
+    author: khanhnt (generated)
+    changes:
+    - dropTable:
+        tableName: category
+- changeSet:
+    id: 1773213287183-7
+    author: khanhnt (generated)
+    changes:
+    - dropTable:
+        tableName: product
+- changeSet:
+    id: 1773213287183-8
+    author: khanhnt (generated)
+    changes:
+    - dropSequence:
+        sequenceName: category_seq
+- changeSet:
+      id: test-1
+      author: you
+      changes:
+          - tagDatabase:
+                tag: test-1.0
