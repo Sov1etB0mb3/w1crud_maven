@@ -11,6 +11,7 @@ import com.nimbusds.jwt.JWTClaimsSet;
 import lombok.experimental.NonFinal;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,8 @@ public class AuthenicationService {
     @Autowired
     private UserRepository userRepository;
     @NonFinal
-    protected final String key ="4f934b723b548d25feb795a8e6d8fc39f66e0abc5d27bdfe983ecbc61edea4c4";
+    @Value("${jwt}")
+    protected String key;
     public AuthenicationResponseDto authenicate(AuthRequestDto authRequestDto){
     var user = userRepository.findUserByUsername(authRequestDto.getUsername()).orElseThrow(()-> new AppException(ErrorCode.USER_NOT_FOUND));
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
