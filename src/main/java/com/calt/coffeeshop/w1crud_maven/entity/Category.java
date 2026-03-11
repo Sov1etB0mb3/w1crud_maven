@@ -1,12 +1,14 @@
 package com.calt.coffeeshop.w1crud_maven.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-//@NoArgsConstructor
-//@AllArgsConstructor
+
+@AllArgsConstructor
 @Entity
 @Table(name="Category")
 

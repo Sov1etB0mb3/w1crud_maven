@@ -1,6 +1,7 @@
 package com.calt.coffeeshop.w1crud_maven.exception;
 
-import com.calt.coffeeshop.w1crud_maven.dto.responsedto.ApiResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.responsedto.ApiResponseDto;
+import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,33 +13,33 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(DataIntegrityViolationException.class)
-    public ResponseEntity<ApiResponse> handleConflict(DataIntegrityViolationException e){
-        ApiResponse apiResponse =  ApiResponse.builder().build();
-        apiResponse.setCode(7);
-        apiResponse.setMessage(e.getMessage());
-    return ResponseEntity.status(HttpStatus.CONFLICT).body(apiResponse);
+    public ResponseEntity<ApiResponseDto> handleConflict(DataIntegrityViolationException e){
+        ApiResponseDto apiResponseDto =  ApiResponseDto.builder().build();
+        apiResponseDto.setCode(7);
+        apiResponseDto.setMessage(e.getMessage());
+    return ResponseEntity.status(HttpStatus.CONFLICT).body(apiResponseDto);
 
     }
     @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<ApiResponse> handleRuntime(RuntimeException e){
-        ApiResponse apiResponse =  ApiResponse.builder().build();
-        apiResponse.setCode(6);
-        apiResponse.setMessage(e.getMessage());
-        return ResponseEntity.badRequest().body(apiResponse);
+    public ResponseEntity<ApiResponseDto> handleRuntime(RuntimeException e){
+        ApiResponseDto apiResponseDto =  ApiResponseDto.builder().build();
+        apiResponseDto.setCode(6);
+        apiResponseDto.setMessage(e.getMessage());
+        return ResponseEntity.badRequest().body(apiResponseDto);
     }
     @ExceptionHandler(AppException.class)
-    public ResponseEntity<ApiResponse> handleAppException(AppException e){
-        ApiResponse apiResponse =  ApiResponse.builder().build();
+    public ResponseEntity<ApiResponseDto> handleAppException(AppException e){
+        ApiResponseDto apiResponseDto =  ApiResponseDto.builder().build();
         ErrorCode errorCode= e.getErrorCode();
-        apiResponse.setCode(errorCode.getCode());
-        apiResponse.setMessage(errorCode.getMessage());
-        return ResponseEntity.badRequest().body(apiResponse);
+        apiResponseDto.setCode(errorCode.getCode());
+        apiResponseDto.setMessage(errorCode.getMessage());
+        return ResponseEntity.badRequest().body(apiResponseDto);
     }
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
-    public ResponseEntity<ApiResponse> handleValidation(MethodArgumentNotValidException e){
-        ApiResponse apiResponse = ApiResponse.builder().build();
-        apiResponse.setCode(5);
-        apiResponse.setMessage(e.getMessage());
-        return ResponseEntity.badRequest().body(apiResponse);
+    public ResponseEntity<ApiResponseDto> handleValidation(MethodArgumentNotValidException e){
+        ApiResponseDto apiResponseDto = ApiResponseDto.builder().build();
+        apiResponseDto.setCode(5);
+        apiResponseDto.setMessage(e.getMessage());
+        return ResponseEntity.badRequest().body(apiResponseDto);
     }
 }

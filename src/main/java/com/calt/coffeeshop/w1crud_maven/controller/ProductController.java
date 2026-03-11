@@ -1,20 +1,16 @@
 package com.calt.coffeeshop.w1crud_maven.controller;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.RequestProduct;
-import com.calt.coffeeshop.w1crud_maven.dto.responsedto.ApiResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.ProductRequestDto;
+import com.calt.coffeeshop.w1crud_maven.dto.responsedto.ApiResponseDto;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
-import com.calt.coffeeshop.w1crud_maven.exception.ErrorCode;
+import com.calt.coffeeshop.w1crud_maven.enums.StatusCode;
 import com.calt.coffeeshop.w1crud_maven.service.ProductService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-import static java.util.Objects.isNull;
 
 @RestController
 @RequestMapping("/api/products")
@@ -25,65 +21,53 @@ public class ProductController {
     private ProductService productService;
     @GetMapping("")
     //return String becase the whole html site are Strings!!!
-    public ApiResponse<List<Product>> getProduct(){
+    public ApiResponseDto<List<Product>> getProduct(){
         //List<Product> productList= productService.getAllProducts();
-        ApiResponse apiResponse= ApiResponse.builder().build();
-        apiResponse.setResult(productService.getAllProducts());
-        apiResponse.setCode(703);
-        apiResponse.setMessage("GOT!");
+        ApiResponseDto apiResponseDto = ApiResponseDto.builder().build();
+        apiResponseDto.setResult(productService.getAllProducts());
+        apiResponseDto.setCode(703);
+        apiResponseDto.setMessage("GOT!");
 
-        return apiResponse;
+        return apiResponseDto;
     }
     @GetMapping("/{id}")
     //return String becase the whole html site are Strings!!!
-    public ApiResponse<Product> getProduct(@PathVariable("id") String id){
+    public ApiResponseDto<Product> getProduct(@PathVariable("id") String id){
 
-        ApiResponse apiResponse = ApiResponse.builder().build();
-        apiResponse.setResult(productService.getProductByID(id));
+        ApiResponseDto apiResponseDto = ApiResponseDto.builder().build();
+        apiResponseDto.setResult(productService.getProductByID(id));
+        apiResponseDto.setCode(703);
+        apiResponseDto.setMessage("GOT!");
 
-        //Product rProduct= productService.getProductByID(id);
-        apiResponse.setCode(703);
-        apiResponse.setMessage("GOT!");
-//        if(isNull( productService.getProductByID(id))){
-//            return ResponseEntity.noContent().build();
-//        }
-//
-//        return ResponseEntity.ok(rProduct);
-        return apiResponse;
+        return apiResponseDto;
     }
 
-//    @PatchMapping("/{id}")
-//    //return String becase the whole html site are Strings!!!
-//    public ResponseEntity<String> updateProduct(@RequestBody RequestProduct rProduct){
-//       if (!isNull(productService.getProductByID(rProduct.getId()))){
-//           if(productService.saveProductfromDTO(rProduct))
-//           return ResponseEntity.ok("Updated!");
-//           else
-//               return ResponseEntity.status(HttpStatus.CONFLICT).body("Can not Update!");
-//       }
-//       return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Not found product id!");
-//    }
+
     @PatchMapping("/{id}")
-    public ApiResponse<Product> updateProduct(@PathVariable("id") String id,@RequestBody RequestProduct rProduct){
-        ApiResponse apiResponse = ApiResponse.builder().build();
-        apiResponse.setCode(222);
-        apiResponse.setMessage("updated!");
-        apiResponse.setResult(productService.updateProduct(id,rProduct));
-        return apiResponse;
+    public ApiResponseDto<Product> updateProduct(@PathVariable("id") String id, @RequestBody ProductRequestDto rProduct){
+        ApiResponseDto apiResponseDto = ApiResponseDto.builder().build();
+        apiResponseDto.setCode(StatusCode.UPDATED.getCode());
+        apiResponseDto.setMessage(StatusCode.UPDATED.getMessage());
+        apiResponseDto.setResult(productService.updateProduct(id,rProduct));
+        return apiResponseDto;
     }
     @PostMapping("")
-
-    public ApiResponse<Product> addProduct(@RequestBody @Valid RequestProduct productDto){
-        ApiResponse apiResponse = ApiResponse.builder().build();
-        apiResponse.setResult( productService.saveProductfromDTO(productDto));
-            return apiResponse;
+    public ApiResponseDto<Product> addProduct(@RequestBody @Valid ProductRequestDto productDto){
+        ApiResponseDto apiResponseDto = ApiResponseDto.builder().build();
+        apiResponseDto.setResult( productService.saveProductfromDTO(productDto));
+            return apiResponseDto;
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteProduct(@PathVariable("id") String id){
+    public ApiResponseDto<String> deleteProduct(@PathVariable("id") String id){
 
+        ApiResponseDto apiResponseDto = ApiResponseDto.builder().build();
         productService.deleteProduct(productService.getProductByID(id));
+        apiResponseDto.setMessage(StatusCode.DELETED.getMessage());
+        apiResponseDto.setCode(StatusCode.DELETED.getCode());
+        apiResponseDto.setResult(null);
 
-        return ResponseEntity.status(HttpStatus.OK).body("Deleted!");
+
+        return apiResponseDto;
     }
 }

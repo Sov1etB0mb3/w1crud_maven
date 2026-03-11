@@ -9,17 +9,17 @@ import java.util.List;
 //@AllArgsConstructor
 
 
-public class RequestCategory {
+public class CategoryRequestDto {
 
     private Long id;
 
     private String name;
     private String description;
     List<Product> listProduct = new ArrayList<>();
-    public RequestCategory() {
+    public CategoryRequestDto() {
     }
 
-    public RequestCategory(String name, String description) {
+    public CategoryRequestDto(String name, String description) {
         this.name = name;
         this.description = description;
     }

@@ -1,6 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.RequestCategory;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.CategoryRequestDto;
 import com.calt.coffeeshop.w1crud_maven.entity.Category;
 import com.calt.coffeeshop.w1crud_maven.repository.CategoryRepository;
 import jakarta.transaction.Transactional;
@@ -24,7 +24,7 @@ public class CategoryService {
     public void saveCategory(Category category){
         categoryRepository.save(category);
     }
-    public void saveCategoryfromDTO(RequestCategory rCategory){
+    public void saveCategoryfromDTO(CategoryRequestDto rCategory){
         if(categoryRepository.existsByName(rCategory.getName())){
             throw new DataIntegrityViolationException("This category existed!");
         }
@@ -41,6 +41,13 @@ public class CategoryService {
         }
         return null;
 
+    }
+    public Category getCategoryByName(String name){
+        Optional<Category> optionalCategory= categoryRepository.findCategoryByName(name);
+        if(!optionalCategory.isEmpty()){
+            return optionalCategory.get();
+        }
+        return null;
     }
     @Transactional
     public void deleteCategory(Long id){

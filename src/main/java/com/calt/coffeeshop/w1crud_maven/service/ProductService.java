@@ -1,9 +1,12 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.RequestProduct;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.ProductRequestDto;
+import com.calt.coffeeshop.w1crud_maven.entity.Category;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
-import com.calt.coffeeshop.w1crud_maven.exception.ErrorCode;
+import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
+import com.calt.coffeeshop.w1crud_maven.mapper.ProductMapper;
+import com.calt.coffeeshop.w1crud_maven.repository.CategoryRepository;
 import com.calt.coffeeshop.w1crud_maven.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -12,17 +15,29 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService {
     @Autowired
     private ProductRepository productRepository;
-    public Product saveProductfromDTO(RequestProduct rProduct) {
+    @Autowired
+    private CategoryService categoryService;
+    @Autowired
+    private ProductMapper productMapper;
+    public Product saveProductfromDTO(ProductRequestDto rProduct) {
 
         if (productRepository.existsById(rProduct.getId()))
             throw new AppException(ErrorCode.EXISTED);
         //use mapper later!
-        Product newProduct = new Product(rProduct.getId(), rProduct.getName(), rProduct.getQuantity(), rProduct.getPrice());
+
+        //Product newProduct = new Product(rProduct.getId(), rProduct.getName(), rProduct.getQuantity(), rProduct.getPrice());
+        //now is mapper
+        Product newProduct = productMapper.toProduct(rProduct);
+        if(newProduct.getCategory()!=null){
+            return productRepository.save(newProduct);
+        }
+        newProduct.setCategory(null);
         return productRepository.save(newProduct);
 
     }
@@ -45,12 +60,11 @@ public class ProductService {
         }
 
     }
-    public Product updateProduct(String id,RequestProduct request){
+    public Product updateProduct(String id, ProductRequestDto request){
         Product product=getProductByID(id);
-        product.setName(request.getName());
-        product.setCategory(request.getCategory());
-        product.setPrice(request.getPrice());
-        product.setQuantity(request.getQuantity());
+        Category category = categoryService.getCategoryByID(request.getCategory());
+        productMapper.updateProduct(product,request);
+        product.setCategory(category);
         return productRepository.save(product);
     }
 

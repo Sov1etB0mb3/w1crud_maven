@@ -26,3 +26,12 @@ databaseChangeLog:
 #  - include:
 #      file: change_table_column_name.yaml
 #      relativeToChangelogFile: true
+#- include:
+#    file: 20260311-023310_changelog.yaml
+#    relativeToChangelogFile: true
+#- include:
+#    file: 20260311-031038_changelog.yaml
+#    relativeToChangelogFile: true
+#- include:
+#    file: 20260311-033327_changelog.yaml
+#    relativeToChangelogFile: true

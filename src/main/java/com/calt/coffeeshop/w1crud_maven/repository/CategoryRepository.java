@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 // JpaRepo demands two paramaters. The first one is the class that need a repo, the second one is data type for Id column
@@ -16,4 +17,6 @@ public interface CategoryRepository extends JpaRepository<Category,Long> {
     void deleteAllById(Iterable<? extends Long> longs);
 
     boolean existsByName(String name);
+
+    Optional findCategoryByName(String name);
 }

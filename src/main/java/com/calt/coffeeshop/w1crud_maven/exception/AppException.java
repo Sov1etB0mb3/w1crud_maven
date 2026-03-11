@@ -1,5 +1,7 @@
 package com.calt.coffeeshop.w1crud_maven.exception;
 
+import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
+
 public class AppException extends RuntimeException{
     private ErrorCode errorCode;
 

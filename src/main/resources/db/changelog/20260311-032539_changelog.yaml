@@ -1,0 +1,15 @@
+databaseChangeLog:
+
+- changeSet:
+    id: 1773199545967-1
+    author: khanhnt (generated)
+    changes:
+    - dropColumn:
+        columnName: testcol
+        tableName: product
+- changeSet:
+        id: tag-release-1
+        author: you
+        changes:
+            - tagDatabase:
+                tag: release-1.0

@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 
-public class RequestProduct {
+public class ProductRequestDto {
     @NotNull
     private String id;
     @NotBlank(message = "Name is required!")
@@ -13,11 +13,11 @@ public class RequestProduct {
 //    @NotBlank(message = "Quantity is required!!!!!!")
     private int quantity;
     private double price;
-    private Category category;
-    public RequestProduct() {
+    private Long category;
+    public ProductRequestDto() {
     }
 
-    public RequestProduct(String id, String name, int quantity, double price) {
+    public ProductRequestDto(String id, String name, int quantity, double price) {
         this.id = id;
         this.name = name;
         this.quantity = quantity;
@@ -25,7 +25,7 @@ public class RequestProduct {
 
     }
 
-    public RequestProduct(String id, String name, double price) {
+    public ProductRequestDto(String id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -64,11 +64,11 @@ public class RequestProduct {
         this.quantity = quantity;
     }
 
-    public Category getCategory() {
+    public Long getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(Long category) {
         this.category = category;
     }
 

@@ -1,26 +1,62 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.RequestAuth;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.AuthRequestDto;
+import com.calt.coffeeshop.w1crud_maven.dto.responsedto.AuthenicationResponseDto;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
-import com.calt.coffeeshop.w1crud_maven.exception.ErrorCode;
+import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
+import com.nimbusds.jose.*;
+import com.nimbusds.jose.crypto.MACSigner;
+import com.nimbusds.jwt.JWTClaimsSet;
+import lombok.experimental.NonFinal;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
+
+@Slf4j
 @Service
 public class AuthenicationService {
     @Autowired
     private UserRepository userRepository;
-
-    public boolean authenicate(RequestAuth requestAuth){
-    var user = userRepository.findUserByUsername(requestAuth.getUsername()).orElseThrow(()-> new AppException(ErrorCode.USER_NOT_FOUND));
+    @NonFinal
+    protected final String key ="4f934b723b548d25feb795a8e6d8fc39f66e0abc5d27bdfe983ecbc61edea4c4";
+    public AuthenicationResponseDto authenicate(AuthRequestDto authRequestDto){
+    var user = userRepository.findUserByUsername(authRequestDto.getUsername()).orElseThrow(()-> new AppException(ErrorCode.USER_NOT_FOUND));
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
-        System.out.println(requestAuth.getPassword());
-        return passwordEncoder.matches(requestAuth.getPassword(), user.getPassword());
+        boolean authenicated = passwordEncoder.matches(authRequestDto.getPassword(), user.getPassword());
+        if(!authenicated)
+            throw new AppException(ErrorCode.UNAUTHENICATED);
+        var token=generateToken(authRequestDto.getUsername());
+        return AuthenicationResponseDto.builder().token(token).authenicated(true).build();
+    }
+    private String generateToken(String username){
+        JWSHeader jweHeader = new JWSHeader(JWSAlgorithm.HS512);
+        // claim("customClaim","Custom")
+        JWTClaimsSet jwtClaimsSet= new JWTClaimsSet.Builder()
+                .subject(username)
+                .issuer("mrx.com")//domain
+                .issueTime(new Date())
+                .expirationTime(new Date(
+                        Instant.now().plus(1, ChronoUnit.HOURS).toEpochMilli()
+                ))
+                .claim("mrxClaim","mrx")
+                .build();
 
-
+        Payload payload = new Payload(jwtClaimsSet.toJSONObject());
+        JWSObject jwsObject=new JWSObject(jweHeader,payload);
+        try {
+            jwsObject.sign(new MACSigner(key.getBytes()));
+            return jwsObject.serialize();
+        } catch (JOSEException e) {
+            log.error("Cannot create token: "+e);
+            throw new RuntimeException(e);
+        }
 
     }
 }
