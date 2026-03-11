@@ -10,6 +10,7 @@ import org.mapstruct.MappingTarget;
 public interface ProductMapper {
     @Mapping(target= "category",ignore = true)
     Product toProduct(ProductRequestDto productRequestDto);
+    @Mapping(target = "created_at",ignore = true)
     @Mapping(target= "category",ignore = true)
     void updateProduct(@MappingTarget Product product, ProductRequestDto productRequestDto);
 }
