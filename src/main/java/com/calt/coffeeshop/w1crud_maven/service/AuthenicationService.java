@@ -4,6 +4,7 @@ import com.calt.coffeeshop.w1crud_maven.dto.request.AuthRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.IntrospectRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenicationResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.IntrospectResponse;
+import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
@@ -40,7 +41,7 @@ public class AuthenicationService {
         boolean authenicated = passwordEncoder.matches(authRequest.getPassword(), user.getPassword());
         if(!authenicated)
             throw new AppException(ErrorCode.UNAUTHENICATED);
-        var token=generateToken(authRequest.getUsername());
+        var token=generateToken(user);
         return AuthenicationResponse.builder().token(token).authenicated(true).build();
     }
 
@@ -55,17 +56,17 @@ public class AuthenicationService {
                 .build();
 
     }
-    private String generateToken(String username){
+    private String generateToken(User user){
         JWSHeader jweHeader = new JWSHeader(JWSAlgorithm.HS512);
         // claim("customClaim","Custom")
         JWTClaimsSet jwtClaimsSet= new JWTClaimsSet.Builder()
-                .subject(username)
+                .subject(user.getUsername())
                 .issuer("mrx.com")//domain
                 .issueTime(new Date())
                 .expirationTime(new Date(
                         Instant.now().plus(1, ChronoUnit.HOURS).toEpochMilli()
                 ))
-                .claim("mrxClaim","mrx")
+                .claim("scope",user.getRoles())
                 .build();
 
         Payload payload = new Payload(jwtClaimsSet.toJSONObject());
