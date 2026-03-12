@@ -1,0 +1,12 @@
+databaseChangeLog:
+- changeSet:
+    id: 1773301071608-1
+    author: khanhnt (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: role
+            type: VARCHAR(255)
+        tableName: tbl_user
+

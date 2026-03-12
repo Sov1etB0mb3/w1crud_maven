@@ -1,6 +1,7 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.UserRequest;
+
 import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.enums.Role;
@@ -12,6 +13,8 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -26,18 +29,22 @@ public class UserService {
     private UserMapper userMapper;
     public User saveUserfromDTO(UserRequest userRequest) {
 
-        if (userRepository.existsByUsername(userRequest.getName()))
+        if (userRepository.existsByUsername(userRequest.getUsername()))
             throw new AppException(ErrorCode.EXISTED);
         User newUser = userMapper.toUser(userRequest);
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
+        newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
         if(newUser.getRoles()!=null){
             return userRepository.save(newUser);
         }
-        HashSet<String>  roles = new HashSet<>();
-        roles.add(Role.USER.name());
 
-        newUser.setRoles(roles);
+        newUser.setRoles(Role.USER.name());
         return userRepository.save(newUser);
 
+    }
+    public User getUserByUsername(String userName){
+        return userRepository.findUserByUsername(userName)
+                .orElseThrow(()->new RuntimeException("User not found!"));
     }
     public void saveUser(User user) {
             userRepository.save(user);
@@ -46,11 +53,21 @@ public class UserService {
         return userRepository.findAll(pageable);
     }
 
+
     public void deleteUser(UserRequest userRequest){
         try{
             userRepository.delete(userMapper.toUser(userRequest));
         }
           catch (DataIntegrityViolationException e){
+            throw new ResponseStatusException(HttpStatus.CONFLICT,"Can't delete!");
+        }
+
+    }
+    public void deleteUser(User user){
+        try{
+            userRepository.delete(user);
+        }
+        catch (DataIntegrityViolationException e){
             throw new ResponseStatusException(HttpStatus.CONFLICT,"Can't delete!");
         }
 

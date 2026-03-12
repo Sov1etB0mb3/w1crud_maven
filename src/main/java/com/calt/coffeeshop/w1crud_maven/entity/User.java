@@ -22,7 +22,7 @@ public class User {
     @Column(name="password")
     private String password;
     @Column(name="role")
-    private Set<String> roles;
+    private String roles;
     @Column(name="created_at",updatable = false)
     private Instant created_at;
     @Column(name="updated_at")
@@ -31,5 +31,19 @@ public class User {
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    public User(String username, String password, String roles) {
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public User(String username, String password, String roles, Instant created_at, Instant updated_at) {
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
     }
 }
