@@ -1,7 +1,7 @@
 package com.calt.coffeeshop.w1crud_maven.controller;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.ProductRequest;
-import com.calt.coffeeshop.w1crud_maven.dto.responsedto.ApiResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.request.ProductRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.response.ApiResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
 import com.calt.coffeeshop.w1crud_maven.enums.StatusCode;
 import com.calt.coffeeshop.w1crud_maven.service.ProductService;

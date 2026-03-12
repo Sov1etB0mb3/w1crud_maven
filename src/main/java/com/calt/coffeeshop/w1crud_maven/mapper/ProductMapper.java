@@ -1,6 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.mapper;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.ProductRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.request.ProductRequest;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

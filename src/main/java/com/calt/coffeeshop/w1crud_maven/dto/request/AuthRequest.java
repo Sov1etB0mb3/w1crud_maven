@@ -1,4 +1,4 @@
-package com.calt.coffeeshop.w1crud_maven.dto.requestdto;
+package com.calt.coffeeshop.w1crud_maven.dto.request;
 
 import lombok.*;
 

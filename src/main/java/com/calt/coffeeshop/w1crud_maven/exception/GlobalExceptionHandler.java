@@ -1,6 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.exception;
 
-import com.calt.coffeeshop.w1crud_maven.dto.responsedto.ApiResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.response.ApiResponse;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

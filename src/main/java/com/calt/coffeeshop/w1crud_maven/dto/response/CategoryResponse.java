@@ -1,4 +1,4 @@
-package com.calt.coffeeshop.w1crud_maven.dto.requestdto;
+package com.calt.coffeeshop.w1crud_maven.dto.response;
 
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
 import lombok.*;
@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter @Setter
 @ToString
-public class CategoryRequest {
+public class CategoryResponse {
 
     private Long id;
 
@@ -21,7 +21,7 @@ public class CategoryRequest {
     private Instant updated_at;
     List<Product> listProduct = new ArrayList<>();
 
-    public CategoryRequest(String name, String description) {
+    public CategoryResponse(String name, String description) {
         this.name = name;
         this.description = description;
     }

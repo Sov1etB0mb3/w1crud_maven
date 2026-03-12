@@ -1,4 +1,4 @@
-package com.calt.coffeeshop.w1crud_maven.dto.responsedto;
+package com.calt.coffeeshop.w1crud_maven.dto.response;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

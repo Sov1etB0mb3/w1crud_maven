@@ -1,6 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.CategoryRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.request.CategoryRequest;
 import com.calt.coffeeshop.w1crud_maven.entity.Category;
 import com.calt.coffeeshop.w1crud_maven.repository.CategoryRepository;
 import jakarta.transaction.Transactional;

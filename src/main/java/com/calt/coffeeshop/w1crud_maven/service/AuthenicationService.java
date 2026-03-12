@@ -1,9 +1,9 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.AuthRequest;
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.IntrospectRequest;
-import com.calt.coffeeshop.w1crud_maven.dto.responsedto.AuthenicationResponse;
-import com.calt.coffeeshop.w1crud_maven.dto.responsedto.IntrospectResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.request.AuthRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.request.IntrospectRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenicationResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.response.IntrospectResponse;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
