@@ -18,20 +18,13 @@ import java.util.Set;
 
 public class UserResponse {
     private int id;
-    @Column(name = "username")
     private String username;
-    @Column(name="password")
-    private String password;
-    @Column(name="role")
     private String roles;
-    @Column(name="created_at",updatable = false)
     private Instant created_at;
-    @Column(name="updated_at")
     private Instant updated_at;
 
-    public UserResponse(String username, String password, Instant created_at, Instant updated_at) {
+    public UserResponse(String username, Instant created_at, Instant updated_at) {
         this.username = username;
-        this.password = password;
 
         this.created_at = created_at;
         this.updated_at = updated_at;

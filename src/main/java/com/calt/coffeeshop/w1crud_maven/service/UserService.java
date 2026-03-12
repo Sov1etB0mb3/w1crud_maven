@@ -2,6 +2,7 @@ package com.calt.coffeeshop.w1crud_maven.service;
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.UserRequest;
 
+import com.calt.coffeeshop.w1crud_maven.dto.response.UserResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.enums.Role;
@@ -49,8 +50,10 @@ public class UserService {
     public void saveUser(User user) {
             userRepository.save(user);
     }
-    public Page<User> getAllUser(Pageable pageable){
-        return userRepository.findAll(pageable);
+    public Page<UserResponse> getAllUser(Pageable pageable){
+        Page<User> userPage=userRepository.findAll(pageable);
+        //return userPage.map(userMapper::toUserResponse);
+        return userPage.map(user->userMapper.toUserResponse(user));
     }
 
 

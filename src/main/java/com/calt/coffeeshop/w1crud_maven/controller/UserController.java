@@ -7,15 +7,19 @@ import com.calt.coffeeshop.w1crud_maven.enums.StatusCode;
 import com.calt.coffeeshop.w1crud_maven.service.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.Instant;
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/users")
 //@CrossOrigin("http://localhost:xxx")//let domain http://localhost:xxx access resut of api to avoid CORS
@@ -30,6 +34,10 @@ public class UserController {
             @RequestParam(defaultValue = "5") int pageSize,
             @RequestParam(defaultValue = "id") String sortBy,
             @RequestParam(defaultValue = "true") boolean ascending){
+        var authenication = SecurityContextHolder.getContext().getAuthentication();
+        authenication.getAuthorities().forEach(e->
+                log.info(e.getAuthority())
+                );
         Sort sort= ascending ? Sort.by(sortBy).ascending():Sort.by(sortBy).descending();
         Pageable pageable = PageRequest.of(page,pageSize,sort);
         ApiResponse apiResponse = ApiResponse.builder().build();

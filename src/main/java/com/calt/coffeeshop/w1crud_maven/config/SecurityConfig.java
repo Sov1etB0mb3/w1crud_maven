@@ -4,9 +4,11 @@ import com.nimbusds.jose.Algorithm;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
@@ -19,16 +21,20 @@ import java.util.List;
 public class SecurityConfig {
     @Value("${jwt}")
     private String secretkey;
-    private String[] PUBLIC_ENDPOINTS={"api/auth/**"};
+    private String[] publicEndpoints={"api/auth/token"};
+    private String[] privateEndpoints={"api/users"};
     //after complete api, add has role adfter resquestMatchers
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        //httpSecurity.csrf(csrf::disable) is the equivalent of below
-        httpSecurity.csrf(csrf->csrf.disable())
+        httpSecurity
                 .authorizeHttpRequests(auth->auth
-                        .requestMatchers(PUBLIC_ENDPOINTS).permitAll().anyRequest()
+                        .requestMatchers(HttpMethod.POST,publicEndpoints).permitAll()
+                        .requestMatchers(HttpMethod.GET,privateEndpoints)
+                        .hasAuthority("SCOPE_ADMIN")
+                        .anyRequest()
                         .authenticated()
                 );
+        httpSecurity.csrf(AbstractHttpConfigurer::disable);
 
         //).httpBasic(basic-> basic.disable()) to use the basic auth from spring security.
         // We can also use default spring security with this:

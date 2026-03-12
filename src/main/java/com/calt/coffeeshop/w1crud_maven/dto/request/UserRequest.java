@@ -18,15 +18,10 @@ import java.util.Set;
 
 public class UserRequest {
     private int id;
-    @Column(name = "username")
     private String username;
-    @Column(name="password")
     private String password;
-    @Column(name="role")
     private String roles;
-    @Column(name="created_at",updatable = false)
     private Instant created_at;
-    @Column(name="updated_at")
     private Instant updated_at;
 
     public UserRequest(String username, String password, String roles) {
