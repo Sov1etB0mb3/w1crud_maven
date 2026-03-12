@@ -1,13 +1,12 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
 import com.calt.coffeeshop.w1crud_maven.dto.requestdto.ProductRequestDto;
-import com.calt.coffeeshop.w1crud_maven.entity.Category;
-import com.calt.coffeeshop.w1crud_maven.entity.Product;
-import com.calt.coffeeshop.w1crud_maven.exception.AppException;
+import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
+import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.mapper.ProductMapper;
-import com.calt.coffeeshop.w1crud_maven.repository.CategoryRepository;
 import com.calt.coffeeshop.w1crud_maven.repository.ProductRepository;
+import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -16,18 +15,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
-import java.util.Optional;
-
 @Service
-public class ProductService {
+public class UserService {
     @Autowired
-    private ProductRepository productRepository;
-    @Autowired
-    private CategoryService categoryService;
+    private UserRepository userRepository;
+
     @Autowired
     private ProductMapper productMapper;
-    public Product saveProductfromDTO(ProductRequestDto rProduct) {
+    public User saveUserfromDTO(User rProduct) {
 
         if (productRepository.existsById(rProduct.getId()))
             throw new AppException(ErrorCode.EXISTED);

@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.id.IncrementGenerator;
 
 import java.time.Instant;
+import java.util.Set;
 
 @Getter @Setter
 @NoArgsConstructor
@@ -20,6 +21,8 @@ public class User {
     private String username;
     @Column(name="password")
     private String password;
+    @Column(name="role")
+    private Set<String> roles;
     @Column(name="created_at",updatable = false)
     private Instant created_at;
     @Column(name="updated_at")
