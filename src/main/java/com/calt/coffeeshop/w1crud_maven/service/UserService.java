@@ -1,10 +1,13 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
 import com.calt.coffeeshop.w1crud_maven.dto.requestdto.ProductRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.UserRequest;
 import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
+import com.calt.coffeeshop.w1crud_maven.enums.Role;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.mapper.ProductMapper;
+import com.calt.coffeeshop.w1crud_maven.mapper.UserMapper;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -14,55 +17,50 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.HashSet;
+
 @Service
 public class UserService {
     @Autowired
     private UserRepository userRepository;
 
     @Autowired
-    private ProductMapper productMapper;
-    public User saveUserfromDTO(User rProduct) {
+    private UserMapper userMapper;
+    public User saveUserfromDTO(UserRequest userRequest) {
 
-        if (productRepository.existsById(rProduct.getId()))
+        if (userRepository.existsByUsername(userRequest.getName()))
             throw new AppException(ErrorCode.EXISTED);
-        //use mapper later!
-
-        //Product newProduct = new Product(rProduct.getId(), rProduct.getName(), rProduct.getQuantity(), rProduct.getPrice());
-        //now is mapper
-        Product newProduct = productMapper.toProduct(rProduct);
-        if(newProduct.getCategory()!=null){
-            return productRepository.save(newProduct);
+        User newUser = userMapper.toUser(userRequest);
+        if(newUser.getRoles()!=null){
+            return userRepository.save(newUser);
         }
-        newProduct.setCategory(null);
-        return productRepository.save(newProduct);
+        HashSet<String>  roles = new HashSet<>();
+        roles.add(Role.USER.name());
+
+        newUser.setRoles(roles);
+        return userRepository.save(newUser);
 
     }
-    public void saveProduct(Product rProduct) {
-            productRepository.save(rProduct);
+    public void saveUser(User user) {
+            userRepository.save(user);
     }
-    public Page<Product> getAllProducts(Pageable pageable){
-        return productRepository.findAll(pageable);
+    public Page<User> getAllUser(Pageable pageable){
+        return userRepository.findAll(pageable);
     }
-    public Product getProductByID(String id){
-        return productRepository.findById(id).orElseThrow(()->new RuntimeException("Product not found!"));
-        //productRepository.findById(id) will return an Optional<Type>
-    }
-    public void deleteProduct(Product product){
+
+    public void deleteUser(UserRequest userRequest){
         try{
-            productRepository.delete(product);
+            userRepository.delete(userMapper.toUser(userRequest));
         }
           catch (DataIntegrityViolationException e){
             throw new ResponseStatusException(HttpStatus.CONFLICT,"Can't delete!");
         }
 
     }
-    public Product updateProduct(String id, ProductRequest request){
-        Product product=getProductByID(id);
-        Category category = categoryService.getCategoryByName(request.getCategory());
-//        request.setCreated_at(product.getCreated_at());
-        productMapper.updateProduct(product,request);
-        product.setCategory(category);
-        return productRepository.save(product);
+    public User updateUser(String name, UserRequest request){
+        User user=userRepository.findUserByUsername(name).get();
+        userMapper.updateUser(request,user);
+        return userRepository.save(user);
     }
 
 
