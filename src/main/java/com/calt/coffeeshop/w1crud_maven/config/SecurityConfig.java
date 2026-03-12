@@ -1,22 +1,57 @@
 package com.calt.coffeeshop.w1crud_maven.config;
 
+import com.nimbusds.jose.Algorithm;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
+import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.web.SecurityFilterChain;
+
+import javax.crypto.spec.SecretKeySpec;
+import java.util.List;
 
 @Configuration
 public class SecurityConfig {
+    @Value("${jwt}")
+    private String secretkey;
+    private String[] PUBLIC_ENDPOINTS={"api/auth/**"};
     //after complete api, add has role adfter resquestMatchers
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+        //httpSecurity.csrf(csrf::disable) is the equivalent of below
         httpSecurity.csrf(csrf->csrf.disable())
                 .authorizeHttpRequests(auth->auth
-                        .requestMatchers("api/auth/**").permitAll().anyRequest().authenticated()
-                ).httpBasic(basic-> basic.disable());
-        //httpBasic(Customizer.withDefaults())
+                        .requestMatchers(PUBLIC_ENDPOINTS).permitAll().anyRequest()
+                        .authenticated()
+                );
+
+        //).httpBasic(basic-> basic.disable()) to use the basic auth from spring security.
+        // We can also use default spring security with this:
+        //httpSecurity.httpBasic(Customizer.withDefaults())
+        //###############################
+        //Configure the spring security so that we can use the key we generate to Authorize!
+        httpSecurity.oauth2ResourceServer(o2Auth->
+                o2Auth.jwt(jwtConfigurer -> jwtConfigurer.decoder(jwtDecoder()))
+                );
     return httpSecurity.build();
     }
+    //Decoder to decode the JWT we generate
+    @Bean
+    public JwtDecoder jwtDecoder(){
+        SecretKeySpec secretKeySpec = new SecretKeySpec(secretkey.getBytes(), "HS512");
+        return NimbusJwtDecoder.withSecretKey(secretKeySpec)
+                .macAlgorithm(MacAlgorithm.HS512)
+                .build();
+    }
+    // this use to ignore the urls that aren't be secured! (In a nutshell, those urls can be accessed by anynone)
+//    @Bean
+//    public WebSecurityCustomizer webSecurityCustomizer(){
+//        return (web)->web.ignoring().requestMatchers("rq1","rq1");
+//    }
 
 }

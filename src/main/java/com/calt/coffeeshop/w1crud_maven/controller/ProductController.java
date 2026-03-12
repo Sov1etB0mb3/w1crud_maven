@@ -79,8 +79,6 @@ public class ProductController {
         apiResponse.setMessage(StatusCode.DELETED.getMessage());
         apiResponse.setCode(StatusCode.DELETED.getCode());
         apiResponse.setResult(null);
-
-
         return apiResponse;
     }
 }
