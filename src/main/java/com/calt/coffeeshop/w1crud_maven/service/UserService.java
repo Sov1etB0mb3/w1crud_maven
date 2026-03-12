@@ -1,11 +1,10 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.ProductRequestDto;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.ProductRequest;
 import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.mapper.ProductMapper;
-import com.calt.coffeeshop.w1crud_maven.repository.ProductRepository;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -57,7 +56,7 @@ public class UserService {
         }
 
     }
-    public Product updateProduct(String id, ProductRequestDto request){
+    public Product updateProduct(String id, ProductRequest request){
         Product product=getProductByID(id);
         Category category = categoryService.getCategoryByName(request.getCategory());
 //        request.setCreated_at(product.getCreated_at());

@@ -1,6 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.controller;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.ProductRequestDto;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.ProductRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.responsedto.ApiResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
 import com.calt.coffeeshop.w1crud_maven.enums.StatusCode;
@@ -54,7 +54,7 @@ public class ProductController {
 
 
     @PatchMapping("/{id}")
-    public ApiResponse<Product> updateProduct(@PathVariable("id") String id, @RequestBody ProductRequestDto rProduct){
+    public ApiResponse<Product> updateProduct(@PathVariable("id") String id, @RequestBody ProductRequest rProduct){
         ApiResponse apiResponse = ApiResponse.builder().build();
         apiResponse.setCode(StatusCode.UPDATED.getCode());
         apiResponse.setMessage(StatusCode.UPDATED.getMessage());
@@ -63,7 +63,7 @@ public class ProductController {
         return apiResponse;
     }
     @PostMapping("")
-    public ApiResponse<Product> addProduct(@RequestBody @Valid ProductRequestDto productDto){
+    public ApiResponse<Product> addProduct(@RequestBody @Valid ProductRequest productDto){
         ApiResponse apiResponse = ApiResponse.builder().build();
         productDto.setCreated_at(Instant.now());
         productDto.setUpdated_at(Instant.now());

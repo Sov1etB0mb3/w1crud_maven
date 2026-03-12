@@ -1,12 +1,11 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
-import com.calt.coffeeshop.w1crud_maven.dto.requestdto.ProductRequestDto;
+import com.calt.coffeeshop.w1crud_maven.dto.requestdto.ProductRequest;
 import com.calt.coffeeshop.w1crud_maven.entity.Category;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.mapper.ProductMapper;
-import com.calt.coffeeshop.w1crud_maven.repository.CategoryRepository;
 import com.calt.coffeeshop.w1crud_maven.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -16,9 +15,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
-import java.util.Optional;
-
 @Service
 public class ProductService {
     @Autowired
@@ -27,7 +23,7 @@ public class ProductService {
     private CategoryService categoryService;
     @Autowired
     private ProductMapper productMapper;
-    public Product saveProductfromDTO(ProductRequestDto rProduct) {
+    public Product saveProductfromDTO(ProductRequest rProduct) {
 
         if (productRepository.existsById(rProduct.getId()))
             throw new AppException(ErrorCode.EXISTED);
@@ -62,7 +58,7 @@ public class ProductService {
         }
 
     }
-    public Product updateProduct(String id, ProductRequestDto request){
+    public Product updateProduct(String id, ProductRequest request){
         Product product=getProductByID(id);
         Category category = categoryService.getCategoryByName(request.getCategory());
 //        request.setCreated_at(product.getCreated_at());

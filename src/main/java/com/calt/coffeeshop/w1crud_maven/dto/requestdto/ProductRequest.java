@@ -1,8 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.dto.requestdto;
 
-import com.calt.coffeeshop.w1crud_maven.entity.Category;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -16,7 +14,7 @@ import java.time.Instant;
 @AllArgsConstructor
 @Getter @Setter
 
-public class ProductRequestDto {
+public class ProductRequest {
     @NotNull
     private String id;
     @NotBlank(message = "Name is required!")
@@ -31,7 +29,7 @@ public class ProductRequestDto {
     private String category;
 
 
-    public ProductRequestDto(String id, String name, int quantity, double price, Instant createdAt, Instant updatedAt) {
+    public ProductRequest(String id, String name, int quantity, double price, Instant createdAt, Instant updatedAt) {
         this.id = id;
         this.name = name;
         this.quantity = quantity;
@@ -41,7 +39,7 @@ public class ProductRequestDto {
         this.category = category;
     }
 
-    public ProductRequestDto(String id, String name, double price) {
+    public ProductRequest(String id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
