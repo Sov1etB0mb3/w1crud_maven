@@ -15,6 +15,11 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -45,13 +50,19 @@ public class UserService {
         return userRepository.save(newUser);
 
     }
+
+    @PostAuthorize( "returnObject.username.compareTo(authentication.name)==0")
     public User getUserByUsername(String userName){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        log.info(auth.getName());
         return userRepository.findUserByUsername(userName)
                 .orElseThrow(()->new RuntimeException("User not found!"));
     }
     public void saveUser(User user) {
             userRepository.save(user);
     }
+
+    @PreAuthorize("hasRole('ADMIN')")
     public Page<UserResponse> getAllUser(Pageable pageable){
         Page<User> userPage=userRepository.findAll(pageable);
         //return userPage.map(userMapper::toUserResponse);
@@ -77,6 +88,7 @@ public class UserService {
         }
 
     }
+
     public User updateUser(String username, UserRequest request){
         User user=userRepository.findUserByUsername(username).get();
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
