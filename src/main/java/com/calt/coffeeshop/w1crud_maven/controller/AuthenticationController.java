@@ -3,9 +3,9 @@ package com.calt.coffeeshop.w1crud_maven.controller;
 import com.calt.coffeeshop.w1crud_maven.dto.request.AuthRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.IntrospectRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.ApiResponse;
-import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenicationResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenticationResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.IntrospectResponse;
-import com.calt.coffeeshop.w1crud_maven.service.AuthenicationService;
+import com.calt.coffeeshop.w1crud_maven.service.AuthenticationService;
 import com.nimbusds.jose.JOSEException;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -21,17 +21,17 @@ import java.text.ParseException;
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class AuthenicationController {
+public class AuthenticationController {
     //@Autowired already a final so don't need to use
-    AuthenicationService authenicationService;
+    AuthenticationService authenticationService;
 
     @PostMapping("/token")
-     public ApiResponse<AuthenicationResponse> login(@RequestBody AuthRequest authRequest) {
-        var result = authenicationService.authenicate(authRequest);
+     public ApiResponse<AuthenticationResponse> login(@RequestBody AuthRequest authRequest) {
+        var result = authenticationService.authenicate(authRequest);
 
-        return ApiResponse.<AuthenicationResponse>builder().
+        return ApiResponse.<AuthenticationResponse>builder().
                 result(
-                        AuthenicationResponse.builder().
+                        AuthenticationResponse.builder().
                                 authenicated(result.isAuthenicated()).
                                 token(result.getToken()).
                                 build()).
@@ -41,7 +41,7 @@ public class AuthenicationController {
     }
     @PostMapping("/introspect")
     public ApiResponse<IntrospectResponse> login(@RequestBody IntrospectRequest introspectRequest) throws ParseException, JOSEException {
-        var result = authenicationService.introspect(introspectRequest);
+        var result = authenticationService.introspect(introspectRequest);
 
         return ApiResponse.<IntrospectResponse>builder().
                 result(result).

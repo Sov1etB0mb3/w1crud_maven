@@ -2,7 +2,7 @@ package com.calt.coffeeshop.w1crud_maven.service;
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.AuthRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.IntrospectRequest;
-import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenicationResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenticationResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.IntrospectResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
@@ -28,21 +28,21 @@ import java.util.Date;
 
 @Slf4j
 @Service
-public class AuthenicationService {
+public class AuthenticationService {
     @Autowired
     private UserRepository userRepository;
     @NonFinal
     @Value("${jwt}")
     protected String key;
 
-    public AuthenicationResponse authenicate(AuthRequest authRequest){
+    public AuthenticationResponse authenicate(AuthRequest authRequest){
     var user = userRepository.findUserByUsername(authRequest.getUsername()).orElseThrow(()-> new AppException(ErrorCode.USER_NOT_FOUND));
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         boolean authenicated = passwordEncoder.matches(authRequest.getPassword(), user.getPassword());
         if(!authenicated)
             throw new AppException(ErrorCode.UNAUTHENICATED);
         var token=generateToken(user);
-        return AuthenicationResponse.builder().token(token).authenicated(true).build();
+        return AuthenticationResponse.builder().token(token).authenicated(true).build();
     }
 
     public IntrospectResponse introspect(IntrospectRequest introspectRequest) throws JOSEException, ParseException {
