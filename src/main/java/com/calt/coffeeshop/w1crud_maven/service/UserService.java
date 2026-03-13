@@ -9,6 +9,7 @@ import com.calt.coffeeshop.w1crud_maven.enums.Role;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.mapper.UserMapper;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -21,6 +22,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.HashSet;
 
+@Slf4j
 @Service
 public class UserService {
     @Autowired
@@ -75,8 +77,10 @@ public class UserService {
         }
 
     }
-    public User updateUser(String name, UserRequest request){
-        User user=userRepository.findUserByUsername(name).get();
+    public User updateUser(String username, UserRequest request){
+        User user=userRepository.findUserByUsername(username).get();
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
+        request.setPassword(passwordEncoder.encode(request.getPassword()));
         userMapper.updateUser(request,user);
         return userRepository.save(user);
     }

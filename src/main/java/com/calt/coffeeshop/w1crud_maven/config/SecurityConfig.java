@@ -9,9 +9,15 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
+import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import javax.crypto.spec.SecretKeySpec;
@@ -21,29 +27,39 @@ import java.util.List;
 public class SecurityConfig {
     @Value("${jwt}")
     private String secretkey;
-    private String[] publicEndpoints={"api/auth/token"};
-    private String[] privateEndpoints={"api/users"};
+    private String[] publicEndpoints={"/api/auth/token"};
+    private String[] privateEndpoints={"/api/users"};
+    private static final String[] WHITE_LIST_URL = { "/api/v1/auth/**", "/v2/api-docs", "/v3/api-docs",
+            "/v3/api-docs/**", "/swagger-resources", "/swagger-resources/**", "/configuration/ui",
+            "/configuration/security", "/swagger-ui/**", "/webjars/**", "/swagger-ui.html", "/api/auth/**",
+            "/api/test/**", "/authenticate",
+            "/v3/api-docs/swagger-config"};
     //after complete api, add has role adfter resquestMatchers
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .authorizeHttpRequests(auth->auth
+                        .requestMatchers(WHITE_LIST_URL).permitAll()
                         .requestMatchers(HttpMethod.POST,publicEndpoints).permitAll()
-                        .requestMatchers(HttpMethod.GET,privateEndpoints)
-                        .hasAuthority("SCOPE_ADMIN")
+
+                        .requestMatchers(privateEndpoints)
+                        .hasAuthority("ROLE_ADMIN")
                         .anyRequest()
                         .authenticated()
                 );
-        httpSecurity.csrf(AbstractHttpConfigurer::disable);
 
+        httpSecurity.csrf(AbstractHttpConfigurer::disable);
+        httpSecurity.httpBasic(http->http.disable());
+//    httpSecurity.httpBasic(Customizer.withDefaults());
         //).httpBasic(basic-> basic.disable()) to use the basic auth from spring security.
         // We can also use default spring security with this:
         //httpSecurity.httpBasic(Customizer.withDefaults())
         //###############################
         //Configure the spring security so that we can use the key we generate to Authorize!
         httpSecurity.oauth2ResourceServer(o2Auth->
-                o2Auth.jwt(jwtConfigurer -> jwtConfigurer.decoder(jwtDecoder()))
+                o2Auth.jwt(jwtConfigurer -> jwtConfigurer.decoder(jwtDecoder()).jwtAuthenticationConverter(jwtAuthenticationConverter()))
                 );
+
     return httpSecurity.build();
     }
     //Decoder to decode the JWT we generate
@@ -54,6 +70,15 @@ public class SecurityConfig {
                 .macAlgorithm(MacAlgorithm.HS512)
                 .build();
     }
+    @Bean
+    JwtAuthenticationConverter jwtAuthenticationConverter(){
+        JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
+        jwtGrantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
+        JwtAuthenticationConverter jwtAuthenticationConverter= new JwtAuthenticationConverter();
+        jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(jwtGrantedAuthoritiesConverter);
+        return  jwtAuthenticationConverter;
+    }
+
     // this use to ignore the urls that aren't be secured! (In a nutshell, those urls can be accessed by anynone)
 //    @Bean
 //    public WebSecurityCustomizer webSecurityCustomizer(){
