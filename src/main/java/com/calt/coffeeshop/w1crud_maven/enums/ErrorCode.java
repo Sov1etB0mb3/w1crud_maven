@@ -4,9 +4,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 
 public enum ErrorCode {
-    EXISTED(707,"Existed!", HttpStatus.CONFLICT),
+    EXISTED(709,"Existed!", HttpStatus.CONFLICT),
     USER_NOT_FOUND(704,"User not found!",HttpStatus.NOT_FOUND),
-    UNAUTHENTICATED(706,"Unauthenticated!",HttpStatus.UNAUTHORIZED);
+    UNAUTHENTICATED(701,"Unauthenticated!",HttpStatus.UNAUTHORIZED),
+    UNAUTHORIZED (703,"You do not have permission!",HttpStatus.FORBIDDEN);
 
     private int code;
     private String message;
