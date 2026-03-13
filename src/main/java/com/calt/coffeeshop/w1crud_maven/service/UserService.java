@@ -50,8 +50,14 @@ public class UserService {
         return userRepository.save(newUser);
 
     }
-
     @PostAuthorize( "returnObject.username.compareTo(authentication.name)==0")
+    public UserResponse getMyInfor(){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        return userRepository.findUserByUsername(auth.getName()).map(u->userMapper.toUserResponse(u))
+                .orElseThrow(()->new RuntimeException("User not found!"));
+    }
+
     public User getUserByUsername(String userName){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         log.info(auth.getName());

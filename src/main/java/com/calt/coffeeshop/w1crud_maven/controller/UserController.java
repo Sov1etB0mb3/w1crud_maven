@@ -58,6 +58,17 @@ public class UserController {
 
         return apiResponse;
     }
+    @GetMapping("/myInfor")
+    //return String becase the whole html site are Strings!!!
+    public ApiResponse<User> getUser(){
+
+        ApiResponse apiResponse = ApiResponse.builder().build();
+        apiResponse.setResult(userService.getMyInfor());
+        apiResponse.setCode(703);
+        apiResponse.setMessage("GOT!");
+
+        return apiResponse;
+    }
 
 
 
