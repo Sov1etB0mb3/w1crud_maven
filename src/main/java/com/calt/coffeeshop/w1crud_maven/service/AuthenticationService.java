@@ -40,7 +40,7 @@ public class AuthenticationService {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         boolean authenicated = passwordEncoder.matches(authRequest.getPassword(), user.getPassword());
         if(!authenicated)
-            throw new AppException(ErrorCode.UNAUTHENICATED);
+            throw new AppException(ErrorCode.UNAUTHENTICATED);
         var token=generateToken(user);
         return AuthenticationResponse.builder().token(token).authenicated(true).build();
     }

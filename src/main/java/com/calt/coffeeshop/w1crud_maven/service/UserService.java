@@ -57,7 +57,7 @@ public class UserService {
         return userRepository.findUserByUsername(auth.getName()).map(u->userMapper.toUserResponse(u))
                 .orElseThrow(()->new RuntimeException("User not found!"));
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     public User getUserByUsername(String userName){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         log.info(auth.getName());
