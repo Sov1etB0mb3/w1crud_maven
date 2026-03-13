@@ -43,10 +43,13 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST,publicEndpoints).permitAll()
 
                         .requestMatchers(privateEndpoints)
-                        .hasAuthority("ROLE_ADMIN")
+                        .hasRole("ADMIN")
                         .anyRequest()
                         .authenticated()
                 );
+        //use .hasRole("USER") instead of .has Authority("${Prefix}ROLE") to be more idiomatic
+        // the mechanism isn't much different, hasRole will automatically find in Authority
+        // that contains the value we pass in!
 
         httpSecurity.csrf(AbstractHttpConfigurer::disable);
         httpSecurity.httpBasic(http->http.disable());
