@@ -21,7 +21,7 @@ import java.util.Set;
 public class UserResponse {
     private int id;
     private String username;
-    private Set<UserRole> roles;
+    private Set<String> roles;
     private Instant created_at;
     private Instant updated_at;
 
@@ -31,4 +31,5 @@ public class UserResponse {
         this.created_at = created_at;
         this.updated_at = updated_at;
     }
+
 }

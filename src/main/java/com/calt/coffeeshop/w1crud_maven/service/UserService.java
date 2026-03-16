@@ -28,7 +28,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import static java.rmi.server.LogStream.log;
 
 @Slf4j
 @Service
@@ -68,7 +74,7 @@ public class UserService {
     @PreAuthorize("hasRole('ADMIN')")
     public User getUserByUsername(String userName){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        log.info(auth.getName());
+        UserService.log.info(auth.getName());
         return userRepository.findUserByUsername(userName)
                 .orElseThrow(()->new RuntimeException("User not found!"));
     }
@@ -79,8 +85,20 @@ public class UserService {
     @PreAuthorize("hasRole('ADMIN')")
     public Page<UserResponse> getAllUser(Pageable pageable){
         Page<User> userPage=userRepository.findAll(pageable);
-        //return userPage.map(userMapper::toUserResponse);
-        return userPage.map(user->userMapper.toUserResponse(user));
+//        return userPage.map(userMapper::toUserResponse);
+        return userPage.map(user->{
+                log("DATA: "+user.toString());
+                UserResponse userResponse = userMapper.toUserResponse(user);
+                Set<String> roles =
+                        user.getRoles()
+                        .stream()
+                        .map(userRole -> userRole.getRole().getName())
+                        .collect(Collectors.toSet());
+//                UserRole userRole = userRoleRepository.findUserRoleByUser(user);
+//                userResponse.setRoles(Collections.singleton(userRole.getRole().getName()));
+                userResponse.setRoles(roles);
+                return userResponse;});
+
 
     }
 
@@ -122,6 +140,9 @@ public class UserService {
     }
     public void addRoleToUser(String roleName, String userName){
         Role role = roleRepository.findRoleByName(roleName);
+        if(role == null){
+            role = roleRepository.findRoleByName("USER");
+        }
         User user = userRepository.findUserByUsername(userName).get();
         UserRole userRole = new UserRole();
         userRole.setUser(user);

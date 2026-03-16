@@ -1,10 +1,12 @@
 package com.calt.coffeeshop.w1crud_maven.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter @Setter
@@ -21,9 +23,9 @@ public class User {
     private String username;
     @Column(name="password")
     private String password;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,orphanRemoval = false)
-    private Set<UserRole> roles;
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,orphanRemoval = true)
+    private Set<UserRole> roles = new HashSet<>();
     @Column(name="created_at",updatable = false)
     private Instant created_at;
     @Column(name="updated_at")

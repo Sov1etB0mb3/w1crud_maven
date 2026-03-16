@@ -22,9 +22,9 @@ public class Role {
     @Column(name = "description")
     private String description;
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL,orphanRemoval = false)
-    Set<UserRole> users = new HashSet<>();
+    private Set<UserRole> users = new HashSet<>();
 
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL,orphanRemoval = false)
-    Set<RolePermission> permissions = new HashSet<>();
+    private Set<RolePermission> permissions = new HashSet<>();
 
 }

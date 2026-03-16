@@ -6,6 +6,7 @@ import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.enums.StatusCode;
 import com.calt.coffeeshop.w1crud_maven.service.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,14 +79,17 @@ public class UserController {
         apiResponse.setCode(StatusCode.UPDATED.getCode());
         apiResponse.setMessage(StatusCode.UPDATED.getMessage());
 //        userRequest.setUpdated_at(Instant.now());
+
         apiResponse.setResult(userService.updateUser(username,userRequest));
         return apiResponse;
     }
     @PostMapping("")
+    @Transactional
     public ApiResponse<User> addUser(@RequestBody @Valid UserRequest userRequest){
         ApiResponse apiResponse = ApiResponse.builder().build();
 //        userRequest.setCreated_at(Instant.now());
 //        userRequest.setUpdated_at(Instant.now());
+        userService.addRoleToUser("USER",userRequest.getUsername());
         apiResponse.setResult( userService.saveUserfromDTO(userRequest));
             return apiResponse;
     }
