@@ -19,6 +19,6 @@ public class Permission {
     private String name;
     @Column(name = "description")
     private String description;
-    @OneToMany(mappedBy = "permission")
-    private Set<Role_Permission> rolePermissions = new HashSet<>();
+    @OneToMany(mappedBy = "permission", cascade = CascadeType.ALL,orphanRemoval = false)
+    private Set<RolePermission> rolePermissions = new HashSet<>();
 }
