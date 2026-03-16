@@ -45,8 +45,9 @@ public class UserService {
         if(newUser.getRoles()!=null){
             return userRepository.save(newUser);
         }
-
-        newUser.setRoles(Role.USER.name());
+        HashSet<String> roles = new HashSet<>();
+        roles.add(Role.ADMIN.name());
+        newUser.setRoles(roles);
         return userRepository.save(newUser);
 
     }
