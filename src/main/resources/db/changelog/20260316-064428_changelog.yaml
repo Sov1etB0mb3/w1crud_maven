@@ -1,0 +1,183 @@
+databaseChangeLog:
+- changeSet:
+    id: 1773643476454-1
+    author: khanhnt (generated)
+    changes:
+    - createSequence:
+        incrementBy: 50
+        sequenceName: tbl_permisson_SEQ
+        startValue: 1
+- changeSet:
+    id: 1773643476454-2
+    author: khanhnt (generated)
+    changes:
+    - createSequence:
+        incrementBy: 50
+        sequenceName: tbl_role_SEQ
+        startValue: 1
+- changeSet:
+    id: 1773643476454-3
+    author: khanhnt (generated)
+    changes:
+    - createSequence:
+        incrementBy: 50
+        sequenceName: tbl_role_permisison_SEQ
+        startValue: 1
+- changeSet:
+    id: 1773643476454-4
+    author: khanhnt (generated)
+    changes:
+    - createSequence:
+        incrementBy: 50
+        sequenceName: tbl_user_role_SEQ
+        startValue: 1
+- changeSet:
+    id: 1773643476454-5
+    author: khanhnt (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: tbl_permissonPK
+            name: id
+            type: BIGINT
+        - column:
+            name: description
+            type: VARCHAR(255)
+        - column:
+            name: name
+            type: VARCHAR(255)
+        tableName: tbl_permisson
+- changeSet:
+    id: 1773643476454-6
+    author: khanhnt (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: tbl_rolePK
+            name: id
+            type: BIGINT
+        - column:
+            name: description
+            type: VARCHAR(255)
+        - column:
+            name: name
+            type: VARCHAR(255)
+        tableName: tbl_role
+- changeSet:
+    id: 1773643476454-7
+    author: khanhnt (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: tbl_role_permisisonPK
+            name: id
+            type: BIGINT
+        - column:
+            name: permission_id
+            type: BIGINT
+        - column:
+            name: role_id
+            type: BIGINT
+        tableName: tbl_role_permisison
+- changeSet:
+    id: 1773643476454-8
+    author: khanhnt (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: tbl_user_rolePK
+            name: id
+            type: BIGINT
+        - column:
+            name: role_id
+            type: BIGINT
+        - column:
+            name: user_id
+            type: INTEGER
+        tableName: tbl_user_role
+- changeSet:
+    id: 1773643476454-9
+    author: khanhnt (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: role_id
+        baseTableName: tbl_role_permisison
+        constraintName: FK32pcc4jexi78s894502rjodme
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: tbl_role
+        validate: true
+- changeSet:
+    id: 1773643476454-10
+    author: khanhnt (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: role_id
+        baseTableName: tbl_user_role
+        constraintName: FK6phlytlf1w3h9vutsu019xor5
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: tbl_role
+        validate: true
+- changeSet:
+    id: 1773643476454-11
+    author: khanhnt (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: permission_id
+        baseTableName: tbl_role_permisison
+        constraintName: FKco6bj9p5jmqthwfkqjsqmn7xb
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: tbl_permisson
+        validate: true
+- changeSet:
+    id: 1773643476454-12
+    author: khanhnt (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: tbl_user_role
+        constraintName: FKggc6wjqokl2vlw89y22a1j2oh
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: tbl_user
+        validate: true
+- changeSet:
+    id: 1773643476454-13
+    author: khanhnt (generated)
+    changes:
+    - dropColumn:
+        columnName: role
+        tableName: tbl_user
+- changeSet:
+      id: test-03
+      author: khanhnt
+      changes:
+          - tagDatabase:
+                tag: test-3.0
+
