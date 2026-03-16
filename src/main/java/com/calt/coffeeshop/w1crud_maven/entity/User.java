@@ -23,7 +23,7 @@ public class User {
     private String password;
 
     @Column(name="role")
-    private Set<String> roles;
+    private Set<String> role;
     @Column(name="created_at",updatable = false)
     private Instant created_at;
     @Column(name="updated_at")
