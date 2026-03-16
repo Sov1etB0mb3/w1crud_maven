@@ -5,7 +5,8 @@ import org.springframework.http.HttpStatusCode;
 
 public enum StatusCode {
     UPDATED(200,"Updated!", HttpStatus.OK),
-    DELETED(200,"Deleted",HttpStatus.OK);
+    DELETED(200,"Deleted!",HttpStatus.OK),
+    FOUND(302,"Found!",HttpStatus.FOUND);
 
     private int code;
     private String message;

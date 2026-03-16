@@ -1,4 +1,4 @@
-package com.calt.coffeeshop.w1crud_maven.dto.request;
+package com.calt.coffeeshop.w1crud_maven.dto.response;
 
 
 import lombok.AllArgsConstructor;
@@ -10,7 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class RoleRequest {
+public class RoleResponse {
     private long id;
     private String name;
     private String description;

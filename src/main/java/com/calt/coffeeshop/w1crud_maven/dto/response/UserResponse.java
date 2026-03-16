@@ -1,6 +1,7 @@
 package com.calt.coffeeshop.w1crud_maven.dto.response;
 
 import com.calt.coffeeshop.w1crud_maven.entity.Role;
+import com.calt.coffeeshop.w1crud_maven.entity.UserRole;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
@@ -20,7 +21,7 @@ import java.util.Set;
 public class UserResponse {
     private int id;
     private String username;
-    private Set<String> roles;
+    private Set<UserRole> roles;
     private Instant created_at;
     private Instant updated_at;
 

@@ -1,13 +1,13 @@
 package com.calt.coffeeshop.w1crud_maven.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter @Setter
 @Table(name = "tbl_role_permisison")
-
+@NoArgsConstructor
+@AllArgsConstructor
 public class RolePermission {
     @Id
     @Column(name="id")
@@ -22,4 +22,9 @@ public class RolePermission {
     @ManyToOne
     @JoinColumn(name = "permission_id")
     private Permission permission;
+
+    public RolePermission(Role role, Permission permission) {
+        this.role = role;
+        this.permission = permission;
+    }
 }

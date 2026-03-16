@@ -13,16 +13,8 @@ import java.util.Set;
 @Getter @Setter
 
 public class PermissionResponse {
-    private int id;
-    private String username;
-    private Set<String> roles;
-    private Instant created_at;
-    private Instant updated_at;
+    private long id;
+    private String name;
+    private String description;
 
-    public PermissionResponse(String username, Instant created_at, Instant updated_at) {
-        this.username = username;
-
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-    }
 }

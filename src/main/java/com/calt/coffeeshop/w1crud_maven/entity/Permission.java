@@ -1,7 +1,9 @@
 package com.calt.coffeeshop.w1crud_maven.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.HashSet;
@@ -10,6 +12,8 @@ import java.util.Set;
 @Entity
 @Table(name = "tbl_permisson")
 @Getter @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,4 +25,9 @@ public class Permission {
     private String description;
     @OneToMany(mappedBy = "permission", cascade = CascadeType.ALL,orphanRemoval = false)
     private Set<RolePermission> rolePermissions = new HashSet<>();
+
+    public Permission(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }

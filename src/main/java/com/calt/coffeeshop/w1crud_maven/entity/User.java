@@ -2,6 +2,7 @@ package com.calt.coffeeshop.w1crud_maven.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.Instant;
 import java.util.Set;
@@ -26,6 +27,7 @@ public class User {
     @Column(name="created_at",updatable = false)
     private Instant created_at;
     @Column(name="updated_at")
+    @LastModifiedDate
     private Instant updated_at;
 
     public User(String username, String password) {
@@ -38,7 +40,6 @@ public class User {
     public User(String username, String password, Instant created_at, Instant updated_at) {
         this.username = username;
         this.password = password;
-        this.roles = roles;
         this.created_at = created_at;
         this.updated_at = updated_at;
     }

@@ -4,7 +4,9 @@ import com.calt.coffeeshop.w1crud_maven.dto.request.AuthRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.IntrospectRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenticationResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.IntrospectResponse;
+import com.calt.coffeeshop.w1crud_maven.entity.Role;
 import com.calt.coffeeshop.w1crud_maven.entity.User;
+import com.calt.coffeeshop.w1crud_maven.entity.UserRole;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
@@ -27,7 +29,9 @@ import java.text.ParseException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
+import java.util.Set;
 import java.util.StringJoiner;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -59,15 +63,17 @@ public class AuthenticationService {
                 .build();
 
     }
-    public String buildRole(User user){
-        StringJoiner stringJoiner = new StringJoiner(" ");
-        if(CollectionUtils.isEmpty(user.getRoles()))
-            user.getRoles().forEach(stringJoiner::add);
-        return stringJoiner.toString();
-
-    }
+//    public String buildRole(User user){
+//        StringJoiner stringJoiner = new StringJoiner(" ");
+//        if(CollectionUtils.isEmpty(user.getRoles()))
+//            user.getRoles().forEach(stringJoiner::add);
+//        return stringJoiner.toString();
+//
+//    }
     private String generateToken(User user){
         JWSHeader jweHeader = new JWSHeader(JWSAlgorithm.HS512);
+        String role = user.getRoles().stream().map(u->u.getRole().getName())
+                .collect(Collectors.joining(" "));
         // claim("customClaim","Custom")
         JWTClaimsSet jwtClaimsSet= new JWTClaimsSet.Builder()
                 .subject(user.getUsername())
@@ -76,7 +82,7 @@ public class AuthenticationService {
                 .expirationTime(new Date(
                         Instant.now().plus(1, ChronoUnit.HOURS).toEpochMilli()
                 ))
-                .claim("scope",buildRole(user))
+                .claim("scope",role)
                 .build();
 
         Payload payload = new Payload(jwtClaimsSet.toJSONObject());

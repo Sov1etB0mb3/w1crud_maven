@@ -77,15 +77,15 @@ public class UserController {
         ApiResponse apiResponse = ApiResponse.builder().build();
         apiResponse.setCode(StatusCode.UPDATED.getCode());
         apiResponse.setMessage(StatusCode.UPDATED.getMessage());
-        userRequest.setUpdated_at(Instant.now());
+//        userRequest.setUpdated_at(Instant.now());
         apiResponse.setResult(userService.updateUser(username,userRequest));
         return apiResponse;
     }
     @PostMapping("")
     public ApiResponse<User> addUser(@RequestBody @Valid UserRequest userRequest){
         ApiResponse apiResponse = ApiResponse.builder().build();
-        userRequest.setCreated_at(Instant.now());
-        userRequest.setUpdated_at(Instant.now());
+//        userRequest.setCreated_at(Instant.now());
+//        userRequest.setUpdated_at(Instant.now());
         apiResponse.setResult( userService.saveUserfromDTO(userRequest));
             return apiResponse;
     }
@@ -99,5 +99,17 @@ public class UserController {
         apiResponse.setCode(StatusCode.DELETED.getCode());
         apiResponse.setResult(null);
         return apiResponse;
+    }
+    @PostMapping("/roles")
+    public ApiResponse<String> addRoleToUser(@RequestParam String userName,
+                                             @RequestParam String roleName){
+        userService.addRoleToUser(roleName,userName);
+        ApiResponse apiResponse = ApiResponse.builder()
+                .result(null)
+                .code(StatusCode.UPDATED.getCode())
+                .message(StatusCode.UPDATED.getMessage())
+                .build();
+        return apiResponse;
+
     }
 }

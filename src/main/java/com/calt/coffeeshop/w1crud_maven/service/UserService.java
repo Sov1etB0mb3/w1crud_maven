@@ -3,12 +3,15 @@ package com.calt.coffeeshop.w1crud_maven.service;
 import com.calt.coffeeshop.w1crud_maven.dto.request.UserRequest;
 
 import com.calt.coffeeshop.w1crud_maven.dto.response.UserResponse;
+import com.calt.coffeeshop.w1crud_maven.entity.Role;
 import com.calt.coffeeshop.w1crud_maven.entity.User;
+import com.calt.coffeeshop.w1crud_maven.entity.UserRole;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
-import com.calt.coffeeshop.w1crud_maven.enums.Role;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.mapper.UserMapper;
+import com.calt.coffeeshop.w1crud_maven.repository.RoleRepository;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
+import com.calt.coffeeshop.w1crud_maven.repository.UserRoleRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -32,7 +35,10 @@ import java.util.HashSet;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-
+    @Autowired
+    private UserRoleRepository userRoleRepository;
+    @Autowired
+    private RoleRepository roleRepository;
     @Autowired
     private UserMapper userMapper;
     public User saveUserfromDTO(UserRequest userRequest) {
@@ -44,10 +50,11 @@ public class UserService {
         newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
         if(newUser.getRoles()!=null){
             return userRepository.save(newUser);
+
         }
-        HashSet<String> roles = new HashSet<>();
-        roles.add(Role.ADMIN.name());
-        newUser.setRoles(roles);
+
+//        roles.add(Role.ADMIN.name());
+//        newUser.setRoles(roles);
         return userRepository.save(newUser);
 
     }
@@ -74,6 +81,7 @@ public class UserService {
         Page<User> userPage=userRepository.findAll(pageable);
         //return userPage.map(userMapper::toUserResponse);
         return userPage.map(user->userMapper.toUserResponse(user));
+
     }
 
 
@@ -103,6 +111,23 @@ public class UserService {
         userMapper.updateUser(request,user);
         return userRepository.save(user);
     }
+    public void addRoleToUser(Long roleId, Integer userId){
+        Role role = roleRepository.findRoleById(roleId);
+        User user = userRepository.findById(userId).get();
+        UserRole userRole = new UserRole();
+        userRole.setUser(user);
+        userRole.setRole(role);
+        userRoleRepository.save(userRole);
 
+    }
+    public void addRoleToUser(String roleName, String userName){
+        Role role = roleRepository.findRoleByName(roleName);
+        User user = userRepository.findUserByUsername(userName).get();
+        UserRole userRole = new UserRole();
+        userRole.setUser(user);
+        userRole.setRole(role);
+        userRoleRepository.save(userRole);
+
+    }
 
 }
