@@ -1,9 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
-import com.calt.coffeeshop.w1crud_maven.dto.request.PermissionRequest;
-import com.calt.coffeeshop.w1crud_maven.dto.request.ProductRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.RoleRequest;
-import com.calt.coffeeshop.w1crud_maven.dto.response.PermissionResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.RoleResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.*;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
@@ -51,7 +48,7 @@ public class RoleService {
         log("After mapped: "+ role);
         role = roleRepository.save(role);
         log("After saved: "+role);
-        return roleMapper.toRoleResposne(role);
+        return roleMapper.toRoleResponse(role);
     }
     public Page<Role> getAllRoles(Pageable pageable) {
         try {
@@ -79,8 +76,9 @@ public class RoleService {
         }
     }
     public RoleResponse updateRole(Long id, RoleRequest request){
-        Role role = roleRepository.findRoleById(id).orElseThrow(()->new AppException(ErrorCode.NOT_FOUND));
+        Role role = roleRepository.findRoleById(id).orElseThrow(
+                ()->new AppException(ErrorCode.NOT_FOUND));
         roleMapper.updateRole(request,role);
-        return roleMapper.toRoleResposne(roleRepository.save(role));
+        return roleMapper.toRoleResponse(roleRepository.save(role));
     }
 }

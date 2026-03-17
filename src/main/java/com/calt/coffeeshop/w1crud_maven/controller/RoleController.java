@@ -4,7 +4,6 @@ import com.calt.coffeeshop.w1crud_maven.dto.request.RoleRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.ApiResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.RoleResponse;
 
-import com.calt.coffeeshop.w1crud_maven.entity.Role;
 import com.calt.coffeeshop.w1crud_maven.enums.StatusCode;
 import com.calt.coffeeshop.w1crud_maven.mapper.RoleMapper;
 import com.calt.coffeeshop.w1crud_maven.service.RoleService;
@@ -47,7 +46,7 @@ public class RoleController {
         Pageable pageable = PageRequest.of(page, pageSize, sort);
         ApiResponse apiResponse = ApiResponse.builder().build();
         apiResponse.setResult(roleService.getAllRoles(pageable).map(
-                r -> roleMapper.toRoleResposne(r)));
+                r -> roleMapper.toRoleResponse(r)));
         apiResponse.setCode(StatusCode.FOUND.getCode());
         apiResponse.setMessage(StatusCode.FOUND.getMessage());
         return apiResponse;
