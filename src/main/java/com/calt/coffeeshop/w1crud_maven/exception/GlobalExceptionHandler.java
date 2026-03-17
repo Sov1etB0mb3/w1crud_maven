@@ -25,17 +25,19 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ApiResponse> handleConflict(DataIntegrityViolationException e){
+        ErrorCode errorCode = ErrorCode.DATA_INTEGRITY;
         ApiResponse apiResponse =  ApiResponse.builder().build();
-        apiResponse.setCode(7);
-        apiResponse.setMessage(e.getMessage());
+        apiResponse.setCode(errorCode.getCode());
+        apiResponse.setMessage(errorCode.getMessage());
     return ResponseEntity.status(HttpStatus.CONFLICT).body(apiResponse);
 
     }
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<ApiResponse> handleRuntime(RuntimeException e){
+        ErrorCode errorCode = ErrorCode.UNCATEGORIZED_EXCEPTION;
         ApiResponse apiResponse =  ApiResponse.builder().build();
-        apiResponse.setCode(6);
-        apiResponse.setMessage(e.getMessage());
+        apiResponse.setCode(errorCode.getCode());
+        apiResponse.setMessage(errorCode.getMessage());
         return ResponseEntity.badRequest().body(apiResponse);
     }
     @ExceptionHandler(value = AppException.class)

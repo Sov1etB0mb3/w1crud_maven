@@ -17,4 +17,6 @@ public interface UserRepository extends JpaRepository<User,Integer> {
 
     @Override
     Page<User> findAll(Pageable pageable);
+
+    void deleteUserByUsername(String username);
 }

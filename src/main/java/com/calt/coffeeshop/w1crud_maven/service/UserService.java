@@ -69,15 +69,16 @@ public class UserService {
     public UserResponse getMyInfor(){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        return userRepository.findUserByUsername(auth.getName()).map(u->userMapper.toUserResponse(u))
+        return userRepository.findUserByUsername(auth.getName()).map(u->getUserWithRole(u))
                 .orElseThrow(()->new RuntimeException("User not found!"));
     }
     @PreAuthorize("hasRole('ADMIN')")
-    public User getUserByUsername(String userName){
+    public UserResponse getUserByUsername(String userName){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         UserService.log.info(auth.getName());
-        return userRepository.findUserByUsername(userName)
+         User user=userRepository.findUserByUsername(userName)
                 .orElseThrow(()->new RuntimeException("User not found!"));
+        return getUserWithRole(user);
     }
     public void saveUser(User user) {
             userRepository.save(user);
@@ -88,19 +89,7 @@ public class UserService {
         Page<User> userPage=userRepository.findAll(pageable);
 //        return userPage.map(userMapper::toUserResponse);
         try {
-            return userPage.map(user -> {
-                log("DATA: " + user.toString());
-                UserResponse userResponse = userMapper.toUserResponse(user);
-                Set<String> roles =
-                        user.getRoles()
-                                .stream()
-                                .map(userRole -> userRole.getRole().getName())
-                                .collect(Collectors.toSet());
-//                UserRole userRole = userRoleRepository.findUserRoleByUser(user);
-//                userResponse.setRoles(Collections.singleton(userRole.getRole().getName()));
-                userResponse.setRoles(roles);
-                return userResponse;
-            });
+            return userPage.map(user -> getUserWithRole(user));
 
         }catch (AccessDeniedException exception){
 
@@ -122,6 +111,15 @@ public class UserService {
     public void deleteUser(User user){
         try{
             userRepository.delete(user);
+        }
+        catch (DataIntegrityViolationException e){
+            throw new ResponseStatusException(HttpStatus.CONFLICT,"Can't delete!");
+        }
+
+    }
+    public void deleteUser(String username){
+        try{
+            userRepository.deleteUserByUsername(username);
         }
         catch (DataIntegrityViolationException e){
             throw new ResponseStatusException(HttpStatus.CONFLICT,"Can't delete!");
@@ -155,6 +153,20 @@ public class UserService {
         userRole.setUser(user);
         userRole.setRole(role);
         userRoleRepository.save(userRole);
+
+    }
+    public UserResponse getUserWithRole(User user){
+        log("DATA: " + user.toString());
+        UserResponse userResponse = userMapper.toUserResponse(user);
+        Set<String> roles =
+                user.getRoles()
+                        .stream()
+                        .map(userRole -> userRole.getRole().getName())
+                        .collect(Collectors.toSet());
+//                UserRole userRole = userRoleRepository.findUserRoleByUser(user);
+//                userResponse.setRoles(Collections.singleton(userRole.getRole().getName()));
+        userResponse.setRoles(roles);
+        return userResponse;
 
     }
 

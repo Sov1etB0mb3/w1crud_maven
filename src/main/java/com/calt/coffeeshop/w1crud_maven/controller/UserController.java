@@ -2,6 +2,7 @@ package com.calt.coffeeshop.w1crud_maven.controller;
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.UserRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.ApiResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.response.UserResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.enums.StatusCode;
 import com.calt.coffeeshop.w1crud_maven.service.UserService;
@@ -61,7 +62,7 @@ public class UserController {
     }
     @GetMapping("/myInfor")
     //return String becase the whole html site are Strings!!!
-    public ApiResponse<User> getUser(){
+    public ApiResponse<UserResponse> getUser(){
 
         ApiResponse apiResponse = ApiResponse.builder().build();
         apiResponse.setResult(userService.getMyInfor());
@@ -98,7 +99,7 @@ public class UserController {
     public ApiResponse<String> deleteUser(@PathVariable("username") String username){
 
         ApiResponse apiResponse = ApiResponse.builder().build();
-        userService.deleteUser(userService.getUserByUsername(username));
+        userService.deleteUser(username);
         apiResponse.setMessage(StatusCode.DELETED.getMessage());
         apiResponse.setCode(StatusCode.DELETED.getCode());
         apiResponse.setResult(null);
