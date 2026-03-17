@@ -62,13 +62,19 @@ public class RoleController {
         apiResponse.setResult(null);
         return apiResponse;
     }
-    @PatchMapping("/{roleName}")
-    public ApiResponse<String> deleteRole(@PathVariable("roleName") String roleName) {
+    @PatchMapping("/{id}")
+    public ApiResponse<String> deleteRole(@PathVariable("id") Long id, @RequestBody RoleRequest roleRequest) {
 
         ApiResponse apiResponse = ApiResponse.builder().build();
-        roleService.deleteRole(roleName);
-        apiResponse.setMessage(StatusCode.DELETED.getMessage());
-        apiResponse.setCode(StatusCode.DELETED.getCode());
+        roleService.updateRole(id,roleRequest);
+        apiResponse.setResult(null);
+        return apiResponse;
+    }
+    @PatchMapping("/{roleName}")
+    public ApiResponse<String> deleteRole(@PathVariable("roleName") String roleName, @RequestBody RoleRequest roleRequest) {
+
+        ApiResponse apiResponse = ApiResponse.builder().build();
+        roleService.updateRole(roleName,roleRequest);
         apiResponse.setResult(null);
         return apiResponse;
     }
