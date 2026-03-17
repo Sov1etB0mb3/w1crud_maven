@@ -1,5 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.controller;
 
+import com.calt.coffeeshop.w1crud_maven.dto.request.PermissionRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.RoleRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.ApiResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.RoleResponse;
@@ -42,9 +43,12 @@ public class RoleController {
 //
 //    }
 @PostMapping("/{roleName}/permission")
-public ApiResponse<RoleResponse> addPermission(@RequestParam("roleName") String roleName,@RequestBody RoleRequest roleRequest) {
+public ApiResponse<RoleResponse> addPermission(
+        @RequestParam("roleName") String roleName
+        ,@RequestBody String permissionName) {
+    roleService.addPermissionToRole(roleName,permissionName);
     return ApiResponse.<RoleResponse>builder()
-            .result(roleService.create(roleRequest))
+            .result(null)
             .build();
 
 }
@@ -59,8 +63,7 @@ public ApiResponse<RoleResponse> addPermission(@RequestParam("roleName") String 
         Sort sort = ascending ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
         Pageable pageable = PageRequest.of(page, pageSize, sort);
         ApiResponse apiResponse = ApiResponse.builder().build();
-        apiResponse.setResult(roleService.getAllRoles(pageable).map(
-                r -> roleMapper.toRoleResponse(r)));
+        apiResponse.setResult(roleService.getAllRoles(pageable));
         apiResponse.setCode(StatusCode.FOUND.getCode());
         apiResponse.setMessage(StatusCode.FOUND.getMessage());
         return apiResponse;

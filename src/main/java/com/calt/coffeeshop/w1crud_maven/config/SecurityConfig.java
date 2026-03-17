@@ -51,10 +51,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth->auth
                         .requestMatchers(WHITE_LIST_URL).permitAll()
                         .requestMatchers(HttpMethod.POST,publicEndpoints).permitAll()
-                        .requestMatchers(privateEndpoints)
-                        .hasRole("ADMIN")
-                        .anyRequest()
-                        .authenticated()
+                        .requestMatchers(HttpMethod.GET,privateEndpoints).hasRole("ADMIN")
+                        .anyRequest().authenticated()
+
+
                 );
         //use .hasRole("USER") instead of .has Authority("${Prefix}ROLE") to be more idiomatic
         // the mechanism isn't much different, hasRole will automatically find in Authority

@@ -2,6 +2,7 @@ package com.calt.coffeeshop.w1crud_maven.service;
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.RoleRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.RoleResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.response.UserResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.*;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
@@ -18,6 +19,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static java.rmi.server.LogStream.log;
 
@@ -39,7 +43,9 @@ public class RoleService {
  }
     public void addPermissionToRole(String roleName, String permissionName){
         Role role= roleRepository.findRoleByName(roleName).orElseThrow(()->new AppException(ErrorCode.NOT_FOUND));
-        Permission permission= permissionRepository.findPermissionByName(permissionName);
+        Permission permission= permissionRepository.findPermissionByName(permissionName).orElseThrow(
+                ()-> new RuntimeException("NOTFOUND Permission")
+        );
         RolePermission rolePermission= new RolePermission(role,permission);
         rolePermissionRepository.save(rolePermission);
     }
@@ -50,9 +56,10 @@ public class RoleService {
         log("After saved: "+role);
         return roleMapper.toRoleResponse(role);
     }
-    public Page<Role> getAllRoles(Pageable pageable) {
+    public Page<RoleResponse> getAllRoles(Pageable pageable) {
         try {
-            return roleRepository.findAll(pageable);
+            return roleRepository.findAll(pageable).map(role ->
+                    getRoleWithPermission(role));
         } catch (Exception e) {
             throw new AppException(ErrorCode.NOT_FOUND);
         }
@@ -86,5 +93,19 @@ public class RoleService {
                 ()->new AppException(ErrorCode.NOT_FOUND));
         roleMapper.updateRole(request,role);
         return roleMapper.toRoleResponse(roleRepository.save(role));
+    }
+    public RoleResponse getRoleWithPermission(Role role){
+        log("DATA: " + role.toString());
+        RoleResponse roleResponse = roleMapper.toRoleResponse(role);
+        Set<String> permissions =
+                role.getPermissions()
+                        .stream()
+                        .map(rolePermission ->
+                                rolePermission.getPermission().getName())
+                        .collect(Collectors.toSet());
+
+        roleResponse.setPermissions(permissions);
+        return roleResponse;
+
     }
 }

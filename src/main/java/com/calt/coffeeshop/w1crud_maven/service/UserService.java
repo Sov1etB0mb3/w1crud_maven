@@ -72,8 +72,8 @@ public class UserService {
         return userRepository.findUserByUsername(auth.getName()).map(u->getUserWithRole(u))
                 .orElseThrow(()->new RuntimeException("User not found!"));
     }
-    @PreAuthorize("hasRole('ADMIN')")
-    @PostAuthorize("hasAuthority('READ')")
+//    @PreAuthorize("hasRole('ADMIN')")
+//    @PostAuthorize("hasAuthority('READ')")
     public UserResponse getUserByUsername(String userName){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         UserService.log.info(auth.getName());

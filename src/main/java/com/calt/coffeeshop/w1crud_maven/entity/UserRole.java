@@ -1,6 +1,7 @@
 package com.calt.coffeeshop.w1crud_maven.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,8 +19,12 @@ private long id;
 
 @ManyToOne
 @JoinColumn(name = "user_id")
+@NotNull
+
 private User user;
 @ManyToOne
 @JoinColumn(name = "role_id")
+@NotNull
+
 private Role role;
 }
