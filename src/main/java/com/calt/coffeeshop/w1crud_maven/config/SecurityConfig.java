@@ -1,5 +1,9 @@
 package com.calt.coffeeshop.w1crud_maven.config;
 
+import com.calt.coffeeshop.w1crud_maven.entity.User;
+import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
+import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,6 +11,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
@@ -15,6 +21,11 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtGra
 import org.springframework.security.web.SecurityFilterChain;
 
 import javax.crypto.spec.SecretKeySpec;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Configuration
 //without this, post condtion won't work
@@ -29,6 +40,10 @@ public class SecurityConfig {
             "/configuration/security", "/swagger-ui/**", "/webjars/**", "/swagger-ui.html", "/api/auth/**",
             "/api/test/**", "/authenticate",
             "/v3/api-docs/swagger-config"};
+
+
+    @Autowired
+    private UserRepository userRepository;
     //after complete api, add has role adfter resquestMatchers
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity, CustomAccessDeniedHandler customAccessDeniedHandler) throws Exception {
@@ -63,7 +78,7 @@ public class SecurityConfig {
 
     return httpSecurity.build();
     }
-    //Decoder to decode the JWT we generate
+    //Decoder to decode the JWT we generated
     @Bean
     public JwtDecoder jwtDecoder(){
         SecretKeySpec secretKeySpec = new SecretKeySpec(secretkey.getBytes(), "HS512");
@@ -71,14 +86,37 @@ public class SecurityConfig {
                 .macAlgorithm(MacAlgorithm.HS512)
                 .build();
     }
+
     @Bean
     JwtAuthenticationConverter jwtAuthenticationConverter(){
-        JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
-        jwtGrantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
-        JwtAuthenticationConverter jwtAuthenticationConverter= new JwtAuthenticationConverter();
-        jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(jwtGrantedAuthoritiesConverter);
-        return  jwtAuthenticationConverter;
-    }
+        JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
+            converter.setJwtGrantedAuthoritiesConverter(jwt -> {
+                String username = jwt.getSubject();
+                User user = userRepository.findUserWithRolesAndPermissions(username)
+                        .orElseThrow();
+                return user.getRoles().stream()
+                        .flatMap(userRole -> {
+                            String roleName = userRole.getRole().getName();
+                            Stream<SimpleGrantedAuthority> roleAuthority =
+                                    Stream.of(new SimpleGrantedAuthority("ROLE_" + roleName));
+                            Stream<SimpleGrantedAuthority> permissionAuthorities =
+
+                                    userRole.getRole()
+                                    .getPermissions()
+                                    .stream()
+                                    .map(rolePermission ->
+                                            new SimpleGrantedAuthority(
+                                                    rolePermission.getPermission().getName()
+                                            )
+                                    );
+                            return Stream.concat(roleAuthority,permissionAuthorities);
+                        })
+                        .collect(Collectors.toSet());
+
+        });
+
+    return converter;
+}
 
     // this use to ignore the urls that aren't be secured! (In a nutshell, those urls can be accessed by anynone)
 //    @Bean
@@ -87,3 +125,41 @@ public class SecurityConfig {
 //    }
 
 }
+//        JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
+//        jwtGrantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
+////        jwtGrantedAuthoritiesConverter.setAuthoritiesClaimName("Permission");
+//        JwtAuthenticationConverter jwtAuthenticationConverter= new JwtAuthenticationConverter();
+//
+//        jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(jwtGrantedAuthoritiesConverter);
+//        return  jwtAuthenticationConverter;
+//
+//JwtAuthenticationConverter jwtAuthenticationConverter(){
+//
+//    JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
+//
+//    converter.setJwtGrantedAuthoritiesConverter(jwt -> {
+//
+//        List<GrantedAuthority> authorities = new ArrayList<>();
+//
+//        String roles = jwt.getClaimAsString("role");
+//        if (roles != null) {
+//            Arrays.stream(roles.split(" "))
+//                    .map(r ->
+//                            new SimpleGrantedAuthority("ROLE_"+r))
+//                    .forEach(authorities::add);
+//
+//        }
+//
+//        String permissions = jwt.getClaimAsString("permission");
+//        if (permissions != null && !permissions.isBlank()) {
+//            Arrays.stream(permissions.split(" "))
+//                    .map(r ->
+//                            new SimpleGrantedAuthority(r))
+//                    .forEach(authorities::add);
+//        }
+//
+//        return authorities;
+//    });
+//
+//    return converter;
+//}

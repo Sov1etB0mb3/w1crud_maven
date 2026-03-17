@@ -34,6 +34,20 @@ public class RoleController {
                 .build();
 
     }
+//    @PostMapping
+//    public ApiResponse<RoleResponse> createRoleWithPermission(@RequestBody RoleRequest roleRequest) {
+//        return ApiResponse.<RoleResponse>builder()
+//                .result(roleService.create(roleRequest))
+//                .build();
+//
+//    }
+@PostMapping("/{roleName}/permission")
+public ApiResponse<RoleResponse> addPermission(@RequestParam("roleName") String roleName,@RequestBody RoleRequest roleRequest) {
+    return ApiResponse.<RoleResponse>builder()
+            .result(roleService.create(roleRequest))
+            .build();
+
+}
 
     @GetMapping
     public ApiResponse<List<RoleResponse>> getAllRole(

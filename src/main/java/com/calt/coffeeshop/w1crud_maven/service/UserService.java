@@ -73,6 +73,7 @@ public class UserService {
                 .orElseThrow(()->new RuntimeException("User not found!"));
     }
     @PreAuthorize("hasRole('ADMIN')")
+    @PostAuthorize("hasAuthority('READ')")
     public UserResponse getUserByUsername(String userName){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         UserService.log.info(auth.getName());
@@ -84,7 +85,7 @@ public class UserService {
             userRepository.save(user);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+//    @PreAuthorize("hasRole('ADMIN')")
     public Page<UserResponse> getAllUser(Pageable pageable){
         Page<User> userPage=userRepository.findAll(pageable);
 //        return userPage.map(userMapper::toUserResponse);

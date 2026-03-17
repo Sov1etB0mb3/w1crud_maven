@@ -75,15 +75,18 @@ public class AuthenticationService {
         JWSHeader jweHeader = new JWSHeader(JWSAlgorithm.HS512);
         String role = user.getRoles().stream().map(u->u.getRole().getName())
                 .collect(Collectors.joining(" "));
+
+
         // claim("customClaim","Custom")
         JWTClaimsSet jwtClaimsSet= new JWTClaimsSet.Builder()
                 .subject(user.getUsername())
                 .issuer("mrx.com")//domain
                 .issueTime(new Date())
                 .expirationTime(new Date(
-                        Instant.now().plus(1, ChronoUnit.HOURS).toEpochMilli()
+                        Instant.now()
+                                .plus(1, ChronoUnit.HOURS).toEpochMilli()
                 ))
-                .claim("scope",role)
+                .claim("role",role)
                 .build();
 
         Payload payload = new Payload(jwtClaimsSet.toJSONObject());
@@ -98,3 +101,12 @@ public class AuthenticationService {
 
     }
 }
+//String permission = user.getRoles().stream().flatMap(
+//                userRole -> userRole.getRole()
+//                        .getPermissions()
+//                        .stream()
+//                        .map(rolePermission ->
+//                                rolePermission.getPermission().getName())
+//                        .distinct()
+//        )
+//        .collect(Collectors.joining(" "));

@@ -44,8 +44,8 @@ public class UserController {
         Pageable pageable = PageRequest.of(page,pageSize,sort);
         ApiResponse apiResponse = ApiResponse.builder().build();
         apiResponse.setResult(userService.getAllUser(pageable));
-        apiResponse.setCode(703);
-        apiResponse.setMessage("GOT!");
+        apiResponse.setCode(StatusCode.FOUND.getCode());
+        apiResponse.setMessage(StatusCode.FOUND.getMessage());
 
         return apiResponse;
     }
@@ -55,8 +55,8 @@ public class UserController {
 
         ApiResponse apiResponse = ApiResponse.builder().build();
         apiResponse.setResult(userService.getUserByUsername(username));
-        apiResponse.setCode(703);
-        apiResponse.setMessage("GOT!");
+        apiResponse.setCode(StatusCode.FOUND.getCode());
+        apiResponse.setMessage(StatusCode.FOUND.getMessage());
 
         return apiResponse;
     }
