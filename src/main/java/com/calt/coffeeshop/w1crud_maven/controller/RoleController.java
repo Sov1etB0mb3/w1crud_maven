@@ -63,4 +63,14 @@ public class RoleController {
         apiResponse.setResult(null);
         return apiResponse;
     }
+    @PatchMapping("/{roleName}")
+    public ApiResponse<String> deleteRole(@PathVariable("roleName") String roleName) {
+
+        ApiResponse apiResponse = ApiResponse.builder().build();
+        roleService.deleteRole(roleName);
+        apiResponse.setMessage(StatusCode.DELETED.getMessage());
+        apiResponse.setCode(StatusCode.DELETED.getCode());
+        apiResponse.setResult(null);
+        return apiResponse;
+    }
 }

@@ -13,7 +13,7 @@ public enum ErrorCode {
     NOT_FOUND(404,"Not found!",HttpStatus.NOT_FOUND),
     UNAUTHENTICATED(401,"Unauthenticated!",HttpStatus.UNAUTHORIZED),
     UNAUTHORIZED (403,"You do not have permission!",HttpStatus.FORBIDDEN),
-    DATA_INTEGRITY(5005, "Cannot handle!", HttpStatus.INTERNAL_SERVER_ERROR);
+    DATA_INTEGRITY(4009, "Cannot handle!", HttpStatus.CONFLICT);
 
 
     private int code;

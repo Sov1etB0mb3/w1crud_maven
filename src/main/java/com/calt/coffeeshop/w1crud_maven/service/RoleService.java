@@ -1,12 +1,11 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.PermissionRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.request.ProductRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.RoleRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.PermissionResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.RoleResponse;
-import com.calt.coffeeshop.w1crud_maven.entity.Permission;
-import com.calt.coffeeshop.w1crud_maven.entity.Role;
-import com.calt.coffeeshop.w1crud_maven.entity.RolePermission;
+import com.calt.coffeeshop.w1crud_maven.entity.*;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.mapper.RoleMapper;
@@ -36,11 +35,17 @@ public class RoleService {
 
 
     public void addPermissionToRole(Long roleId, Long permissionId){
-        Role role= roleRepository.findRoleById(roleId);
+        Role role= roleRepository.findRoleById(roleId).orElseThrow(()->new AppException(ErrorCode.NOT_FOUND));
         Permission permission= permissionRepository.findPermissionById(permissionId);
         RolePermission rolePermission= new RolePermission(role,permission);
         rolePermissionRepository.save(rolePermission);
  }
+    public void addPermissionToRole(String roleName, String permissionName){
+        Role role= roleRepository.findRoleByName(roleName).orElseThrow(()->new AppException(ErrorCode.NOT_FOUND));
+        Permission permission= permissionRepository.findPermissionByName(permissionName);
+        RolePermission rolePermission= new RolePermission(role,permission);
+        rolePermissionRepository.save(rolePermission);
+    }
     public RoleResponse create(RoleRequest roleRequest){
         Role role = roleMapper.toRole(roleRequest);
         log("After mapped: "+ role);
@@ -63,5 +68,19 @@ public class RoleService {
             throw new ResponseStatusException(HttpStatus.CONFLICT,"Can't delete!");
 
         }
+    }
+    public void deleteRole(String roleName){
+        try{
+            roleRepository.deleteByName(roleName);
+
+        }catch (DataIntegrityViolationException exception){
+            throw new ResponseStatusException(HttpStatus.CONFLICT,"Can't delete!");
+
+        }
+    }
+    public RoleResponse updateRole(Long id, RoleRequest request){
+        Role role = roleRepository.findRoleById(id).orElseThrow(()->new AppException(ErrorCode.NOT_FOUND));
+        roleMapper.updateRole(request,role);
+        return roleMapper.toRoleResposne(roleRepository.save(role));
     }
 }

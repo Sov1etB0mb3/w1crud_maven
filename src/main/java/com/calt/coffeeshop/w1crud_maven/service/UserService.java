@@ -135,7 +135,7 @@ public class UserService {
         return userRepository.save(user);
     }
     public void addRoleToUser(Long roleId, Integer userId){
-        Role role = roleRepository.findRoleById(roleId);
+        Role role = roleRepository.findRoleById(roleId).orElseThrow(()->new AppException(ErrorCode.NOT_FOUND));
         User user = userRepository.findById(userId).get();
         UserRole userRole = new UserRole();
         userRole.setUser(user);
@@ -144,9 +144,10 @@ public class UserService {
 
     }
     public void addRoleToUser(String roleName, String userName){
-        Role role = roleRepository.findRoleByName(roleName);
+        Role role = roleRepository.findRoleByName(roleName).get();
         if(role == null){
-            role = roleRepository.findRoleByName("USER");
+            role = roleRepository.findRoleByName("USER").orElseThrow(
+                    ()-> new AppException(ErrorCode.NOT_FOUND));
         }
         User user = userRepository.findUserByUsername(userName).get();
         UserRole userRole = new UserRole();
