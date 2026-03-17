@@ -1,28 +1,20 @@
 package com.calt.coffeeshop.w1crud_maven.config;
 
-import com.nimbusds.jose.Algorithm;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import javax.crypto.spec.SecretKeySpec;
-import java.util.List;
 
 @Configuration
 //without this, post condtion won't work
@@ -31,7 +23,7 @@ public class SecurityConfig {
     @Value("${jwt}")
     private String secretkey;
     private String[] publicEndpoints={"/api/auth/token"};
-    private String[] privateEndpoints={"/api/users"};
+    private String[] privateEndpoints={"/api/users","/api/role/**","/api/permission/**"};
     private static final String[] WHITE_LIST_URL = { "/api/v1/auth/**", "/v2/api-docs", "/v3/api-docs",
             "/v3/api-docs/**", "/swagger-resources", "/swagger-resources/**", "/configuration/ui",
             "/configuration/security", "/swagger-ui/**", "/webjars/**", "/swagger-ui.html", "/api/auth/**",
@@ -39,12 +31,11 @@ public class SecurityConfig {
             "/v3/api-docs/swagger-config"};
     //after complete api, add has role adfter resquestMatchers
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity, CustomAccessDeniedHandler customAccessDeniedHandler) throws Exception {
         httpSecurity
                 .authorizeHttpRequests(auth->auth
                         .requestMatchers(WHITE_LIST_URL).permitAll()
                         .requestMatchers(HttpMethod.POST,publicEndpoints).permitAll()
-                        .requestMatchers("/api/permission").permitAll()
                         .requestMatchers(privateEndpoints)
                         .hasRole("ADMIN")
                         .anyRequest()
@@ -63,8 +54,12 @@ public class SecurityConfig {
         //###############################
         //Configure the spring security so that we can use the key we generate to Authorize!
         httpSecurity.oauth2ResourceServer(o2Auth->
-                o2Auth.jwt(jwtConfigurer -> jwtConfigurer.decoder(jwtDecoder()).jwtAuthenticationConverter(jwtAuthenticationConverter()))
+                o2Auth.jwt(jwtConfigurer -> jwtConfigurer.decoder(jwtDecoder()).
+                        jwtAuthenticationConverter(jwtAuthenticationConverter()))
+                        .authenticationEntryPoint(new JwtAuthenticationEntryPoint())
                 );
+        httpSecurity.exceptionHandling(e->e
+                .accessDeniedHandler(customAccessDeniedHandler));
 
     return httpSecurity.build();
     }

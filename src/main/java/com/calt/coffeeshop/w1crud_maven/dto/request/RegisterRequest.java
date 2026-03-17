@@ -16,9 +16,6 @@ public class RegisterRequest {
     private int id;
     private String username;
     private String password;
-    private Set<String> roles;
-    private Instant created_at;
-    private Instant updated_at;
 
     public RegisterRequest(String username, String password) {
         this.username = username;

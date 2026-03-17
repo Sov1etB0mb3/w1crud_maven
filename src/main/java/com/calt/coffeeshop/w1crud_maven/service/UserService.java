@@ -18,6 +18,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -86,19 +87,25 @@ public class UserService {
     public Page<UserResponse> getAllUser(Pageable pageable){
         Page<User> userPage=userRepository.findAll(pageable);
 //        return userPage.map(userMapper::toUserResponse);
-        return userPage.map(user->{
-                log("DATA: "+user.toString());
+        try {
+            return userPage.map(user -> {
+                log("DATA: " + user.toString());
                 UserResponse userResponse = userMapper.toUserResponse(user);
                 Set<String> roles =
                         user.getRoles()
-                        .stream()
-                        .map(userRole -> userRole.getRole().getName())
-                        .collect(Collectors.toSet());
+                                .stream()
+                                .map(userRole -> userRole.getRole().getName())
+                                .collect(Collectors.toSet());
 //                UserRole userRole = userRoleRepository.findUserRoleByUser(user);
 //                userResponse.setRoles(Collections.singleton(userRole.getRole().getName()));
                 userResponse.setRoles(roles);
-                return userResponse;});
+                return userResponse;
+            });
 
+        }catch (AccessDeniedException exception){
+
+            throw new AccessDeniedException(ErrorCode.UNAUTHORIZED.getMessage());
+        }
 
     }
 

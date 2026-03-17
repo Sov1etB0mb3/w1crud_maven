@@ -4,6 +4,9 @@ import com.calt.coffeeshop.w1crud_maven.dto.request.RoleRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.ApiResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.RoleResponse;
 
+import com.calt.coffeeshop.w1crud_maven.entity.Role;
+import com.calt.coffeeshop.w1crud_maven.enums.StatusCode;
+import com.calt.coffeeshop.w1crud_maven.mapper.RoleMapper;
 import com.calt.coffeeshop.w1crud_maven.service.RoleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,37 +24,43 @@ import java.util.List;
 @Slf4j
 public class RoleController {
     @Autowired
-    RoleService roleService;
+    private RoleService roleService;
+    @Autowired
+    private RoleMapper roleMapper;
+
     @PostMapping
-        ApiResponse<RoleResponse> createRole (@RequestBody RoleRequest roleRequest){
+    public ApiResponse<RoleResponse> createRole(@RequestBody RoleRequest roleRequest) {
         return ApiResponse.<RoleResponse>builder()
                 .result(roleService.create(roleRequest))
                 .build();
 
     }
-//    @GetMapping
-//    //return String becase the whole html site are Strings!!!
-//        public ApiResponse<List<Permission>> getAllPermission(
-//                @RequestParam(defaultValue = "0") int page,
-//                @RequestParam(defaultValue = "5") int pageSize,
-//                @RequestParam(defaultValue = "id") String sortBy,
-//                @RequestParam(defaultValue = "true") boolean ascending){
-//            //List<Product> productList= productService.getAllProducts();
-//            Sort sort= ascending ? Sort.by(sortBy).ascending():Sort.by(sortBy).descending();
-//            Pageable pageable = PageRequest.of(page,pageSize,sort);
-//            ApiResponse apiResponse = ApiResponse.builder().build();
-//            apiResponse.setResult(roleService.ge(pageable));
-//            apiResponse.setCode(StatusCode.FOUND.getCode());
-//            apiResponse.setMessage(StatusCode.FOUND.getMessage());
-//            return apiResponse;
-//        }
-//    @DeleteMapping("/{permisison}")
-//    public ApiResponse<String> deletePermission(@PathVariable("permission") String permisison){
-//
-//        ApiResponse apiResponse = ApiResponse.builder().build();
-//        permissionService.deletePermission(productService.getProductByID(permisison));
-//        apiResponse.setMessage(StatusCode.DELETED.getMessage());
-//        apiResponse.setCode(StatusCode.DELETED.getCode());
-//        apiResponse.setResult(null);
-//        return apiResponse;
+
+    @GetMapping
+    public ApiResponse<List<RoleResponse>> getAllRole(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int pageSize,
+            @RequestParam(defaultValue = "id") String sortBy,
+            @RequestParam(defaultValue = "true") boolean ascending) {
+        //List<Product> productList= productService.getAllProducts();
+        Sort sort = ascending ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+        Pageable pageable = PageRequest.of(page, pageSize, sort);
+        ApiResponse apiResponse = ApiResponse.builder().build();
+        apiResponse.setResult(roleService.getAllRoles(pageable).map(
+                r -> roleMapper.toRoleResposne(r)));
+        apiResponse.setCode(StatusCode.FOUND.getCode());
+        apiResponse.setMessage(StatusCode.FOUND.getMessage());
+        return apiResponse;
+    }
+
+    @DeleteMapping("/{id}")
+    public ApiResponse<String> deleteRole(@PathVariable("id") Long id) {
+
+        ApiResponse apiResponse = ApiResponse.builder().build();
+        roleService.deleteRole(id);
+        apiResponse.setMessage(StatusCode.DELETED.getMessage());
+        apiResponse.setCode(StatusCode.DELETED.getCode());
+        apiResponse.setResult(null);
+        return apiResponse;
+    }
 }

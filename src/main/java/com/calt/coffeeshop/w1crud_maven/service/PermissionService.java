@@ -14,10 +14,13 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import static java.rmi.server.LogStream.log;
 
@@ -40,10 +43,18 @@ public class PermissionService {
         log("After saved: "+permission);
         return permissionMapper.toPermissionResponse(permission);
     }
-//    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     public Page<PermissionResponse> getAllPermission(Pageable pageable){
         Page<Permission> permissionPage=permissionRepository.findAll(pageable);
         //return aPage.map(aMapper::toaResponse);
         return permissionPage.map(permission->permissionMapper.toPermissionResponse(permission));
+    }
+    public void deletePermission(String permissionName){
+        try {
+            permissionRepository.deletePermissionByName(permissionName);
+        } catch (DataIntegrityViolationException e) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT,"Can't delete!");
+
+        }
     }
 }
