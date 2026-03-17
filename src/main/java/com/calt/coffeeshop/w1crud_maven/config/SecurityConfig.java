@@ -92,37 +92,34 @@ public class SecurityConfig {
         JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
             converter.setJwtGrantedAuthoritiesConverter(jwt -> {
                 String username = jwt.getSubject();
+                List<GrantedAuthority> roleAuthorities = new ArrayList<>();
+
+                String roles = jwt.getClaimAsString("role");
+                if (roles != null) {
+                    Arrays.stream(roles.split(" "))
+                            .map(r ->
+                                    new SimpleGrantedAuthority("ROLE_"+r))
+                            .forEach(roleAuthorities::add);
+
+                }
                 User user = userRepository.findUserWithRolesAndPermissions(username)
                         .orElseThrow();
-                return user.getRoles().stream()
-                        .flatMap(userRole -> {
-                            String roleName = userRole.getRole().getName();
-                            Stream<SimpleGrantedAuthority> roleAuthority =
-                                    Stream.of(new SimpleGrantedAuthority("ROLE_" + roleName));
-                            Stream<SimpleGrantedAuthority> permissionAuthorities =
-
+                Stream<GrantedAuthority> permissionAuthorities = user.getRoles().stream()
+                        .flatMap(userRole ->
                                     userRole.getRole()
                                     .getPermissions()
                                     .stream()
                                     .map(rolePermission ->
                                             new SimpleGrantedAuthority(
                                                     rolePermission.getPermission().getName()
-                                            )
-                                    );
-                            return Stream.concat(roleAuthority,permissionAuthorities);
-                        })
-                        .collect(Collectors.toSet());
+                                            ))
+                        );
+                return Stream.concat(roleAuthorities.stream(),permissionAuthorities).collect(Collectors.toSet());
 
         });
 
     return converter;
 }
-
-    // this use to ignore the urls that aren't be secured! (In a nutshell, those urls can be accessed by anynone)
-//    @Bean
-//    public WebSecurityCustomizer webSecurityCustomizer(){
-//        return (web)->web.ignoring().requestMatchers("rq1","rq1");
-//    }
 
 }
 //        JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
