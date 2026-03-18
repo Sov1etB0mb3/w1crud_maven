@@ -5,13 +5,11 @@ import com.calt.coffeeshop.w1crud_maven.dto.request.IntrospectRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.LogoutRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenticationResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.IntrospectResponse;
-import com.calt.coffeeshop.w1crud_maven.entity.InvalidToken;
-import com.calt.coffeeshop.w1crud_maven.entity.Role;
-import com.calt.coffeeshop.w1crud_maven.entity.User;
-import com.calt.coffeeshop.w1crud_maven.entity.UserRole;
+import com.calt.coffeeshop.w1crud_maven.entity.*;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.repository.InvalidTokenRepository;
+import com.calt.coffeeshop.w1crud_maven.repository.RefreshTokenRepository;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
 import com.nimbusds.jose.*;
 import com.nimbusds.jose.crypto.MACSigner;
@@ -20,6 +18,7 @@ import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
 import lombok.experimental.NonFinal;
 import lombok.extern.slf4j.Slf4j;
+import org.antlr.v4.runtime.Token;
 import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -45,6 +44,8 @@ public class AuthenticationService {
     private UserRepository userRepository;
     @Autowired
     private InvalidTokenRepository invalidTokenRepository;
+    @Autowired
+    private RefreshTokenRepository refreshTokenRepository;
     @NonFinal
     @Value("${jwt}")
     protected String key;
@@ -58,8 +59,22 @@ public class AuthenticationService {
         if(!authenicated)
             throw new AppException(ErrorCode.UNAUTHORIZED);
         var token=generateToken(user);
-        return AuthenticationResponse.builder().token(token).authenicated(true).build();
+        String rtoken=UUID.randomUUID().toString();
+
+        RefreshToken refreshToken = RefreshToken.builder()
+                .userid(user.getId())
+                .refreshtoken(rtoken)
+                .expirytime(new Date( Instant.now()
+                        .plus(1,ChronoUnit.HOURS)
+                        .toEpochMilli()
+                ).toInstant()
+                )
+                .build();
+        refreshTokenRepository.save(refreshToken);
+
+        return AuthenticationResponse.builder().token(token).refreshtoken(rtoken).authenicated(true).build();
     }
+
 
     public IntrospectResponse introspect(IntrospectRequest introspectRequest) throws JOSEException, ParseException {
         var token =  introspectRequest.getToken();
@@ -86,6 +101,10 @@ public class AuthenticationService {
                 .expirytime(expiryTime)
                 .build();
         invalidTokenRepository.save(invalidToken);
+        Integer userId= userRepository.findUserByUsername(signToken.getJWTClaimsSet().getSubject())
+                .get().getId();
+        RefreshToken refreshToken = refreshTokenRepository.findRefreshTokenByUserid(userId);
+        refreshTokenRepository.delete(refreshToken);
 
     }
     private SignedJWT verifyToken(String token) throws JOSEException, ParseException {

@@ -1,0 +1,37 @@
+databaseChangeLog:
+- changeSet:
+    id: 1773814739261-1
+    author: khanhnt (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: tbl_refresh_tokenPK
+            name: id
+            type: BIGINT
+        - column:
+            name: expirytime
+            type: TIMESTAMP(6) WITH TIME ZONE
+        - column:
+            name: refreshToken
+            type: VARCHAR(255)
+        - column:
+            name: userid
+            type: INTEGER
+        tableName: tbl_refresh_token
+
+- changeSet:
+      id: cachesimRefreshToken
+      author: khanhnt
+      changes:
+          - tagDatabase:
+                tag: cachesim-2.0
+
+
+
+
+
