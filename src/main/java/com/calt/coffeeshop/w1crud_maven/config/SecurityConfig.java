@@ -51,8 +51,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth->auth
                         .requestMatchers(WHITE_LIST_URL).permitAll()
                         .requestMatchers(HttpMethod.POST,publicEndpoints).permitAll()
-                        .requestMatchers(HttpMethod.GET,privateEndpoints).hasRole("ADMIN")
-                        .anyRequest().authenticated()
+                        .requestMatchers(privateEndpoints)
+                        .authenticated()
 
 
                 );

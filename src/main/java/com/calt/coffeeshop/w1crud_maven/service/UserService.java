@@ -48,6 +48,8 @@ public class UserService {
     private RoleRepository roleRepository;
     @Autowired
     private UserMapper userMapper;
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")
+
     public User saveUserfromDTO(UserRequest userRequest) {
 
         if (userRepository.existsByUsername(userRequest.getUsername()))
@@ -72,8 +74,8 @@ public class UserService {
         return userRepository.findUserByUsername(auth.getName()).map(u->getUserWithRole(u))
                 .orElseThrow(()->new RuntimeException("User not found!"));
     }
-//    @PreAuthorize("hasRole('ADMIN')")
-//    @PostAuthorize("hasAuthority('READ')")
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('READ_USER')")
+
     public UserResponse getUserByUsername(String userName){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         UserService.log.info(auth.getName());
@@ -85,7 +87,8 @@ public class UserService {
             userRepository.save(user);
     }
 
-//    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('READ_USER')")
+
     public Page<UserResponse> getAllUser(Pageable pageable){
         Page<User> userPage=userRepository.findAll(pageable);
 //        return userPage.map(userMapper::toUserResponse);
@@ -99,6 +102,7 @@ public class UserService {
 
     }
 
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('DELETE_USER')")
 
     public void deleteUser(UserRequest userRequest){
         try{
@@ -109,6 +113,8 @@ public class UserService {
         }
 
     }
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('DELETE_USER')")
+
     public void deleteUser(User user){
         try{
             userRepository.delete(user);
@@ -118,6 +124,8 @@ public class UserService {
         }
 
     }
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('DELETE_USER')")
+
     public void deleteUser(String username){
         try{
             userRepository.deleteUserByUsername(username);
@@ -127,6 +135,7 @@ public class UserService {
         }
 
     }
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('UPDATE_USER')")
 
     public User updateUser(String username, UserRequest request){
         User user=userRepository.findUserByUsername(username).get();
@@ -135,6 +144,8 @@ public class UserService {
         userMapper.updateUser(request,user);
         return userRepository.save(user);
     }
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")
+
     public void addRoleToUser(Long roleId, Integer userId){
         Role role = roleRepository.findRoleById(roleId).orElseThrow(()->new AppException(ErrorCode.NOT_FOUND));
         User user = userRepository.findById(userId).get();
@@ -144,6 +155,7 @@ public class UserService {
         userRoleRepository.save(userRole);
 
     }
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")
     public void addRoleToUser(String roleName, String userName){
         Role role = roleRepository.findRoleByName(roleName).get();
         if(role == null){
@@ -157,6 +169,18 @@ public class UserService {
         userRoleRepository.save(userRole);
 
     }
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('DELETE_USER')")
+    public void deleteRoleFromUser(String userName, String roleName){
+        User user = userRepository.findUserByUsername(userName)
+                .orElseThrow(()->new AppException(ErrorCode.NOT_FOUND));
+        Role role = roleRepository.findRoleByName(roleName)
+                .orElseThrow(()-> new AppException(ErrorCode.NOT_FOUND));
+        user.getRoles().removeIf(
+                userRole -> userRole.getRole().equals(role)
+        );
+        userRepository.save(user);
+    }
+
     public UserResponse getUserWithRole(User user){
         log("DATA: " + user.toString());
         UserResponse userResponse = userMapper.toUserResponse(user);

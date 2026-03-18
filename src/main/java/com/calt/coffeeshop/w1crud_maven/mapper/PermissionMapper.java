@@ -15,4 +15,5 @@ import org.mapstruct.MappingTarget;
 public interface PermissionMapper {
     Permission toPermisison(PermissionRequest permissionRequest);
     PermissionResponse toPermissionResponse(Permission permission);
+    void updatePermission(PermissionRequest request,@MappingTarget Permission permission);
 }

@@ -80,7 +80,7 @@ public ApiResponse<RoleResponse> addPermission(
         return apiResponse;
     }
     @PatchMapping("/{id}")
-    public ApiResponse<String> deleteRole(@PathVariable("id") Long id, @RequestBody RoleRequest roleRequest) {
+    public ApiResponse<String> updateRole(@PathVariable("id") Long id, @RequestBody RoleRequest roleRequest) {
 
         ApiResponse apiResponse = ApiResponse.builder().build();
         roleService.updateRole(id,roleRequest);
@@ -88,7 +88,7 @@ public ApiResponse<RoleResponse> addPermission(
         return apiResponse;
     }
     @PatchMapping("/{roleName}")
-    public ApiResponse<String> deleteRole(@PathVariable("roleName") String roleName, @RequestBody RoleRequest roleRequest) {
+    public ApiResponse<String> updateRole(@PathVariable("roleName") String roleName, @RequestBody RoleRequest roleRequest) {
 
         ApiResponse apiResponse = ApiResponse.builder().build();
         roleService.updateRole(roleName,roleRequest);

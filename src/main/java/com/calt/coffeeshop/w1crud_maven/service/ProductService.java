@@ -12,6 +12,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -23,6 +24,8 @@ public class ProductService {
     private CategoryService categoryService;
     @Autowired
     private ProductMapper productMapper;
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_PRODUCT')")
+
     public Product saveProductfromDTO(ProductRequest rProduct) {
 
         if (productRepository.existsById(rProduct.getId()))
@@ -39,16 +42,22 @@ public class ProductService {
         return productRepository.save(newProduct);
 
     }
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_PRODUCT')")
+
     public void saveProduct(Product rProduct) {
             productRepository.save(rProduct);
     }
     public Page<Product> getAllProducts(Pageable pageable){
         return productRepository.findAll(pageable);
     }
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('READ_PRODUCT')")
+
     public Product getProductByID(String id){
         return productRepository.findById(id).orElseThrow(()->new RuntimeException("Product not found!"));
         //productRepository.findById(id) will return an Optional<Type>
     }
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('DELETE_PRODUCT')")
+
     public void deleteProduct(Product product){
         try{
             productRepository.delete(product);
@@ -58,6 +67,8 @@ public class ProductService {
         }
 
     }
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('UPDATE_PRODUCT')")
+
     public Product updateProduct(String id, ProductRequest request){
         Product product=getProductByID(id);
         Category category = categoryService.getCategoryByName(request.getCategory());

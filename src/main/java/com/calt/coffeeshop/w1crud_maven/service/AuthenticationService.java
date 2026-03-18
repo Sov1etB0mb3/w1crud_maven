@@ -32,6 +32,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.Set;
 import java.util.StringJoiner;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -42,6 +43,8 @@ public class AuthenticationService {
     @NonFinal
     @Value("${jwt}")
     protected String key;
+    @Value("${DURATION}")
+    protected Integer DURATION;
 
     public AuthenticationResponse authenicate(AuthRequest authRequest){
     var user = userRepository.findUserByUsername(authRequest.getUsername()).orElseThrow(()-> new AppException(ErrorCode.NOT_FOUND));
@@ -84,9 +87,10 @@ public class AuthenticationService {
                 .issueTime(new Date())
                 .expirationTime(new Date(
                         Instant.now()
-                                .plus(1, ChronoUnit.HOURS).toEpochMilli()
+                                .plus(DURATION, ChronoUnit.SECONDS).toEpochMilli()
                 ))
                 .claim("role",role)
+                .jwtID(UUID.randomUUID().toString())
                 .build();
 
         Payload payload = new Payload(jwtClaimsSet.toJSONObject());
