@@ -31,10 +31,7 @@ import org.springframework.util.CollectionUtils;
 import java.text.ParseException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
-import java.util.Set;
-import java.util.StringJoiner;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -101,10 +98,13 @@ public class AuthenticationService {
                 .expirytime(expiryTime)
                 .build();
         invalidTokenRepository.save(invalidToken);
-        Integer userId= userRepository.findUserByUsername(signToken.getJWTClaimsSet().getSubject())
-                .get().getId();
-        RefreshToken refreshToken = refreshTokenRepository.findRefreshTokenByUserid(userId);
+//        Integer userId= userRepository.findUserByUsername(signToken.getJWTClaimsSet().getSubject())
+//                .get().getId();
+        RefreshToken refreshToken = refreshTokenRepository
+                .findRefreshTokenByRefreshtoken(request.getRefreshtoken())
+                .orElseThrow(()-> new RuntimeException("CANNOT FOUND refreshtoken!"));
         refreshTokenRepository.delete(refreshToken);
+
 
     }
     private SignedJWT verifyToken(String token) throws JOSEException, ParseException {

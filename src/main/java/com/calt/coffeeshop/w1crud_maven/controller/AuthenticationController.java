@@ -35,6 +35,7 @@ public class AuthenticationController {
                         AuthenticationResponse.builder().
                                 authenicated(result.isAuthenicated()).
                                 token(result.getToken()).
+                                refreshtoken(result.getRefreshtoken()).
                                 build()).
                 build();
 
