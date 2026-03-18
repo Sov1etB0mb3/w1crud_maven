@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @RestController
@@ -79,7 +80,6 @@ public class UserController {
         ApiResponse apiResponse = ApiResponse.builder().build();
         apiResponse.setCode(StatusCode.UPDATED.getCode());
         apiResponse.setMessage(StatusCode.UPDATED.getMessage());
-//        userRequest.setUpdated_at(Instant.now());
 
         apiResponse.setResult(userService.updateUser(username,userRequest));
         return apiResponse;
@@ -88,10 +88,15 @@ public class UserController {
     @Transactional
     public ApiResponse<User> addUser(@RequestBody @Valid UserRequest userRequest){
         ApiResponse apiResponse = ApiResponse.builder().build();
-//        userRequest.setCreated_at(Instant.now());
-//        userRequest.setUpdated_at(Instant.now());
+
+        User result = userService.saveUserfromDTO(userRequest);
+        String role= userRequest.getRoles().stream().collect(Collectors.joining(","));
+        if (!role.isBlank() || !role.contains("USER"))
+            userService.addRoleToUser(role,userRequest.getUsername());
         userService.addRoleToUser("USER",userRequest.getUsername());
-        apiResponse.setResult( userService.saveUserfromDTO(userRequest));
+
+        apiResponse.setResult(result);
+//        apiResponse.setResult( userService.saveUserfromDTO(userRequest));
             return apiResponse;
     }
 

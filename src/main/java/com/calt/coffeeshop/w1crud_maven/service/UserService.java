@@ -29,6 +29,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.Instant;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -57,6 +58,8 @@ public class UserService {
         User newUser = userMapper.toUser(userRequest);
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
+        newUser.setCreated_at(Instant.now());
+        newUser.setUpdated_at(Instant.now());
         if(newUser.getRoles()!=null){
             return userRepository.save(newUser);
 
@@ -75,7 +78,6 @@ public class UserService {
                 .orElseThrow(()->new RuntimeException("User not found!"));
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('READ_USER')")
-
     public UserResponse getUserByUsername(String userName){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         UserService.log.info(auth.getName());
@@ -83,6 +85,8 @@ public class UserService {
                 .orElseThrow(()->new RuntimeException("User not found!"));
         return getUserWithRole(user);
     }
+    @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")
+
     public void saveUser(User user) {
             userRepository.save(user);
     }
@@ -142,6 +146,8 @@ public class UserService {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         request.setPassword(passwordEncoder.encode(request.getPassword()));
         userMapper.updateUser(request,user);
+        user.setUpdated_at(Instant.now());
+
         return userRepository.save(user);
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")

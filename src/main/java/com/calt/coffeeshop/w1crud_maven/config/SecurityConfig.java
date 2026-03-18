@@ -34,12 +34,12 @@ public class SecurityConfig {
     @Value("${jwt}")
     private String secretkey;
     private String[] publicEndpoints={"/api/auth/token"};
-    private String[] privateEndpoints={"/api/users","/api/role/**","/api/permission/**"};
+    private String[] privateEndpoints={"/api/users/**","/api/role/**","/api/permission/**"};
     private static final String[] WHITE_LIST_URL = { "/api/v1/auth/**", "/v2/api-docs", "/v3/api-docs",
             "/v3/api-docs/**", "/swagger-resources", "/swagger-resources/**", "/configuration/ui",
             "/configuration/security", "/swagger-ui/**", "/webjars/**", "/swagger-ui.html", "/api/auth/**",
             "/api/test/**", "/authenticate",
-            "/v3/api-docs/swagger-config"};
+            "/v3/api-docs/swagger-config","/api/products/**","/api/categories/**"};
 
 
     @Autowired
