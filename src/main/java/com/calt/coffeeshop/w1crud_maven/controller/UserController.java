@@ -76,7 +76,7 @@ public class UserController {
 
 
     @PatchMapping("/{username}")
-    public ApiResponse<User> updateUser(@PathVariable("username") String username, @RequestBody UserRequest userRequest){
+    public ApiResponse<UserResponse> updateUser(@PathVariable("username") String username, @RequestBody UserRequest userRequest){
         ApiResponse apiResponse = ApiResponse.builder().build();
         apiResponse.setCode(StatusCode.UPDATED.getCode());
         apiResponse.setMessage(StatusCode.UPDATED.getMessage());
@@ -121,5 +121,17 @@ public class UserController {
                 .build();
         return apiResponse;
 
+    }
+    @DeleteMapping("/roles")
+    public ApiResponse<String> removeRoleFromeUser(
+            @RequestParam String userName,
+            @RequestParam String roleName){
+        userService.deleteRoleFromUser(userName,roleName);
+        ApiResponse apiResponse=ApiResponse.builder()
+                .result("")
+                .code(StatusCode.DELETED.getCode())
+                .message(StatusCode.DELETED.getMessage())
+                .build();
+        return apiResponse;
     }
 }

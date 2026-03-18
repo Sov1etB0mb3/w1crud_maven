@@ -95,4 +95,16 @@ public ApiResponse<RoleResponse> addPermission(
         apiResponse.setResult(null);
         return apiResponse;
     }
+    @DeleteMapping("/permission")
+    public ApiResponse<String> removePermissionFromRole(
+            @RequestParam String permisisonName,
+            @RequestParam String roleName){
+        roleService.deletePermissionFromRole(permisisonName,roleName);
+        ApiResponse apiResponse=ApiResponse.builder()
+                .result("")
+                .code(StatusCode.DELETED.getCode())
+                .message(StatusCode.DELETED.getMessage())
+                .build();
+        return apiResponse;
+    }
 }

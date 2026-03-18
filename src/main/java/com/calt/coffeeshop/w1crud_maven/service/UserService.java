@@ -12,6 +12,7 @@ import com.calt.coffeeshop.w1crud_maven.mapper.UserMapper;
 import com.calt.coffeeshop.w1crud_maven.repository.RoleRepository;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRoleRepository;
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -140,15 +141,20 @@ public class UserService {
 
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('UPDATE_USER')")
-
-    public User updateUser(String username, UserRequest request){
+    @Transactional
+    public UserResponse updateUser(String username, UserRequest request){
         User user=userRepository.findUserByUsername(username).get();
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         request.setPassword(passwordEncoder.encode(request.getPassword()));
         userMapper.updateUser(request,user);
-        user.setUpdated_at(Instant.now());
 
-        return userRepository.save(user);
+        user.setUpdated_at(Instant.now());
+        String role= request.getRoles().stream().collect(Collectors.joining(","));
+
+        UserResponse result =userMapper.toUserResponse(userRepository.save(user));
+        addRoleToUser(role,username);
+        return result;
+
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")
 
