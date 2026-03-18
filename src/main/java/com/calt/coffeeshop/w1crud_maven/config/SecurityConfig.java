@@ -33,7 +33,7 @@ import java.util.stream.Stream;
 public class SecurityConfig {
     @Value("${jwt}")
     private String secretkey;
-    private String[] publicEndpoints={"/api/auth/token"};
+    private String[] publicEndpoints={"/api/auth/token","api/auth/logout"};
     private String[] privateEndpoints={"/api/users/**","/api/role/**","/api/permission/**"};
     private static final String[] WHITE_LIST_URL = { "/api/v1/auth/**", "/v2/api-docs", "/v3/api-docs",
             "/v3/api-docs/**", "/swagger-resources", "/swagger-resources/**", "/configuration/ui",
@@ -44,6 +44,8 @@ public class SecurityConfig {
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private CustomJwtDecoder customJwtDecoder;
     //after complete api, add has role adfter resquestMatchers
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity, CustomAccessDeniedHandler customAccessDeniedHandler) throws Exception {
@@ -69,7 +71,7 @@ public class SecurityConfig {
         //###############################
         //Configure the spring security so that we can use the key we generate to Authorize!
         httpSecurity.oauth2ResourceServer(o2Auth->
-                o2Auth.jwt(jwtConfigurer -> jwtConfigurer.decoder(jwtDecoder()).
+                o2Auth.jwt(jwtConfigurer -> jwtConfigurer.decoder(customJwtDecoder).
                         jwtAuthenticationConverter(jwtAuthenticationConverter()))
                         .authenticationEntryPoint(new JwtAuthenticationEntryPoint())
                 );
@@ -79,13 +81,13 @@ public class SecurityConfig {
     return httpSecurity.build();
     }
     //Decoder to decode the JWT we generated
-    @Bean
-    public JwtDecoder jwtDecoder(){
-        SecretKeySpec secretKeySpec = new SecretKeySpec(secretkey.getBytes(), "HS512");
-        return NimbusJwtDecoder.withSecretKey(secretKeySpec)
-                .macAlgorithm(MacAlgorithm.HS512)
-                .build();
-    }
+//    @Bean
+//    public JwtDecoder jwtDecoder(){
+//        SecretKeySpec secretKeySpec = new SecretKeySpec(secretkey.getBytes(), "HS512");
+//        return NimbusJwtDecoder.withSecretKey(secretKeySpec)
+//                .macAlgorithm(MacAlgorithm.HS512)
+//                .build();
+//    }
 
     @Bean
     JwtAuthenticationConverter jwtAuthenticationConverter(){

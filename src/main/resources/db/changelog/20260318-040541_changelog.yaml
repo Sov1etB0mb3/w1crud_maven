@@ -1,0 +1,27 @@
+databaseChangeLog:
+- changeSet:
+    id: 1773806748729-1
+    author: khanhnt (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: tbl_invalid_tokenPK
+            name: id
+            type: VARCHAR(255)
+        - column:
+            name: expirytime
+            type: TIMESTAMP(6) WITH TIME ZONE
+        tableName: tbl_invalid_token
+- changeSet:
+      id: cachesim
+      author: khanhnt
+      changes:
+          - tagDatabase:
+                tag: cachesim-1.0
+
+
+

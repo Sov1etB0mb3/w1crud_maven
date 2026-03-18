@@ -2,6 +2,7 @@ package com.calt.coffeeshop.w1crud_maven.controller;
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.AuthRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.IntrospectRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.request.LogoutRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.ApiResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenticationResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.IntrospectResponse;
@@ -45,6 +46,14 @@ public class AuthenticationController {
 
         return ApiResponse.<IntrospectResponse>builder().
                 result(result).
+                build();
+
+
+    }
+    @PostMapping("/logout")
+    public ApiResponse <Void> logout(@RequestBody LogoutRequest logoutRequest) throws ParseException, JOSEException {
+        authenticationService.logout(logoutRequest);
+        return ApiResponse.<Void>builder().
                 build();
 
 

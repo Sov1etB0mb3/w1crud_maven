@@ -2,13 +2,16 @@ package com.calt.coffeeshop.w1crud_maven.service;
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.AuthRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.IntrospectRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.request.LogoutRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenticationResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.IntrospectResponse;
+import com.calt.coffeeshop.w1crud_maven.entity.InvalidToken;
 import com.calt.coffeeshop.w1crud_maven.entity.Role;
 import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.entity.UserRole;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
+import com.calt.coffeeshop.w1crud_maven.repository.InvalidTokenRepository;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
 import com.nimbusds.jose.*;
 import com.nimbusds.jose.crypto.MACSigner;
@@ -40,6 +43,8 @@ import java.util.stream.Collectors;
 public class AuthenticationService {
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private InvalidTokenRepository invalidTokenRepository;
     @NonFinal
     @Value("${jwt}")
     protected String key;
@@ -58,14 +63,41 @@ public class AuthenticationService {
 
     public IntrospectResponse introspect(IntrospectRequest introspectRequest) throws JOSEException, ParseException {
         var token =  introspectRequest.getToken();
+        boolean isValid=true;
+        try {
+            verifyToken(token);
+        }catch (AppException e){
+            isValid =false;
+        }
+        return IntrospectResponse.builder()
+                .valid(isValid)
+                .build();
+
+
+
+    }
+    public void logout(LogoutRequest request) throws ParseException, JOSEException {
+        var signToken = verifyToken(request.getToken());
+        String jit = signToken.getJWTClaimsSet().getJWTID();
+        Instant expiryTime= signToken.getJWTClaimsSet().getExpirationTime().toInstant();
+
+        InvalidToken invalidToken = InvalidToken.builder()
+                .id(jit)
+                .expirytime(expiryTime)
+                .build();
+        invalidTokenRepository.save(invalidToken);
+
+    }
+    private SignedJWT verifyToken(String token) throws JOSEException, ParseException {
         JWSVerifier jwsVerifier= new MACVerifier(key.getBytes());
         SignedJWT signedJWT = SignedJWT.parse(token);
         Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();
         var verified = signedJWT.verify(jwsVerifier);
-        return IntrospectResponse.builder()
-                .valid(verified&&expiryTime.after(new Date()))
-                .build();
-
+        if (!verified && expiryTime.after(new Date()))
+            throw new AppException(ErrorCode.UNAUTHENTICATED);
+        if (invalidTokenRepository.existsInvalidTokenById(signedJWT.getJWTClaimsSet().getJWTID()))
+            throw new AppException(ErrorCode.INVALID_KEY);
+        return signedJWT;
     }
 //    public String buildRole(User user){
 //        StringJoiner stringJoiner = new StringJoiner(" ");
