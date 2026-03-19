@@ -18,6 +18,7 @@ import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
+import org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
 
 import javax.crypto.spec.SecretKeySpec;
@@ -46,6 +47,8 @@ public class SecurityConfig {
     private UserRepository userRepository;
     @Autowired
     private CustomJwtDecoder customJwtDecoder;
+    @Autowired
+    private DPoPFilter dPoPFilter;
     //after complete api, add has role adfter resquestMatchers
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity, CustomAccessDeniedHandler customAccessDeniedHandler) throws Exception {
@@ -77,7 +80,7 @@ public class SecurityConfig {
                 );
         httpSecurity.exceptionHandling(e->e
                 .accessDeniedHandler(customAccessDeniedHandler));
-
+        httpSecurity.addFilterAfter(dPoPFilter, BearerTokenAuthenticationFilter.class);
     return httpSecurity.build();
     }
     //Decoder to decode the JWT we generated
