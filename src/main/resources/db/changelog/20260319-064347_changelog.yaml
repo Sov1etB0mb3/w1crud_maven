@@ -1,0 +1,20 @@
+databaseChangeLog:
+- changeSet:
+    id: 1773902637528-1
+    author: khanhnt (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: valid
+            type: BOOLEAN
+        tableName: tbl_refresh_token
+
+- changeSet:
+      id: addvalidRefreshToken
+      author: khanhnt
+      changes:
+          - tagDatabase:
+                tag: cachesim-3.0
+
+

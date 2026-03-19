@@ -6,14 +6,17 @@ import org.springframework.http.HttpStatusCode;
 public enum ErrorCode {
     UNCATEGORIZED_EXCEPTION(500, "Uncategorized error", HttpStatus.INTERNAL_SERVER_ERROR),
     INVALID_KEY(400, "Uncategorized error", HttpStatus.BAD_REQUEST),
-//    USER_EXISTED(400, "User existed", HttpStatus.BAD_REQUEST),
-//    USERNAME_INVALID(400, "Username must be at least {min} characters", HttpStatus.BAD_REQUEST),
+    USER_EXISTED(400, "User existed", HttpStatus.BAD_REQUEST),
+    USERNAME_INVALID(400, "Username must be at least {min} characters", HttpStatus.BAD_REQUEST),
     INVALID_PASSWORD(400, "Password must be at least {min} characters", HttpStatus.BAD_REQUEST),
     EXISTED(409,"Existed!", HttpStatus.CONFLICT),
     NOT_FOUND(404,"Not found!",HttpStatus.NOT_FOUND),
     UNAUTHENTICATED(401,"Unauthenticated!",HttpStatus.UNAUTHORIZED),
     UNAUTHORIZED (403,"You do not have permission!",HttpStatus.FORBIDDEN),
-    DATA_INTEGRITY(4009, "Cannot handle!", HttpStatus.CONFLICT);
+    DATA_INTEGRITY(4009, "Cannot handle!", HttpStatus.CONFLICT),
+    EXPIRED_KEY(400, "EXPIRED KEY!", HttpStatus.BAD_REQUEST),
+
+    REVOKED_KEY(400, "REVOKED KEY!", HttpStatus.BAD_REQUEST);
 
 
     private int code;

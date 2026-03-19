@@ -3,9 +3,12 @@ package com.calt.coffeeshop.w1crud_maven.controller;
 import com.calt.coffeeshop.w1crud_maven.dto.request.AuthRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.IntrospectRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.LogoutRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.request.RefreshRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.ApiResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenticationResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.IntrospectResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.response.RefreshResponse;
+import com.calt.coffeeshop.w1crud_maven.enums.StatusCode;
 import com.calt.coffeeshop.w1crud_maven.service.AuthenticationService;
 import com.nimbusds.jose.JOSEException;
 import lombok.AccessLevel;
@@ -56,6 +59,17 @@ public class AuthenticationController {
         authenticationService.logout(logoutRequest);
         return ApiResponse.<Void>builder().
                 build();
+
+
+    }
+    @PostMapping("/refresh")
+    public ApiResponse <RefreshResponse> refresh(@RequestBody RefreshRequest refreshRequest) throws ParseException, JOSEException {
+        RefreshResponse refreshResponse = authenticationService.refreshToken(refreshRequest);
+        return ApiResponse.<RefreshResponse>builder()
+                .message(StatusCode.OK.getMessage())
+                .code(StatusCode.OK.getCode())
+                .result(refreshResponse)
+                .build();
 
 
     }

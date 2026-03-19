@@ -3,8 +3,10 @@ package com.calt.coffeeshop.w1crud_maven.service;
 import com.calt.coffeeshop.w1crud_maven.dto.request.AuthRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.IntrospectRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.LogoutRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.request.RefreshRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenticationResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.IntrospectResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.response.RefreshResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.*;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
@@ -28,6 +30,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import java.security.SecureRandom;
 import java.text.ParseException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -48,6 +51,8 @@ public class AuthenticationService {
     protected String key;
     @Value("${DURATION}")
     protected Integer DURATION;
+    @Value("${REFRESH_DURATION}")
+    protected Integer REFRESH_DURATION;
 
     public AuthenticationResponse authenicate(AuthRequest authRequest){
     var user = userRepository.findUserByUsername(authRequest.getUsername()).orElseThrow(()-> new AppException(ErrorCode.NOT_FOUND));
@@ -56,23 +61,33 @@ public class AuthenticationService {
         if(!authenicated)
             throw new AppException(ErrorCode.UNAUTHORIZED);
         var token=generateToken(user);
-        String rtoken=UUID.randomUUID().toString();
 
+        RefreshToken refreshToken = generateRefreshToken(user);
+
+        return AuthenticationResponse.builder()
+                .token(token)
+                .refreshtoken(refreshToken.getRefreshtoken())
+                .authenicated(true).build();
+    }
+
+    private RefreshToken generateRefreshToken(User user){
+        SecureRandom random = new SecureRandom();
+        byte[] bytes = new byte[32]; // 256 bits
+        random.nextBytes(bytes);
+        String rtoken = Base64.getUrlEncoder().withoutPadding().encodeToString(bytes);
+        //String rtoken=UUID.randomUUID().toString();
         RefreshToken refreshToken = RefreshToken.builder()
                 .userid(user.getId())
                 .refreshtoken(rtoken)
+                .valid(true)
                 .expirytime(new Date( Instant.now()
-                        .plus(1,ChronoUnit.HOURS)
-                        .toEpochMilli()
-                ).toInstant()
+                                .plus(REFRESH_DURATION,ChronoUnit.DAYS)
+                                .toEpochMilli()
+                        ).toInstant()
                 )
                 .build();
-        refreshTokenRepository.save(refreshToken);
-
-        return AuthenticationResponse.builder().token(token).refreshtoken(rtoken).authenicated(true).build();
+        return refreshTokenRepository.save(refreshToken);
     }
-
-
     public IntrospectResponse introspect(IntrospectRequest introspectRequest) throws JOSEException, ParseException {
         var token =  introspectRequest.getToken();
         boolean isValid=true;
@@ -103,21 +118,60 @@ public class AuthenticationService {
         RefreshToken refreshToken = refreshTokenRepository
                 .findRefreshTokenByRefreshtoken(request.getRefreshtoken())
                 .orElseThrow(()-> new RuntimeException("CANNOT FOUND refreshtoken!"));
-        refreshTokenRepository.delete(refreshToken);
+//        refreshTokenRepository.delete(refreshToken);
+        refreshToken.setValid(false);
+        refreshTokenRepository.save(refreshToken);
 
 
+    }
+
+    public RefreshResponse refreshToken (RefreshRequest request ) throws ParseException, JOSEException {
+        RefreshToken refreshToken= refreshTokenRepository
+                .findRefreshTokenByRefreshtoken(request.getToken())
+                .orElseThrow( () -> new RuntimeException("Not found refresh token!"));
+
+        if(refreshToken.getExpirytime().isBefore(Instant.now())) {
+            refreshTokenRepository.delete(refreshToken);
+            throw new RuntimeException("Expired KEY!");
+        }
+        if(!refreshToken.isValid())
+            throw new RuntimeException("Revoked Key!");
+        User user = userRepository.findUserById(refreshToken.getUserid());
+        RefreshResponse refreshResponse = RefreshResponse.builder()
+                .rtoken(generateRefreshToken(user).getRefreshtoken())
+                .atoken(generateToken(user))
+                .authenicated(true)
+                .build();
+        refreshToken.setValid(false);
+        refreshTokenRepository.save(refreshToken);
+        return refreshResponse;
     }
     private SignedJWT verifyToken(String token) throws JOSEException, ParseException {
         JWSVerifier jwsVerifier= new MACVerifier(key.getBytes());
         SignedJWT signedJWT = SignedJWT.parse(token);
         Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();
         var verified = signedJWT.verify(jwsVerifier);
-        if (!verified && expiryTime.after(new Date()))
+        if (!verified )
             throw new AppException(ErrorCode.UNAUTHENTICATED);
+        if ( expiryTime.before(new Date()))
+            throw new RuntimeException("Expired key");
+
         if (invalidTokenRepository.existsInvalidTokenById(signedJWT.getJWTClaimsSet().getJWTID()))
             throw new AppException(ErrorCode.INVALID_KEY);
         return signedJWT;
     }
+//    private SignedJWT verifyTokenForRefresh(String token) throws JOSEException, ParseException {
+//        JWSVerifier jwsVerifier= new MACVerifier(key.getBytes());
+//        SignedJWT signedJWT = SignedJWT.parse(token);
+//        Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();
+//        var verified = signedJWT.verify(jwsVerifier);
+//        if (!verified )
+//            throw new AppException(ErrorCode.UNAUTHENTICATED);
+//        if ( expiryTime.after(new Date()))
+//            throw new RuntimeException("Valid key!");
+//
+//        return signedJWT;
+//    }
 //    public String buildRole(User user){
 //        StringJoiner stringJoiner = new StringJoiner(" ");
 //        if(CollectionUtils.isEmpty(user.getRoles()))

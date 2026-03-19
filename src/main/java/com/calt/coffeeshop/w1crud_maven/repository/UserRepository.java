@@ -29,4 +29,6 @@ LEFT JOIN FETCH rp.permission
 WHERE u.username = :username
 """)
     Optional<User> findUserWithRolesAndPermissions(String username);
+
+    User findUserById(int id);
 }

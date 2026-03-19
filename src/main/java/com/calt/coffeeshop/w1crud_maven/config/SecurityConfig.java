@@ -33,7 +33,7 @@ import java.util.stream.Stream;
 public class SecurityConfig {
     @Value("${jwt}")
     private String secretkey;
-    private String[] publicEndpoints={"/api/auth/token","api/auth/logout"};
+    private String[] publicEndpoints={"/api/auth/token","api/auth/logout","/api/auth/refresh"};
     private String[] privateEndpoints={"/api/users/**","/api/role/**","/api/permission/**"};
     private static final String[] WHITE_LIST_URL = { "/api/v1/auth/**", "/v2/api-docs", "/v3/api-docs",
             "/v3/api-docs/**", "/swagger-resources", "/swagger-resources/**", "/configuration/ui",
