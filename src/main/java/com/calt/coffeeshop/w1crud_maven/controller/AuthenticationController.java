@@ -10,15 +10,18 @@ import com.calt.coffeeshop.w1crud_maven.dto.response.IntrospectResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.RefreshResponse;
 import com.calt.coffeeshop.w1crud_maven.enums.StatusCode;
 import com.calt.coffeeshop.w1crud_maven.service.AuthenticationService;
+import com.calt.coffeeshop.w1crud_maven.service.DPoPService;
 import com.nimbusds.jose.JOSEException;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.text.ParseException;
 
 @RestController
@@ -29,9 +32,17 @@ public class AuthenticationController {
     //@Autowired already a final so don't need to use
     AuthenticationService authenticationService;
 
+     DPoPService dPoPService;
     @PostMapping("/token")
-     public ApiResponse<AuthenticationResponse> login(@RequestBody AuthRequest authRequest) {
-        var result = authenticationService.authenicate(authRequest);
+     public ApiResponse<AuthenticationResponse> login(
+             @RequestHeader("DPoP") String dpopHeader,
+             @RequestBody AuthRequest authRequest)
+            throws ParseException, NoSuchAlgorithmException, InvalidKeySpecException, JOSEException {
+        if (dpopHeader == null || dpopHeader.isBlank()) {
+            throw new RuntimeException("Missing DPoP header");
+        }
+
+        var result = authenticationService.authenicate(authRequest,dpopHeader);
 
         return ApiResponse.<AuthenticationResponse>builder().
                 result(
@@ -55,7 +66,7 @@ public class AuthenticationController {
 
     }
     @PostMapping("/logout")
-    public ApiResponse <Void> logout(@RequestBody LogoutRequest logoutRequest) throws ParseException, JOSEException {
+    public ApiResponse <Void> logout(@RequestBody LogoutRequest logoutRequest) throws ParseException, JOSEException, InvalidKeySpecException, NoSuchAlgorithmException {
         authenticationService.logout(logoutRequest);
         return ApiResponse.<Void>builder().
                 build();
@@ -63,8 +74,14 @@ public class AuthenticationController {
 
     }
     @PostMapping("/refresh")
-    public ApiResponse <RefreshResponse> refresh(@RequestBody RefreshRequest refreshRequest) throws ParseException, JOSEException {
-        RefreshResponse refreshResponse = authenticationService.refreshToken(refreshRequest);
+    public ApiResponse <RefreshResponse> refresh(
+            @RequestHeader("DPoP") String dpopHeader,
+            @RequestBody RefreshRequest refreshRequest)
+            throws ParseException, JOSEException, NoSuchAlgorithmException, InvalidKeySpecException {
+        if (dpopHeader == null || dpopHeader.isBlank()) {
+            throw new RuntimeException("Missing DPoP header");
+        }
+        RefreshResponse refreshResponse = authenticationService.refreshToken(refreshRequest,dpopHeader);
         return ApiResponse.<RefreshResponse>builder()
                 .message(StatusCode.OK.getMessage())
                 .code(StatusCode.OK.getCode())
@@ -72,6 +89,11 @@ public class AuthenticationController {
                 .build();
 
 
+    }
+    @GetMapping("/debug-plain")
+    public Object debug(Authentication authentication) {
+
+        return authentication.getAuthorities();
     }
 
 }

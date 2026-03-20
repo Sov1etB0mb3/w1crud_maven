@@ -15,6 +15,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
+import org.springframework.security.oauth2.jwt.JwtDecoders;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
@@ -22,8 +23,15 @@ import org.springframework.security.oauth2.server.resource.web.authentication.Be
 import org.springframework.security.web.SecurityFilterChain;
 
 import javax.crypto.spec.SecretKeySpec;
+import java.security.KeyFactory;
+import java.security.NoSuchAlgorithmException;
+import java.security.PublicKey;
+import java.security.interfaces.RSAPublicKey;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -34,6 +42,9 @@ import java.util.stream.Stream;
 public class SecurityConfig {
     @Value("${jwt}")
     private String secretkey;
+
+    @Value("${rsa.key.public}")
+    private String rsaPublic;
     private String[] publicEndpoints={"/api/auth/token","api/auth/logout","/api/auth/refresh"};
     private String[] privateEndpoints={"/api/users/**","/api/role/**","/api/permission/**"};
     private static final String[] WHITE_LIST_URL = { "/api/v1/auth/**", "/v2/api-docs", "/v3/api-docs",
@@ -51,7 +62,10 @@ public class SecurityConfig {
     private DPoPFilter dPoPFilter;
     //after complete api, add has role adfter resquestMatchers
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity, CustomAccessDeniedHandler customAccessDeniedHandler) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity,
+                                                   CustomAccessDeniedHandler customAccessDeniedHandler,
+                                                   JwtDecoder jwtDecoder,
+                                                   RSAPublicKey publicKey) throws Exception {
         httpSecurity
                 .authorizeHttpRequests(auth->auth
                         .requestMatchers(WHITE_LIST_URL).permitAll()
@@ -74,8 +88,9 @@ public class SecurityConfig {
         //###############################
         //Configure the spring security so that we can use the key we generate to Authorize!
         httpSecurity.oauth2ResourceServer(o2Auth->
-                o2Auth.jwt(jwtConfigurer -> jwtConfigurer.decoder(customJwtDecoder).
-                        jwtAuthenticationConverter(jwtAuthenticationConverter()))
+                o2Auth.jwt(jwtConfigurer -> jwtConfigurer
+                        .decoder(jwtDecoder)
+                                .jwtAuthenticationConverter(jwtAuthenticationConverter()))
                         .authenticationEntryPoint(new JwtAuthenticationEntryPoint())
                 );
         httpSecurity.exceptionHandling(e->e
@@ -91,6 +106,20 @@ public class SecurityConfig {
 //                .macAlgorithm(MacAlgorithm.HS512)
 //                .build();
 //    }
+    @Bean
+    public JwtDecoder jwtDecoder(RSAPublicKey publicKey) {
+        return NimbusJwtDecoder.withPublicKey(publicKey).build();
+    }
+    @Bean
+    public RSAPublicKey publicKey() throws Exception {
+        String key = rsaPublic; // from config
+
+        byte[] decoded = Base64.getDecoder().decode(key);
+        X509EncodedKeySpec spec = new X509EncodedKeySpec(decoded);
+
+        KeyFactory kf = KeyFactory.getInstance("RSA");
+        return (RSAPublicKey) kf.generatePublic(spec);
+    }
 
     @Bean
     JwtAuthenticationConverter jwtAuthenticationConverter(){

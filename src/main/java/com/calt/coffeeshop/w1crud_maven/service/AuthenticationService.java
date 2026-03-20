@@ -16,8 +16,14 @@ import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
 import com.nimbusds.jose.*;
 import com.nimbusds.jose.crypto.MACSigner;
 import com.nimbusds.jose.crypto.MACVerifier;
+import com.nimbusds.jose.crypto.RSASSASigner;
+import com.nimbusds.jose.crypto.RSASSAVerifier;
+import com.nimbusds.jose.jwk.JWK;
+import com.nimbusds.jose.jwk.RSAKey;
+import com.nimbusds.jose.util.Base64URL;
 import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.experimental.NonFinal;
 import lombok.extern.slf4j.Slf4j;
 import org.antlr.v4.runtime.Token;
@@ -27,10 +33,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.jose.jws.SignatureAlgorithm;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.security.SecureRandom;
+import java.security.*;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.PKCS8EncodedKeySpec;
 import java.text.ParseException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -46,6 +56,7 @@ public class AuthenticationService {
     private InvalidTokenRepository invalidTokenRepository;
     @Autowired
     private RefreshTokenRepository refreshTokenRepository;
+
     @NonFinal
     @Value("${jwt}")
     protected String key;
@@ -53,16 +64,22 @@ public class AuthenticationService {
     protected Integer DURATION;
     @Value("${REFRESH_DURATION}")
     protected Integer REFRESH_DURATION;
+    @Value("${rsa.key.public}")
+    protected String publicKey;
+    @Value("${rsa.key.private}")
+    protected String privateKey;
 
-    public AuthenticationResponse authenicate(AuthRequest authRequest){
-    var user = userRepository.findUserByUsername(authRequest.getUsername()).orElseThrow(()-> new AppException(ErrorCode.NOT_FOUND));
+    public AuthenticationResponse authenicate(AuthRequest authRequest,String dpopHeader)
+            throws ParseException, NoSuchAlgorithmException, InvalidKeySpecException, JOSEException {
+        var user = userRepository.findUserByUsername(authRequest.getUsername()).orElseThrow(()-> new AppException(ErrorCode.NOT_FOUND));
+
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
         boolean authenicated = passwordEncoder.matches(authRequest.getPassword(), user.getPassword());
         if(!authenicated)
             throw new AppException(ErrorCode.UNAUTHORIZED);
-        var token=generateToken(user);
+        var token=generateToken(user,dpopHeader);
 
-        RefreshToken refreshToken = generateRefreshToken(user);
+        RefreshToken refreshToken = generateRefreshToken(user,dpopHeader);
 
         return AuthenticationResponse.builder()
                 .token(token)
@@ -70,7 +87,7 @@ public class AuthenticationService {
                 .authenicated(true).build();
     }
 
-    private RefreshToken generateRefreshToken(User user){
+    private RefreshToken generateRefreshToken(User user,String dpopHeader){
         SecureRandom random = new SecureRandom();
         byte[] bytes = new byte[32]; // 256 bits
         random.nextBytes(bytes);
@@ -93,7 +110,7 @@ public class AuthenticationService {
         boolean isValid=true;
         try {
             verifyToken(token);
-        }catch (AppException e){
+        }catch (AppException | InvalidKeySpecException | NoSuchAlgorithmException e){
             isValid =false;
         }
         return IntrospectResponse.builder()
@@ -103,7 +120,7 @@ public class AuthenticationService {
 
 
     }
-    public void logout(LogoutRequest request) throws ParseException, JOSEException {
+    public void logout(LogoutRequest request) throws ParseException, JOSEException, InvalidKeySpecException, NoSuchAlgorithmException {
         var signToken = verifyToken(request.getToken());
         String jit = signToken.getJWTClaimsSet().getJWTID();
         Instant expiryTime= signToken.getJWTClaimsSet().getExpirationTime().toInstant();
@@ -125,7 +142,7 @@ public class AuthenticationService {
 
     }
 
-    public RefreshResponse refreshToken (RefreshRequest request ) throws ParseException, JOSEException {
+    public RefreshResponse refreshToken (RefreshRequest request, String dpopHeader) throws ParseException, JOSEException, NoSuchAlgorithmException, InvalidKeySpecException {
         RefreshToken refreshToken= refreshTokenRepository
                 .findRefreshTokenByRefreshtoken(request.getToken())
                 .orElseThrow( () -> new RuntimeException("Not found refresh token!"));
@@ -138,16 +155,24 @@ public class AuthenticationService {
             throw new RuntimeException("Revoked Key!");
         User user = userRepository.findUserById(refreshToken.getUserid());
         RefreshResponse refreshResponse = RefreshResponse.builder()
-                .rtoken(generateRefreshToken(user).getRefreshtoken())
-                .atoken(generateToken(user))
+                .rtoken(generateRefreshToken(user,dpopHeader).getRefreshtoken())
+                .atoken(generateToken(user,dpopHeader))
                 .authenicated(true)
                 .build();
         refreshToken.setValid(false);
         refreshTokenRepository.save(refreshToken);
         return refreshResponse;
     }
-    private SignedJWT verifyToken(String token) throws JOSEException, ParseException {
-        JWSVerifier jwsVerifier= new MACVerifier(key.getBytes());
+    private SignedJWT verifyToken(String token) throws JOSEException, ParseException, InvalidKeySpecException, NoSuchAlgorithmException {
+        byte[] decodedKey = Base64.getDecoder().decode(publicKey);
+        //PKCS8 standardlizer
+        PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(decodedKey);
+        //create keyfactory
+        KeyFactory kf = KeyFactory.getInstance("RSA");
+        //generate public key
+        PublicKey publicKeyP= kf.generatePublic(spec);
+        JWSVerifier jwsVerifier= new RSASSAVerifier(RSAKey.parse(publicKey));
+
         SignedJWT signedJWT = SignedJWT.parse(token);
         Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();
         var verified = signedJWT.verify(jwsVerifier);
@@ -179,13 +204,40 @@ public class AuthenticationService {
 //        return stringJoiner.toString();
 //
 //    }
-    private String generateToken(User user){
-        JWSHeader jweHeader = new JWSHeader(JWSAlgorithm.HS512);
+    //User user, JWK jwk
+    private String generateToken(User user, String dpopHeader  ) throws ParseException, JOSEException, NoSuchAlgorithmException, InvalidKeySpecException {
+        //get header to extract infors
+
+        SignedJWT dpopJwt = SignedJWT.parse(dpopHeader);
+        //get jwk from header sent form client
+        RSAKey clientKey = (RSAKey) dpopJwt.getHeader().getJWK();
+        //compute jkt
+        Base64URL thumbprint = clientKey.computeThumbprint();
+        // verify client public key;
+
+        //get Role from user!
         String role = user.getRoles().stream().map(u->u.getRole().getName())
                 .collect(Collectors.joining(" "));
+        //build cnf claim
+        Map <String,Object> cnf = Map.of("jkt",thumbprint.toString());
+        //rsa decoded
+        byte[] decodedKey = Base64.getDecoder().decode(privateKey);
+        //PKCS8 standardlizer
+        PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(decodedKey);
+        //create keyfactory
+        KeyFactory kf = KeyFactory.getInstance("RSA");
+        //generate private key
+        PrivateKey privateKeyP= kf.generatePrivate(spec);
+        //create header
+        JWSHeader jweHeader = new JWSHeader.Builder(JWSAlgorithm.RS256)
+                .type(JOSEObjectType.JWT)
+                .keyID(thumbprint.toString())
+                .build()
+                ;
 
 
         // claim("customClaim","Custom")
+        //create claim set
         JWTClaimsSet jwtClaimsSet= new JWTClaimsSet.Builder()
                 .subject(user.getUsername())
                 .issuer("mrx.com")//domain
@@ -195,14 +247,15 @@ public class AuthenticationService {
                                 .plus(DURATION, ChronoUnit.SECONDS).toEpochMilli()
                 ))
                 .claim("role",role)
+                .claim("cnf",cnf)
                 .jwtID(UUID.randomUUID().toString())
                 .build();
 
-        Payload payload = new Payload(jwtClaimsSet.toJSONObject());
-        JWSObject jwsObject=new JWSObject(jweHeader,payload);
+//        Payload payload = new Payload(jwtClaimsSet.toJSONObject());
+        SignedJWT signedJWT=new SignedJWT(jweHeader,jwtClaimsSet);
         try {
-            jwsObject.sign(new MACSigner(key.getBytes()));
-            return jwsObject.serialize();
+            signedJWT.sign(new RSASSASigner(privateKeyP));
+            return signedJWT.serialize();
         } catch (JOSEException e) {
             log.error("Cannot create token: "+e);
             throw new RuntimeException(e);

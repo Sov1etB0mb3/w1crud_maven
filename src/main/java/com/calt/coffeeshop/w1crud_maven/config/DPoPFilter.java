@@ -16,6 +16,7 @@ import java.io.IOException;
 
 @Component
 public class DPoPFilter extends OncePerRequestFilter {
+
     private final DPoPService dPoPService;
 
     public DPoPFilter(DPoPService dPoPService) {
@@ -23,13 +24,34 @@ public class DPoPFilter extends OncePerRequestFilter {
     }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if ((authentication instanceof JwtAuthenticationToken jwtAuthenticationToken)){
-            Jwt jwt = jwtAuthenticationToken.getToken();
-            String dpopHeader = request.getHeader("DPoP");
-            dPoPService.validateDPoP(dpopHeader,jwt,request);
-            filterChain.doFilter(request,response);
+    protected void doFilterInternal(HttpServletRequest request,
+                                    HttpServletResponse response,
+                                    FilterChain filterChain)
+            throws ServletException, IOException {
+
+        String path = request.getRequestURI();
+
+
+        try {
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+            if (auth instanceof JwtAuthenticationToken jwtAuth) {
+
+                String dpopHeader = request.getHeader("DPoP");
+
+                dPoPService.validateDPoP(
+                        dpopHeader,
+                        jwtAuth.getToken(),
+                        request
+                );
+            }
+
+            filterChain.doFilter(request, response);
+
+        } catch (Exception e) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setContentType("application/json");
+            response.getWriter().write("{\"error\":\"Invalid DPoP\"}");
         }
     }
 }
