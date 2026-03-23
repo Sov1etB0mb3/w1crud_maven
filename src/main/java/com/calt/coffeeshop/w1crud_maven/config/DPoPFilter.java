@@ -1,6 +1,9 @@
 package com.calt.coffeeshop.w1crud_maven.config;
 
+import com.calt.coffeeshop.w1crud_maven.dto.request.IntrospectRequest;
+import com.calt.coffeeshop.w1crud_maven.service.AuthenticationService;
 import com.calt.coffeeshop.w1crud_maven.service.DPoPService;
+import com.calt.coffeeshop.w1crud_maven.service.InvalidTokenService;
 import com.nimbusds.jwt.SignedJWT;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -20,9 +23,13 @@ import java.io.IOException;
 public class DPoPFilter extends OncePerRequestFilter {
 
     private final DPoPService dPoPService;
+    private final AuthenticationService authenticationService;
+    private final InvalidTokenService invalidTokenService;
 
-    public DPoPFilter(DPoPService dPoPService) {
+    public DPoPFilter(DPoPService dPoPService, AuthenticationService authenticationService, InvalidTokenService invalidTokenService) {
         this.dPoPService = dPoPService;
+        this.authenticationService = authenticationService;
+        this.invalidTokenService = invalidTokenService;
     }
 
     @Override
@@ -40,11 +47,14 @@ public class DPoPFilter extends OncePerRequestFilter {
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
             var claims = jwt.getJWTClaimsSet();
+
 //            String htm =claims.getStringClaim("htm");
 //            String htu =claims.getStringClaim("htu");
 //
             if (auth instanceof JwtAuthenticationToken jwtAuth) {
-
+                String id = jwtAuth.getToken().getId();
+                if(invalidTokenService.validateToken(id))
+                    throw new RuntimeException("Revoked Token!");
 
                 dPoPService.validateDPoPWithJwt(
                         dpopHeader,
@@ -59,7 +69,11 @@ public class DPoPFilter extends OncePerRequestFilter {
         } catch (Exception e) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.setContentType("application/json");
-            response.getWriter().write("{\"error\":\"Invalid DPoP\"}");
+            if ("Revoked Token!".equals(e.getMessage())) {
+                response.getWriter().write("{\"error\":\"Revoked Token\"}");
+            } else {
+                response.getWriter().write("{\"error\":\"Invalid DPoP\"}");
+            }
         }
     }
 }

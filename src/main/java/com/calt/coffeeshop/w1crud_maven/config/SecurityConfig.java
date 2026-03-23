@@ -56,8 +56,8 @@ public class SecurityConfig {
 
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private CustomJwtDecoder customJwtDecoder;
+//    @Autowired
+//    private CustomJwtDecoder customJwtDecoder;
     @Autowired
     private DPoPFilter dPoPFilter;
     //after complete api, add has role adfter resquestMatchers
