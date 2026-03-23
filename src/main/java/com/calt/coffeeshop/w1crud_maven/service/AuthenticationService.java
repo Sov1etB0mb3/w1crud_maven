@@ -77,11 +77,13 @@ public class AuthenticationService {
     protected String privateKey;
 
     public AuthenticationResponse authenicate(AuthRequest authRequest,String dpopHeader)
-            throws ParseException, NoSuchAlgorithmException, InvalidKeySpecException, JOSEException {
-        var user = userRepository.findUserByUsername(authRequest.getUsername()).orElseThrow(()-> new AppException(ErrorCode.NOT_FOUND));
+            throws Exception {
+        var user = userRepository.findUserByUsername(authRequest.getUsername())
+                .orElseThrow(()-> new AppException(ErrorCode.NOT_FOUND));
 
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
-        boolean authenicated = passwordEncoder.matches(authRequest.getPassword(), user.getPassword());
+        boolean authenicated = passwordEncoder
+                .matches(authRequest.getPassword(), user.getPassword());
         if(!authenicated)
             throw new AppException(ErrorCode.UNAUTHORIZED);
         var token=generateToken(user,dpopHeader);
@@ -94,15 +96,17 @@ public class AuthenticationService {
                 .authenicated(true).build();
     }
 
-    private RefreshToken generateRefreshToken(User user,String dpopHeader){
+    private RefreshToken generateRefreshToken(User user,String dpopHeader) throws Exception {
         SecureRandom random = new SecureRandom();
         byte[] bytes = new byte[32]; // 256 bits
         random.nextBytes(bytes);
         String rtoken = Base64.getUrlEncoder().withoutPadding().encodeToString(bytes);
+        String dpopJkt = extractJwkThumbprint(dpopHeader);
         //String rtoken=UUID.randomUUID().toString();
         RefreshToken refreshToken = RefreshToken.builder()
                 .userid(user.getId())
                 .refreshtoken(rtoken)
+                .jkt(dpopJkt)
                 .valid(true)
                 .expirytime(new Date( Instant.now()
                                 .plus(REFRESH_DURATION,ChronoUnit.DAYS)
@@ -185,7 +189,7 @@ public class AuthenticationService {
 
     }
 
-    public RefreshResponse refreshToken (RefreshRequest request, String dpopHeader) throws ParseException, JOSEException, NoSuchAlgorithmException, InvalidKeySpecException {
+    public RefreshResponse refreshToken (RefreshRequest request, String dpopHeader) throws Exception {
         RefreshToken refreshToken= refreshTokenRepository
                 .findRefreshTokenByRefreshtoken(request.getToken())
                 .orElseThrow( () -> new RuntimeException("Not found refresh token!"));
@@ -196,6 +200,9 @@ public class AuthenticationService {
         }
         if(!refreshToken.isValid())
             throw new RuntimeException("Revoked Key!");
+        String incomingJkt = extractJwkThumbprint(dpopHeader);
+        if (!incomingJkt.equals(refreshToken.getJkt()))
+            throw new RuntimeException("DPoP proof doesn't sastify");
         User user = userRepository.findUserById(refreshToken.getUserid());
         RefreshResponse refreshResponse = RefreshResponse.builder()
                 .rtoken(generateRefreshToken(user,dpopHeader).getRefreshtoken())
@@ -304,6 +311,13 @@ public class AuthenticationService {
             throw new RuntimeException(e);
         }
 
+    }
+
+    private String extractJwkThumbprint(String dpopJwt) throws Exception {
+        JWSObject jwsObject = JWSObject.parse(dpopJwt); // parse the JWT
+        JWSHeader header = jwsObject.getHeader();       // get header
+        JWK jwk = header.getJWK();                       // extract JWK
+        return jwk.computeThumbprint().toString();      // compute thumbprint
     }
 }
 //String permission = user.getRoles().stream().flatMap(

@@ -37,7 +37,7 @@ public class AuthenticationController {
      public ApiResponse<AuthenticationResponse> login(
              @RequestHeader("DPoP") String dpopHeader,
              @RequestBody AuthRequest authRequest)
-            throws ParseException, NoSuchAlgorithmException, InvalidKeySpecException, JOSEException {
+            throws Exception {
         if (dpopHeader == null || dpopHeader.isBlank()) {
             throw new RuntimeException("Missing DPoP header");
         }
@@ -81,7 +81,7 @@ public class AuthenticationController {
     public ApiResponse <RefreshResponse> refresh(
             @RequestHeader("DPoP") String dpopHeader,
             @RequestBody RefreshRequest refreshRequest)
-            throws ParseException, JOSEException, NoSuchAlgorithmException, InvalidKeySpecException {
+            throws Exception {
         if (dpopHeader == null || dpopHeader.isBlank()) {
             throw new RuntimeException("Missing DPoP header");
         }

@@ -23,6 +23,8 @@ public class RefreshToken {
     private String refreshtoken;
     @Column(name = "expirytime")
     private Instant expirytime;
+    @Column(name ="jkt")
+    private String jkt;
     @Column(name ="valid")
     private boolean valid = true;
 }

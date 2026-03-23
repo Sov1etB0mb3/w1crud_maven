@@ -1,0 +1,18 @@
+databaseChangeLog:
+- changeSet:
+    id: 1774247034421-1
+    author: khanhnt (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: jkt
+            type: VARCHAR(255)
+        tableName: tbl_refresh_token
+
+- changeSet:
+      id: addvalidRefreshToken3.1
+      author: khanhnt
+      changes:
+          - tagDatabase:
+                tag: cachesim-3.1
