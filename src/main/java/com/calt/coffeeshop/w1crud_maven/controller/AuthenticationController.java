@@ -66,8 +66,12 @@ public class AuthenticationController {
 
     }
     @PostMapping("/logout")
-    public ApiResponse <Void> logout(@RequestBody LogoutRequest logoutRequest) throws ParseException, JOSEException, InvalidKeySpecException, NoSuchAlgorithmException {
-        authenticationService.logout(logoutRequest);
+    public ApiResponse <Void> logout(
+            @RequestHeader("DPoP") String dpopHeader,
+            Authentication authentication,
+            HttpServletRequest httpServletRequest,
+            @RequestBody LogoutRequest logoutRequest) throws ParseException, JOSEException, InvalidKeySpecException, NoSuchAlgorithmException {
+        authenticationService.logout(dpopHeader,httpServletRequest,authentication,logoutRequest);
         return ApiResponse.<Void>builder().
                 build();
 

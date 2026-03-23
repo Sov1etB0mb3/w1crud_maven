@@ -31,16 +31,21 @@ import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jose.jws.SignatureAlgorithm;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import java.security.*;
 import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
 import java.text.ParseException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -56,6 +61,8 @@ public class AuthenticationService {
     private InvalidTokenRepository invalidTokenRepository;
     @Autowired
     private RefreshTokenRepository refreshTokenRepository;
+    @Autowired
+    private DPoPService dPoPService;
 
     @NonFinal
     @Value("${jwt}")
@@ -120,20 +127,56 @@ public class AuthenticationService {
 
 
     }
-    public void logout(LogoutRequest request) throws ParseException, JOSEException, InvalidKeySpecException, NoSuchAlgorithmException {
-        var signToken = verifyToken(request.getToken());
-        String jit = signToken.getJWTClaimsSet().getJWTID();
-        Instant expiryTime= signToken.getJWTClaimsSet().getExpirationTime().toInstant();
+    public void logout(String dpopHeader,
+                       HttpServletRequest httpServletRequest,
+                       Authentication authentication,
+                       LogoutRequest logoutRequest) throws ParseException, JOSEException, InvalidKeySpecException, NoSuchAlgorithmException {
+        log.info("HTU expected: " + httpServletRequest.getRequestURI());
+        log.info("HTM expected: " + httpServletRequest.getMethod());
 
+        if (!(authentication instanceof JwtAuthenticationToken jwtAuth)) {
+            throw new RuntimeException("Invalid authentication type: " + authentication);
+        }
+
+        Jwt jwt = jwtAuth.getToken();
+        try {
+            dPoPService.validateDPoPWithJwt(dpopHeader, jwt, httpServletRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+//        dPoPService.validateDPoPWithJwt(dpopHeader, jwt,httpServletRequest);
+        SignedJWT signToken;
+        SignedJWT dpopToken= SignedJWT.parse(dpopHeader);
+        try {
+             signToken = verifyToken(jwt.getTokenValue());
+            log.info("Parsed OK: " + signToken);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+
+        log.info("HTM actual: " + dpopToken.getJWTClaimsSet().getStringClaim("htm"));
+
+
+        log.info("HTU actual: " + dpopToken.getJWTClaimsSet().getStringClaim("htu"));
+        String jit = signToken.getJWTClaimsSet().getJWTID();
+        Instant iat= dpopToken.getJWTClaimsSet().getIssueTime().toInstant();
+        Instant now = Instant.now();
+        if (Math.abs(now.toEpochMilli() - iat.toEpochMilli()) > 300_000) {
+            throw new RuntimeException("Expired DPoP");
+        }
         InvalidToken invalidToken = InvalidToken.builder()
                 .id(jit)
-                .expirytime(expiryTime)
+                .expirytime(signToken.getJWTClaimsSet().getExpirationTime().toInstant())
                 .build();
+
         invalidTokenRepository.save(invalidToken);
 //        Integer userId= userRepository.findUserByUsername(signToken.getJWTClaimsSet().getSubject())
 //                .get().getId();
+        log.info("RT: "+logoutRequest.getRefreshtoken());
         RefreshToken refreshToken = refreshTokenRepository
-                .findRefreshTokenByRefreshtoken(request.getRefreshtoken())
+                .findRefreshTokenByRefreshtoken(logoutRequest.getRefreshtoken())
                 .orElseThrow(()-> new RuntimeException("CANNOT FOUND refreshtoken!"));
 //        refreshTokenRepository.delete(refreshToken);
         refreshToken.setValid(false);
@@ -166,12 +209,12 @@ public class AuthenticationService {
     private SignedJWT verifyToken(String token) throws JOSEException, ParseException, InvalidKeySpecException, NoSuchAlgorithmException {
         byte[] decodedKey = Base64.getDecoder().decode(publicKey);
         //PKCS8 standardlizer
-        PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(decodedKey);
+        X509EncodedKeySpec spec = new X509EncodedKeySpec(decodedKey);
         //create keyfactory
         KeyFactory kf = KeyFactory.getInstance("RSA");
         //generate public key
         PublicKey publicKeyP= kf.generatePublic(spec);
-        JWSVerifier jwsVerifier= new RSASSAVerifier(RSAKey.parse(publicKey));
+        JWSVerifier jwsVerifier= new RSASSAVerifier((RSAPublicKey) publicKeyP);
 
         SignedJWT signedJWT = SignedJWT.parse(token);
         Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();

@@ -45,8 +45,8 @@ public class SecurityConfig {
 
     @Value("${rsa.key.public}")
     private String rsaPublic;
-    private String[] publicEndpoints={"/api/auth/token","api/auth/logout","/api/auth/refresh"};
-    private String[] privateEndpoints={"/api/users/**","/api/role/**","/api/permission/**"};
+    private String[] publicEndpoints={"/api/auth/token","/api/auth/refresh"};
+    private String[] privateEndpoints={"/api/users/**","/api/role/**","/api/permission/**","/api/auth/logout"};
     private static final String[] WHITE_LIST_URL = { "/api/v1/auth/**", "/v2/api-docs", "/v3/api-docs",
             "/v3/api-docs/**", "/swagger-resources", "/swagger-resources/**", "/configuration/ui",
             "/configuration/security", "/swagger-ui/**", "/webjars/**", "/swagger-ui.html", "/api/auth/**",

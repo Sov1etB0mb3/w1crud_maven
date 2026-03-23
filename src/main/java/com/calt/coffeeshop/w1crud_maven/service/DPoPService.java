@@ -1,5 +1,6 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
+import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JWSVerifier;
 import com.nimbusds.jose.crypto.ECDSAVerifier;
 import com.nimbusds.jose.crypto.RSASSAVerifier;
@@ -9,19 +10,22 @@ import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.util.Base64URL;
 import com.nimbusds.jwt.SignedJWT;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 
 import javax.management.RuntimeMBeanException;
+import java.text.ParseException;
 import java.time.Instant;
 import java.util.Date;
 import java.util.Map;
 
+@Slf4j
 @Service
 
 public class DPoPService {
 
-    public void validateDPoP(String dpopHeader, Jwt jwt, HttpServletRequest request) {
+    public void validateDPoP(String dpopHeader, HttpServletRequest request) {
 
         if (dpopHeader == null) {
             throw new RuntimeException("Missing DPoP header");
@@ -69,16 +73,22 @@ public class DPoPService {
                 throw new RuntimeException("Invalid jti");
             }
 
-            Base64URL thumbprint = jwk.computeThumbprint();
-            Map<String, Object> cnf = jwt.getClaim("cnf");
-            String expectedJkt = (String) cnf.get("jkt");
-
-            if (!thumbprint.toString().equals(expectedJkt)) {
-                throw new RuntimeException("DPoP key mismatch");
-            }
 
         } catch (Exception e) {
             throw new RuntimeException("INVALID DPOP!", e);
+        }
+    }
+    public void validateDPoPWithJwt(String dpopHeader, Jwt jwt, HttpServletRequest httpServletRequest) throws ParseException, JOSEException {
+        SignedJWT dpopJwt = SignedJWT.parse(dpopHeader);
+
+        JWK jwk = dpopJwt.getHeader().getJWK();
+        Base64URL thumbprint = jwk.computeThumbprint();
+        Map<String, Object> cnf = jwt.getClaim("cnf");
+        String expectedJkt = (String) cnf.get("jkt");
+        log.info(expectedJkt);
+
+        if (!thumbprint.toString().equals(expectedJkt)) {
+            throw new RuntimeException("DPoP key mismatch");
         }
     }
 }

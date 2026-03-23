@@ -1,10 +1,12 @@
 package com.calt.coffeeshop.w1crud_maven.config;
 
 import com.calt.coffeeshop.w1crud_maven.service.DPoPService;
+import com.nimbusds.jwt.SignedJWT;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.jwt.Jwt;
@@ -30,21 +32,27 @@ public class DPoPFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
 
         String path = request.getRequestURI();
-
-
+        String dpopHeader = request.getHeader("DPoP");
+        dPoPService.validateDPoP(dpopHeader,request);
         try {
+            SignedJWT jwt = SignedJWT.parse(dpopHeader);
+
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
+            var claims = jwt.getJWTClaimsSet();
+//            String htm =claims.getStringClaim("htm");
+//            String htu =claims.getStringClaim("htu");
+//
             if (auth instanceof JwtAuthenticationToken jwtAuth) {
 
-                String dpopHeader = request.getHeader("DPoP");
 
-                dPoPService.validateDPoP(
+                dPoPService.validateDPoPWithJwt(
                         dpopHeader,
                         jwtAuth.getToken(),
                         request
                 );
             }
+
 
             filterChain.doFilter(request, response);
 
