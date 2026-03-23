@@ -39,6 +39,10 @@ public class DPoPFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
 
         String path = request.getRequestURI();
+        if (path.startsWith("/swagger-ui") || path.startsWith("/v3/api-docs")) {
+            filterChain.doFilter(request, response); // skip DPoP for Swagger
+            return;
+        }
         String dpopHeader = request.getHeader("DPoP");
         dPoPService.validateDPoP(dpopHeader,request);
         try {
