@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
+//use CrudRepository for redis instead of JpaRepository
 public interface InvalidTokenRepository extends CrudRepository<InvalidToken,String> {
      Optional<InvalidToken> findById(String id);
 

@@ -15,6 +15,8 @@ import com.calt.coffeeshop.w1crud_maven.repository.UserRoleRepository;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -51,7 +53,7 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")
-
+    @CacheEvict(value = "users",allEntries = true)
     public User saveUserfromDTO(UserRequest userRequest) {
 
         if (userRepository.existsByUsername(userRequest.getUsername()))
@@ -78,6 +80,7 @@ public class UserService {
                 .orElseThrow(()->new RuntimeException("User not found!"));
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('READ_USER')")
+    @Cacheable(value = "users",key = "#userName")
     public UserResponse getUserByUsername(String userName){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         UserService.log.info(auth.getName());
@@ -86,11 +89,10 @@ public class UserService {
         return getUserWithRole(user);
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")
-
+    @CacheEvict(value = "users",key = "#user.username")
     public void saveUser(User user) {
             userRepository.save(user);
     }
-
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('READ_USER')")
 
     public Page<UserResponse> getAllUser(Pageable pageable){
@@ -107,7 +109,7 @@ public class UserService {
     }
 
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('DELETE_USER')")
-
+    @CacheEvict(value = "users",key = "#username")
     public void deleteUser(UserRequest userRequest){
         try{
             userRepository.delete(userMapper.toUser(userRequest));
@@ -118,7 +120,7 @@ public class UserService {
 
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('DELETE_USER')")
-
+    @CacheEvict(value = "users",key = "#username")
     public void deleteUser(User user){
         try{
             userRepository.delete(user);
@@ -129,7 +131,7 @@ public class UserService {
 
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('DELETE_USER')")
-
+    @CacheEvict(value = "users",key = "#username")
     public void deleteUser(String username){
         try{
             userRepository.deleteUserByUsername(username);
@@ -141,6 +143,7 @@ public class UserService {
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('UPDATE_USER')")
     @Transactional
+    @CacheEvict(value = "users",key = "#username")
     public UserResponse updateUser(String username, UserRequest request){
         User user=userRepository.findUserByUsername(username).get();
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
@@ -156,7 +159,7 @@ public class UserService {
 
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")
-
+    @CacheEvict(value = "users",allEntries = true)
     public void addRoleToUser(Long roleId, Integer userId){
         Role role = roleRepository.findRoleById(roleId).orElseThrow(()->new AppException(ErrorCode.NOT_FOUND));
         User user = userRepository.findById(userId).get();
@@ -167,6 +170,8 @@ public class UserService {
 
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")
+    @Transactional
+    @CacheEvict(value = "users",key ="#userName" )
     public void addRoleToUser(String roleName, String userName){
         Role role = roleRepository.findRoleByName(roleName).get();
         if(role == null){
@@ -181,6 +186,7 @@ public class UserService {
 
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('DELETE_USER')")
+    @CacheEvict(value = "users",allEntries = true)
     public void deleteRoleFromUser(String userName, String roleName){
         User user = userRepository.findUserByUsername(userName)
                 .orElseThrow(()->new AppException(ErrorCode.NOT_FOUND));
