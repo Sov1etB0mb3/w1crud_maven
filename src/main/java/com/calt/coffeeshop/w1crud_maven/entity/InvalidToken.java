@@ -6,20 +6,22 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.springframework.data.redis.core.RedisHash;
+import org.springframework.data.redis.core.TimeToLive;
 
 import java.time.Instant;
+import java.util.concurrent.TimeUnit;
 
 @Getter @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 //@FieldDefaults(level = AccessLevel.PRIVATE)
-@Entity
-@Table(name = "tbl_invalid_token")
+@RedisHash("tbl_invalid_token")
 public class InvalidToken {
     @Id
-    @Column(name = "id")
+
     private String id;
-    @Column(name = "expirytime")
-    private Instant expirytime;
+    @TimeToLive(unit = TimeUnit.DAYS)
+    private Long expirytime;
 }

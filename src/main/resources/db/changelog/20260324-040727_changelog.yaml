@@ -1,0 +1,8 @@
+databaseChangeLog:
+- changeSet:
+    id: 1774325257270-1
+    author: khanhnt (generated)
+    changes:
+    - dropTable:
+        tableName: tbl_invalid_token
+

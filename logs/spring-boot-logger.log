@@ -2,3 +2,322 @@
 2026-03-24 08:47:18,443 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
 2026-03-24 08:47:18,444 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
 2026-03-24 08:47:30,604 INFO o.s.b.StartupInfoLogger. [main] Started W1crudMavenApplicationTests in 12.675 seconds (process running for 14.009)
+2026-03-24 09:44:50,898 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26780 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 09:44:50,899 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 09:44:50,900 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 09:44:57,521 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 09:44:58,849 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.972 seconds (process running for 11.222)
+2026-03-24 11:05:39,252 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21208 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:05:39,253 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:05:39,254 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:05:55,270 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 1548 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:05:55,271 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:05:55,271 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:06:58,788 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8648 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:06:58,788 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:06:58,789 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:07:05,145 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:07:06,183 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.149 seconds (process running for 9.079)
+2026-03-24 11:07:58,078 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8648 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:07:58,079 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:07:58,079 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:08:00,376 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:08:01,883 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 3.858 seconds (process running for 64.779)
+2026-03-24 11:10:18,738 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:10:18,742 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTU expected: /api/auth/logout
+2026-03-24 11:10:18,742 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTM expected: POST
+2026-03-24 11:10:18,742 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:10:18,747 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] Parsed OK: com.nimbusds.jwt.SignedJWT@6ebcdc9c
+2026-03-24 11:10:18,747 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTM actual: POST
+2026-03-24 11:10:18,747 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 11:10:18,774 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] RT: M1wssdga9ceURte-3iT0GV4A9opeOut0SGLe0U3uEtc
+2026-03-24 11:11:23,849 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5720 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:11:23,850 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:11:23,850 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:11:31,596 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:11:32,835 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.559 seconds (process running for 10.41)
+2026-03-24 11:12:11,078 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:15:54,237 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 3568 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:15:54,239 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:15:54,239 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:16:00,481 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:16:01,582 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.913 seconds (process running for 8.734)
+2026-03-24 11:16:12,179 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:18:36,253 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:19:48,366 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:20:14,283 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:20:14,292 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] HTU expected: /api/auth/logout
+2026-03-24 11:20:14,293 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] HTM expected: POST
+2026-03-24 11:20:14,293 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:20:14,299 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] Parsed OK: com.nimbusds.jwt.SignedJWT@4deb8517
+2026-03-24 11:20:14,300 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] HTM actual: POST
+2026-03-24 11:20:14,300 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 11:20:14,326 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] RT: M1wssdga9ceURte-3iT0GV4A9opeOut0SGLe0U3uEtc
+2026-03-24 11:20:29,421 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:21:03,108 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:26:37,738 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 13212 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:26:37,739 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:26:37,740 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:26:44,050 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:26:45,118 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.003 seconds (process running for 8.903)
+2026-03-24 11:27:22,348 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:29:44,343 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26124 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:29:44,344 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:29:44,345 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:29:51,008 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:29:52,334 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.653 seconds (process running for 9.613)
+2026-03-24 11:30:04,780 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:31:33,085 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 11068 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:31:33,086 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:31:33,088 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:31:40,819 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:31:42,611 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.203 seconds (process running for 11.295)
+2026-03-24 11:31:43,568 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:31:45,673 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:32:09,460 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:32:09,506 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] HTU expected: /api/auth/logout
+2026-03-24 11:32:09,507 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] HTM expected: POST
+2026-03-24 11:32:09,507 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:32:09,509 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] Current id from current signedJWT: 46e5b80a-95ff-4523-a7b1-d9c339db7a0f
+2026-03-24 11:32:09,512 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] Parsed OK: com.nimbusds.jwt.SignedJWT@5958b569
+2026-03-24 11:32:09,512 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] HTM actual: POST
+2026-03-24 11:32:09,512 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 11:32:09,513 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 11:32:09,541 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] RT: M1wssdga9ceURte-3iT0GV4A9opeOut0SGLe0U3uEtc
+2026-03-24 11:34:46,592 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:35:21,668 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:35:21,670 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU expected: /api/auth/logout
+2026-03-24 11:35:21,671 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM expected: POST
+2026-03-24 11:35:21,672 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:35:21,674 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Current id from current signedJWT: 1870cb8e-da08-4557-a475-9cb447c3d5af
+2026-03-24 11:35:21,676 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Parsed OK: com.nimbusds.jwt.SignedJWT@174b6f69
+2026-03-24 11:35:21,676 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM actual: POST
+2026-03-24 11:35:21,676 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 11:35:21,677 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 11:35:21,687 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] RT: O-qssmZr_XaLwDqXBo-EYKcC1g_X_w_1zqvzBe10JqI
+2026-03-24 11:35:30,334 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:38:52,840 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8980 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:38:52,841 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:38:52,843 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:38:59,563 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:39:01,000 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.823 seconds (process running for 9.712)
+2026-03-24 11:39:13,695 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:39:13,775 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] HTU expected: /api/auth/logout
+2026-03-24 11:39:13,775 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] HTM expected: POST
+2026-03-24 11:39:13,776 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:39:13,777 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] Current id from current signedJWT: 1870cb8e-da08-4557-a475-9cb447c3d5af
+2026-03-24 11:39:13,780 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] Parsed OK: com.nimbusds.jwt.SignedJWT@20f5390f
+2026-03-24 11:39:13,780 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] HTM actual: POST
+2026-03-24 11:39:13,780 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 11:39:13,781 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 11:39:13,807 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] RT: O-qssmZr_XaLwDqXBo-EYKcC1g_X_w_1zqvzBe10JqI
+2026-03-24 11:40:41,152 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8980 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:40:41,152 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:40:41,152 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:41:39,989 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8980 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:41:39,989 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:41:39,989 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:41:41,352 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:41:41,957 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.003 seconds (process running for 170.67)
+2026-03-24 11:41:49,838 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8980 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:41:49,838 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:41:49,838 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:41:53,259 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8980 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:41:53,260 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:41:53,260 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:41:54,521 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:41:55,382 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.166 seconds (process running for 184.094)
+2026-03-24 11:44:30,163 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 16312 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:44:30,164 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:44:30,165 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:44:37,841 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:44:39,084 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.626 seconds (process running for 10.479)
+2026-03-24 11:45:03,515 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:47:04,749 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:47:04,786 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTU expected: /api/auth/logout
+2026-03-24 11:47:04,786 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTM expected: POST
+2026-03-24 11:47:04,787 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:47:04,788 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] Current id from current signedJWT: 1870cb8e-da08-4557-a475-9cb447c3d5af
+2026-03-24 11:48:04,489 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-6] HTU expected: /api/auth/logout
+2026-03-24 11:48:04,490 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-6] HTM expected: POST
+2026-03-24 11:48:17,702 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] HTU expected: /api/auth/logout
+2026-03-24 11:48:17,703 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] HTM expected: POST
+2026-03-24 11:49:04,112 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTU expected: /api/auth/logout
+2026-03-24 11:49:04,112 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTM expected: POST
+2026-03-24 11:49:12,007 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] HTU expected: /api/auth/logout
+2026-03-24 11:49:12,007 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] HTM expected: POST
+2026-03-24 11:49:21,803 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:49:21,807 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] HTU expected: /api/auth/logout
+2026-03-24 11:49:21,807 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] HTM expected: POST
+2026-03-24 11:49:21,808 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:49:21,808 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] Current id from current signedJWT: 1870cb8e-da08-4557-a475-9cb447c3d5af
+2026-03-24 11:49:45,778 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:50:18,831 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:50:18,834 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU expected: /api/auth/logout
+2026-03-24 11:50:18,834 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM expected: POST
+2026-03-24 11:50:18,835 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:52:43,213 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:52:43,216 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTU expected: /api/auth/logout
+2026-03-24 11:52:43,216 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTM expected: POST
+2026-03-24 11:52:43,217 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:52:43,219 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] Current id from current signedJWT: 591945a5-ba18-4572-a288-e5b201d9b078
+2026-03-24 11:52:43,225 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] Parsed OK: com.nimbusds.jwt.SignedJWT@4bf3a70f
+2026-03-24 11:52:43,226 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTM actual: POST
+2026-03-24 11:52:43,226 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 11:52:43,227 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 11:52:43,249 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] RT: wV5tGp6MKxJRIRWmb1g0INT7SCjcUtuDW06W1DkZzcQ
+2026-03-24 11:53:19,893 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:53:44,683 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:53:52,632 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:53:52,634 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU expected: /api/auth/logout
+2026-03-24 11:53:52,635 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM expected: POST
+2026-03-24 11:53:52,635 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:53:52,636 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Current id from current signedJWT: 591945a5-ba18-4572-a288-e5b201d9b078
+2026-03-24 11:56:28,356 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8780 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:56:28,357 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:56:28,359 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:56:34,715 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:56:35,754 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.019 seconds (process running for 8.893)
+2026-03-24 11:56:48,351 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:58:41,556 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 25268 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:58:41,557 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:58:41,558 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:58:48,066 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:58:49,220 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.257 seconds (process running for 9.112)
+2026-03-24 12:03:37,196 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 25268 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:03:37,197 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:03:37,197 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:03:39,877 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 25268 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:03:39,877 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:03:39,877 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:03:41,371 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:03:42,353 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.505 seconds (process running for 302.263)
+2026-03-24 12:03:53,512 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 15904 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:03:53,513 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:03:53,514 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:04:01,197 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:04:02,407 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.528 seconds (process running for 10.417)
+2026-03-24 12:04:25,811 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:04:25,883 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU expected: /api/auth/logout
+2026-03-24 12:04:25,885 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM expected: POST
+2026-03-24 12:04:25,885 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] SAVED JTI = [eyJraWQiOiJaNG96OXhURVgzTzBPWHFWN04tSmpPTmJjMmljSUhkVXphMThlV0kzc05jIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJhZG1pbjciLCJyb2xlIjoiQURNSU4iLCJpc3MiOiJtcnguY29tIiwiY25mIjp7ImprdCI6Ilo0b3o5eFRFWDNPME9YcVY3Ti1Kak9OYmMyaWNJSGRVemExOGVXSTNzTmMifSwiZXhwIjoxNzc0MzI4Nzk3LCJpYXQiOjE3NzQzMjc4OTcsImp0aSI6IjU5MTk0NWE1LWJhMTgtNDU3Mi1hMjg4LWU1YjIwMWQ5YjA3OCJ9.mjpyduRhTQWLrWMPnyzQe-sCL2YYb5febyt0z5iz7Geq2KNUOkL7upM4TuxNSshapIKQliLMviLO6t1mvk89cNVYvtKKdHIF5ifk8GpccYMw2FnVpm61flkfTrVYBwspIr-1DRPrhTPwZNunfkBLKB-T7c3E4jvUdi5zyuxl4wTMFjDr1t3OWsA0u712F8c8IDSUUevXcdE0o7i0qSc9pc1IFMrO4XiXpr6TuhAhCj_e7PBUjhCnLWC4q_OiT0zsFyClDtoH0_6z1NXFJLUu-sMF-kn0hKojc_8bwI7lF1mi5Vb35m31oSAMieCrxt0lx7VNb32UrHwtObLZ7oOt-g]
+2026-03-24 12:04:25,886 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:04:25,887 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] CHECK JTI = [591945a5-ba18-4572-a288-e5b201d9b078]
+2026-03-24 12:04:25,888 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Current id from current signedJWT: 591945a5-ba18-4572-a288-e5b201d9b078
+2026-03-24 12:04:25,922 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Current id exist?: true
+2026-03-24 12:05:57,175 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21492 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:05:57,176 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:05:57,177 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:06:03,266 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:06:04,382 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.812 seconds (process running for 8.675)
+2026-03-24 12:06:07,734 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:06:07,827 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] HTU expected: /api/auth/logout
+2026-03-24 12:06:07,827 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] HTM expected: POST
+2026-03-24 12:06:07,827 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] SAVED JTI = [admin7]
+2026-03-24 12:06:07,827 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:06:07,829 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] CHECK JTI = [591945a5-ba18-4572-a288-e5b201d9b078]
+2026-03-24 12:06:07,829 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] Current id from current signedJWT: 591945a5-ba18-4572-a288-e5b201d9b078
+2026-03-24 12:06:07,858 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] Current id exist?: true
+2026-03-24 12:07:20,033 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21492 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:07:20,034 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:07:20,034 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:07:42,943 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 16556 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:07:42,944 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:07:42,945 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:07:49,005 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:07:50,050 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.761 seconds (process running for 8.605)
+2026-03-24 12:10:11,447 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:10:53,676 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:10:53,684 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] HTU expected: /api/auth/logout
+2026-03-24 12:10:53,693 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] HTM expected: POST
+2026-03-24 12:10:53,693 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] SAVED JTI = [c4fe79ec-cdce-4c06-8182-86c1a031d257]
+2026-03-24 12:10:53,694 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:10:53,695 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] CHECK JTI = [c4fe79ec-cdce-4c06-8182-86c1a031d257]
+2026-03-24 12:10:53,695 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] Current id from current signedJWT: c4fe79ec-cdce-4c06-8182-86c1a031d257
+2026-03-24 12:10:53,702 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] Current id exist?: false
+2026-03-24 12:10:53,706 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] Parsed OK: com.nimbusds.jwt.SignedJWT@30130364
+2026-03-24 12:10:53,706 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] HTM actual: POST
+2026-03-24 12:10:53,706 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 12:10:53,707 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 12:10:53,737 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] RT: gEd7gzOShHGuWSZ6ONM7RfZ0u3W8MBUe3eX-cuWNmac
+2026-03-24 12:11:04,644 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:12:12,501 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 22636 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:12:12,502 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:12:12,503 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:12:18,756 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:12:19,831 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.969 seconds (process running for 8.922)
+2026-03-24 12:12:28,310 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:12:33,905 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:12:33,939 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU expected: /api/auth/logout
+2026-03-24 12:12:33,940 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM expected: POST
+2026-03-24 12:12:33,940 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] SAVED JTI = [c4fe79ec-cdce-4c06-8182-86c1a031d257]
+2026-03-24 12:12:33,940 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:12:33,942 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] CHECK JTI = [c4fe79ec-cdce-4c06-8182-86c1a031d257]
+2026-03-24 12:12:33,942 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Current id from current signedJWT: c4fe79ec-cdce-4c06-8182-86c1a031d257
+2026-03-24 12:12:33,961 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Current id exist?: true
+2026-03-24 12:12:33,963 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Parsed OK: com.nimbusds.jwt.SignedJWT@479fce7c
+2026-03-24 12:12:33,963 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM actual: POST
+2026-03-24 12:12:33,964 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 12:12:33,964 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 12:12:33,978 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] RT: gEd7gzOShHGuWSZ6ONM7RfZ0u3W8MBUe3eX-cuWNmac
+2026-03-24 12:12:56,840 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:14:47,065 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 22636 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:14:47,065 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:14:47,065 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:15:39,372 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 4460 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:15:39,374 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:15:39,375 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:15:45,451 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:15:46,532 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.771 seconds (process running for 8.628)
+2026-03-24 12:16:32,946 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:17:05,882 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:17:05,918 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTU expected: /api/auth/logout
+2026-03-24 12:17:05,918 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTM expected: POST
+2026-03-24 12:17:05,918 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] SAVED JTI = [c4fe79ec-cdce-4c06-8182-86c1a031d257]
+2026-03-24 12:17:05,918 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:17:05,920 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] CHECK JTI = [c4fe79ec-cdce-4c06-8182-86c1a031d257]
+2026-03-24 12:17:05,920 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] Current id from current signedJWT: c4fe79ec-cdce-4c06-8182-86c1a031d257
+2026-03-24 12:17:05,940 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] Current id exist?: true
+2026-03-24 12:36:57,485 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 13604 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:36:57,486 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:36:57,487 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:37:38,422 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 3816 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:37:38,424 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:37:38,424 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:37:44,660 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:37:45,713 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.865 seconds (process running for 8.678)
+2026-03-24 12:39:53,798 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:40:02,420 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:40:02,428 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTU expected: /api/auth/logout
+2026-03-24 12:40:02,428 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTM expected: POST
+2026-03-24 12:40:02,428 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] SAVED JTI = [2e6ff1b8-5597-4d9a-b984-d3335349afea]
+2026-03-24 12:40:02,429 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:40:02,430 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] CHECK JTI = [2e6ff1b8-5597-4d9a-b984-d3335349afea]
+2026-03-24 12:40:02,430 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] Current id from current signedJWT: 2e6ff1b8-5597-4d9a-b984-d3335349afea
+2026-03-24 12:40:02,437 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] Current id exist?: false
+2026-03-24 12:40:02,439 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] Parsed OK: com.nimbusds.jwt.SignedJWT@6e2cb3b8
+2026-03-24 12:40:02,440 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTM actual: POST
+2026-03-24 12:40:02,440 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 12:40:02,441 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 12:40:02,466 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] RT: JukhDsR8-rQj9JwpBMWGdl5TRiXKGWO65kWpLQD8yKk
+2026-03-24 12:40:27,227 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:44:10,854 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 11400 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:44:10,856 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:44:10,857 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:44:18,584 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:44:20,145 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.072 seconds (process running for 11.136)
+2026-03-24 12:47:31,688 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:47:31,706 INFO c.c.c.w.c.UserController. [http-nio-6969-exec-6] ROLE_ADMIN
+2026-03-24 12:47:55,637 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:47:55,645 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] HTU expected: /api/auth/logout
+2026-03-24 12:47:55,645 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] HTM expected: POST
+2026-03-24 12:47:55,647 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] SAVED JTI = [2f14ffb1-5c89-4498-a46c-8ce1a9b8404d]
+2026-03-24 12:47:55,647 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:47:55,649 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] CHECK JTI = [2f14ffb1-5c89-4498-a46c-8ce1a9b8404d]
+2026-03-24 12:47:55,649 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] Current id from current signedJWT: 2f14ffb1-5c89-4498-a46c-8ce1a9b8404d
+2026-03-24 12:47:55,652 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] Current id exist?: false
+2026-03-24 12:47:55,656 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] Parsed OK: com.nimbusds.jwt.SignedJWT@3b5f06db
+2026-03-24 12:47:55,656 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] HTM actual: POST
+2026-03-24 12:47:55,656 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 12:47:55,657 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 12:47:55,676 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] RT: aV2pR3-QdoQDlDr_mXfUJC1VOtDGROXfCDK0w8gt_wA

@@ -10,10 +10,11 @@ public class InvalidTokenService {
     public InvalidTokenService(InvalidTokenRepository invalidTokenRepository) {
         this.invalidTokenRepository = invalidTokenRepository;
     }
-
+    //redis can understand existById but existsInvalidTokenById()!
     public boolean validateToken(String id){
-        if(invalidTokenRepository.existsInvalidTokenById(id))
+        if(invalidTokenRepository.existsById(id))
             return true;
         return false;
     }
+
 }

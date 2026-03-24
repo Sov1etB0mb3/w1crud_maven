@@ -28,6 +28,7 @@ import lombok.experimental.NonFinal;
 import lombok.extern.slf4j.Slf4j;
 import org.antlr.v4.runtime.Token;
 import org.hibernate.mapping.Collection;
+import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.AccessDeniedException;
@@ -47,6 +48,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.text.ParseException;
+import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -143,6 +145,8 @@ public class AuthenticationService {
         }
 
         Jwt jwt = jwtAuth.getToken();
+        String savedJti = jwt.getId();
+        log.info("SAVED JTI = [{}]", savedJti);
         try {
             dPoPService.validateDPoPWithJwt(dpopHeader, jwt, httpServletRequest);
         } catch (Exception e) {
@@ -170,12 +174,17 @@ public class AuthenticationService {
         if (Math.abs(now.toEpochMilli() - iat.toEpochMilli()) > 300_000) {
             throw new RuntimeException("Expired DPoP");
         }
+        Instant expiredTime= signToken.getJWTClaimsSet().getExpirationTime().toInstant();
+        Long duration = Duration.between(now,expiredTime).getSeconds();
+        if (duration>0){
         InvalidToken invalidToken = InvalidToken.builder()
                 .id(jit)
-                .expirytime(signToken.getJWTClaimsSet().getExpirationTime().toInstant())
+                .expirytime(duration)
                 .build();
+        log.info("REpo class: {}", AopUtils.getTargetClass(invalidTokenRepository));
 
         invalidTokenRepository.save(invalidToken);
+      }
 //        Integer userId= userRepository.findUserByUsername(signToken.getJWTClaimsSet().getSubject())
 //                .get().getId();
         log.info("RT: "+logoutRequest.getRefreshtoken());
@@ -226,13 +235,18 @@ public class AuthenticationService {
         SignedJWT signedJWT = SignedJWT.parse(token);
         Date expiryTime = signedJWT.getJWTClaimsSet().getExpirationTime();
         var verified = signedJWT.verify(jwsVerifier);
+        String checkJti = signedJWT.getJWTClaimsSet().getJWTID();
+        log.info("CHECK JTI = [{}]", checkJti);
         if (!verified )
             throw new AppException(ErrorCode.UNAUTHENTICATED);
         if ( expiryTime.before(new Date()))
             throw new RuntimeException("Expired key");
+        log.info("Current id from current signedJWT: "+signedJWT.getJWTClaimsSet().getJWTID());
+        log.info ("Current id exist?: {}",invalidTokenRepository.existsById(signedJWT.getJWTClaimsSet().getJWTID()));
 
-        if (invalidTokenRepository.existsInvalidTokenById(signedJWT.getJWTClaimsSet().getJWTID()))
-            throw new AppException(ErrorCode.INVALID_KEY);
+        // REDIS CAN UNDERSTAND existsById() but existsInvalidTokenById()!
+        if (invalidTokenRepository.existsById(signedJWT.getJWTClaimsSet().getJWTID()))
+             throw new AppException(ErrorCode.INVALID_KEY);
         return signedJWT;
     }
 //    private SignedJWT verifyTokenForRefresh(String token) throws JOSEException, ParseException {
