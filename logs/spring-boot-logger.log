@@ -1,5 +1,4 @@
-2026-03-23 16:43:26,006 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 13884 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
-2026-03-23 16:43:26,008 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
-2026-03-23 16:43:26,009 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
-2026-03-23 16:43:32,361 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
-2026-03-23 16:43:33,744 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.448 seconds (process running for 9.523)
+2026-03-24 08:47:18,440 INFO o.s.b.StartupInfoLogger. [main] Starting W1crudMavenApplicationTests using Java 21 with PID 12764 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 08:47:18,443 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 08:47:18,444 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 08:47:30,604 INFO o.s.b.StartupInfoLogger. [main] Started W1crudMavenApplicationTests in 12.675 seconds (process running for 14.009)

@@ -65,7 +65,6 @@ public class UserService {
             return userRepository.save(newUser);
 
         }
-
 //        roles.add(Role.ADMIN.name());
 //        newUser.setRoles(roles);
         return userRepository.save(newUser);
