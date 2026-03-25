@@ -34,6 +34,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
@@ -139,6 +140,7 @@ public class AuthenticationService {
 
 
     }
+    @CacheEvict(value = "authCache",key = "#authentication.name")
     public void logout(String dpopHeader,
                        HttpServletRequest httpServletRequest,
                        Authentication authentication,
