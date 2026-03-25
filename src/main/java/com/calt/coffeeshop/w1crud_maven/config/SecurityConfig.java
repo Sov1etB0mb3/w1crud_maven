@@ -60,8 +60,8 @@ public class SecurityConfig {
     private UserRepository userRepository;
 //    @Autowired
 //    private CustomJwtDecoder customJwtDecoder;
-    @Autowired
-    private DPoPFilter dPoPFilter;
+//    @Autowired
+//    private DPoPFilter dPoPFilter;
     //after complete api, add has role adfter resquestMatchers
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity,
@@ -98,7 +98,7 @@ public class SecurityConfig {
                 );
         httpSecurity.exceptionHandling(e->e
                 .accessDeniedHandler(customAccessDeniedHandler));
-        httpSecurity.addFilterAfter(dPoPFilter, BearerTokenAuthenticationFilter.class);
+//        httpSecurity.addFilterAfter(dPoPFilter, BearerTokenAuthenticationFilter.class);
     return httpSecurity.build();
     }
     //Decoder to decode the JWT we generated

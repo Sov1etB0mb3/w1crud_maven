@@ -68,8 +68,7 @@ public class AuthenticationService {
     private InvalidTokenRepository invalidTokenRepository;
     @Autowired
     private RefreshTokenRepository refreshTokenRepository;
-    @Autowired
-    private DPoPService dPoPService;
+
 
     @NonFinal
     @Value("${jwt}")
@@ -85,7 +84,7 @@ public class AuthenticationService {
     @Autowired
     private CacheManager cacheManager;
 
-    public AuthenticationResponse authenicate(AuthRequest authRequest,String dpopHeader)
+    public AuthenticationResponse authenicate(AuthRequest authRequest)
             throws Exception {
         var user = userRepository.findUserByUsername(authRequest.getUsername())
                 .orElseThrow(()-> new AppException(ErrorCode.NOT_FOUND));
@@ -95,9 +94,9 @@ public class AuthenticationService {
                 .matches(authRequest.getPassword(), user.getPassword());
         if(!authenicated)
             throw new AppException(ErrorCode.UNAUTHORIZED);
-        var token=generateToken(user,dpopHeader);
+        var token=generateToken(user);
 
-        RefreshToken refreshToken = generateRefreshToken(user,dpopHeader);
+        RefreshToken refreshToken = generateRefreshToken(user);
 
         return AuthenticationResponse.builder()
                 .token(token)
@@ -105,17 +104,17 @@ public class AuthenticationService {
                 .authenicated(true).build();
     }
 
-    private RefreshToken generateRefreshToken(User user,String dpopHeader) throws Exception {
+    private RefreshToken generateRefreshToken(User user) throws Exception {
         SecureRandom random = new SecureRandom();
         byte[] bytes = new byte[32]; // 256 bits
         random.nextBytes(bytes);
         String rtoken = Base64.getUrlEncoder().withoutPadding().encodeToString(bytes);
-        String dpopJkt = extractJwkThumbprint(dpopHeader);
+//        String dpopJkt = extractJwkThumbprint(dpopHeader);
         //String rtoken=UUID.randomUUID().toString();
         RefreshToken refreshToken = RefreshToken.builder()
                 .userid(user.getId())
                 .refreshtoken(rtoken)
-                .jkt(dpopJkt)
+//                .jkt(dpopJkt)
                 .valid(true)
                 .expirytime(new Date( Instant.now()
                                 .plus(REFRESH_DURATION,ChronoUnit.DAYS)
@@ -155,12 +154,12 @@ public class AuthenticationService {
         Jwt jwt = jwtAuth.getToken();
         String savedJti = jwt.getId();
         log.info("SAVED JTI = [{}]", savedJti);
-        try {
-            dPoPService.validateDPoPWithJwt(dpopHeader, jwt, httpServletRequest);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw e;
-        }
+//        try {
+//            dPoPService.validateDPoPWithJwt(dpopHeader, jwt, httpServletRequest);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            throw e;
+//        }
 //        dPoPService.validateDPoPWithJwt(dpopHeader, jwt,httpServletRequest);
         SignedJWT signToken;
         SignedJWT dpopToken= SignedJWT.parse(dpopHeader);
@@ -179,6 +178,7 @@ public class AuthenticationService {
         String jit = signToken.getJWTClaimsSet().getJWTID();
         Instant iat= dpopToken.getJWTClaimsSet().getIssueTime().toInstant();
         Instant now = Instant.now();
+        //five minute = 300_000 milli
         if (Math.abs(now.toEpochMilli() - iat.toEpochMilli()) > 300_000) {
             throw new RuntimeException("Expired DPoP");
         }
@@ -206,7 +206,7 @@ public class AuthenticationService {
 
     }
 
-    public RefreshResponse refreshToken (RefreshRequest request, String dpopHeader) throws Exception {
+    public RefreshResponse refreshToken (RefreshRequest request) throws Exception {
         RefreshToken refreshToken= refreshTokenRepository
                 .findRefreshTokenByRefreshtoken(request.getToken())
                 .orElseThrow( () -> new RuntimeException("Not found refresh token!"));
@@ -217,13 +217,12 @@ public class AuthenticationService {
         }
         if(!refreshToken.isValid())
             throw new RuntimeException("Revoked Key!");
-        String incomingJkt = extractJwkThumbprint(dpopHeader);
-        if (!incomingJkt.equals(refreshToken.getJkt()))
-            throw new RuntimeException("DPoP proof doesn't sastify");
+//        String incomingJkt = extractJwkThumbprint(dpopHeader);
+
         User user = userRepository.findUserById(refreshToken.getUserid());
         RefreshResponse refreshResponse = RefreshResponse.builder()
-                .rtoken(generateRefreshToken(user,dpopHeader).getRefreshtoken())
-                .atoken(generateToken(user,dpopHeader))
+                .rtoken(generateRefreshToken(user).getRefreshtoken())
+                .atoken(generateToken(user))
                 .authenicated(true)
                 .build();
         refreshToken.setValid(false);
@@ -277,22 +276,22 @@ public class AuthenticationService {
 //
 //    }
     //User user, JWK jwk
-    private String generateToken(User user, String dpopHeader  ) throws ParseException, JOSEException, NoSuchAlgorithmException, InvalidKeySpecException {
+    private String generateToken(User user ) throws ParseException, JOSEException, NoSuchAlgorithmException, InvalidKeySpecException {
         //get header to extract infors
 
-        SignedJWT dpopJwt = SignedJWT.parse(dpopHeader);
+//        SignedJWT dpopJwt = SignedJWT.parse(dpopHeader);
         //get jwk from header sent form client
-        RSAKey clientKey = (RSAKey) dpopJwt.getHeader().getJWK();
+//        RSAKey clientKey = (RSAKey) dpopJwt.getHeader().getJWK();
         //compute jkt
-        Base64URL thumbprint = clientKey.computeThumbprint();
+//        Base64URL thumbprint = clientKey.computeThumbprint();
         // verify client public key;
 
         //get Role from user!
         String role = user.getRoles().stream().map(u->u.getRole().getName())
                 .collect(Collectors.joining(" "));
         //build cnf claim
-        Map <String,Object> cnf = Map.of("jkt",thumbprint.toString());
-        //rsa decoded
+//        Map <String,Object> cnf = Map.of("jkt",thumbprint.toString());
+//        //rsa decoded
         byte[] decodedKey = Base64.getDecoder().decode(privateKey);
         //PKCS8 standardlizer
         PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(decodedKey);
@@ -303,7 +302,7 @@ public class AuthenticationService {
         //create header
         JWSHeader jweHeader = new JWSHeader.Builder(JWSAlgorithm.RS256)
                 .type(JOSEObjectType.JWT)
-                .keyID(thumbprint.toString())
+//                .keyID(thumbprint.toString())
                 .build()
                 ;
 
@@ -319,7 +318,7 @@ public class AuthenticationService {
                                 .plus(DURATION, ChronoUnit.SECONDS).toEpochMilli()
                 ))
                 .claim("role",role)
-                .claim("cnf",cnf)
+//                .claim("cnf",cnf)
                 .jwtID(UUID.randomUUID().toString())
                 .build();
 

@@ -29,17 +29,17 @@ public class SwaggerConfig {
                                                 .scheme("bearer")
                                                 .bearerFormat("DPoP")));
         }
-        @Bean
-        public OperationCustomizer addDPoPHeader(){
-                return (Operation operation,HandlerMethod handlerMethod)
-                -> {
-                        Parameter dpopHeader = new Parameter()
-                                .in("header")
-                                .name("DPoP")
-                                .description("DPoP with JWT")
-                                .required(true);
-                        operation.addParametersItem(dpopHeader);
-                        return operation;
-                };
-        }
+//        @Bean
+//        public OperationCustomizer addDPoPHeader(){
+//                return (Operation operation,HandlerMethod handlerMethod)
+//                -> {
+//                        Parameter dpopHeader = new Parameter()
+//                                .in("header")
+//                                .name("DPoP")
+//                                .description("DPoP with JWT")
+//                                .required(true);
+//                        operation.addParametersItem(dpopHeader);
+//                        return operation;
+//                };
+//        }
 }

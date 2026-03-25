@@ -35,14 +35,14 @@ public class AuthenticationController {
      DPoPService dPoPService;
     @PostMapping("/token")
      public ApiResponse<AuthenticationResponse> login(
-             @RequestHeader("DPoP") String dpopHeader,
+//             @RequestHeader("DPoP") String dpopHeader,
              @RequestBody AuthRequest authRequest)
             throws Exception {
-        if (dpopHeader == null || dpopHeader.isBlank()) {
-            throw new RuntimeException("Missing DPoP header");
-        }
+//        if (dpopHeader == null || dpopHeader.isBlank()) {
+//            throw new RuntimeException("Missing DPoP header");
+//        }
 
-        var result = authenticationService.authenicate(authRequest,dpopHeader);
+        var result = authenticationService.authenicate(authRequest);
 
         return ApiResponse.<AuthenticationResponse>builder().
                 result(
@@ -85,7 +85,7 @@ public class AuthenticationController {
         if (dpopHeader == null || dpopHeader.isBlank()) {
             throw new RuntimeException("Missing DPoP header");
         }
-        RefreshResponse refreshResponse = authenticationService.refreshToken(refreshRequest,dpopHeader);
+        RefreshResponse refreshResponse = authenticationService.refreshToken(refreshRequest);
         return ApiResponse.<RefreshResponse>builder()
                 .message(StatusCode.OK.getMessage())
                 .code(StatusCode.OK.getCode())
