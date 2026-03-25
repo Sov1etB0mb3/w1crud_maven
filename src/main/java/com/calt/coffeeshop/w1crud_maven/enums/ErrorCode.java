@@ -15,6 +15,7 @@ public enum ErrorCode {
     UNAUTHORIZED (403,"You do not have permission!",HttpStatus.FORBIDDEN),
     DATA_INTEGRITY(4009, "Cannot handle!", HttpStatus.CONFLICT),
     EXPIRED_KEY(400, "EXPIRED KEY!", HttpStatus.BAD_REQUEST),
+    USER_NOTFOUND(4004, "Notfound User", HttpStatus.BAD_REQUEST),
 
     REVOKED_KEY(400, "REVOKED KEY!", HttpStatus.BAD_REQUEST);
 

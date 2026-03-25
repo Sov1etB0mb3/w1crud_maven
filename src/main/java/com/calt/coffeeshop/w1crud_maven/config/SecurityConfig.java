@@ -1,7 +1,9 @@
 package com.calt.coffeeshop.w1crud_maven.config;
 
+import com.calt.coffeeshop.w1crud_maven.dto.response.AuthInforResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
+import com.calt.coffeeshop.w1crud_maven.service.AuthenticationService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -65,7 +67,8 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity,
                                                    CustomAccessDeniedHandler customAccessDeniedHandler,
                                                    JwtDecoder jwtDecoder,
-                                                   RSAPublicKey publicKey) throws Exception {
+                                                   RSAPublicKey publicKey,
+                                                   AuthenticationService authenticationService) throws Exception {
         httpSecurity
                 .authorizeHttpRequests(auth->auth
                         .requestMatchers(WHITE_LIST_URL).permitAll()
@@ -90,7 +93,7 @@ public class SecurityConfig {
         httpSecurity.oauth2ResourceServer(o2Auth->
                 o2Auth.jwt(jwtConfigurer -> jwtConfigurer
                         .decoder(jwtDecoder)
-                                .jwtAuthenticationConverter(jwtAuthenticationConverter()))
+                                .jwtAuthenticationConverter(jwtAuthenticationConverter(authenticationService)))
                         .authenticationEntryPoint(new JwtAuthenticationEntryPoint())
                 );
         httpSecurity.exceptionHandling(e->e
@@ -122,33 +125,14 @@ public class SecurityConfig {
     }
 
     @Bean
-    JwtAuthenticationConverter jwtAuthenticationConverter(){
+    JwtAuthenticationConverter jwtAuthenticationConverter(AuthenticationService authenticationService){
         JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
             converter.setJwtGrantedAuthoritiesConverter(jwt -> {
                 String username = jwt.getSubject();
-                List<GrantedAuthority> roleAuthorities = new ArrayList<>();
 
-                String roles = jwt.getClaimAsString("role");
-                if (roles != null) {
-                    Arrays.stream(roles.split(" "))
-                            .map(r ->
-                                    new SimpleGrantedAuthority("ROLE_"+r))
-                            .forEach(roleAuthorities::add);
+                AuthInforResponse authInforResponse = authenticationService.getAuthInfor(username);
 
-                }
-                User user = userRepository.findUserWithRolesAndPermissions(username)
-                        .orElseThrow();
-                Stream<GrantedAuthority> permissionAuthorities = user.getRoles().stream()
-                        .flatMap(userRole ->
-                                    userRole.getRole()
-                                    .getPermissions()
-                                    .stream()
-                                    .map(rolePermission ->
-                                            new SimpleGrantedAuthority(
-                                                    rolePermission.getPermission().getName()
-                                            ))
-                        );
-                return Stream.concat(roleAuthorities.stream(),permissionAuthorities).collect(Collectors.toSet());
+                return authInforResponse.getAuthorities();
 
         });
 
@@ -156,3 +140,41 @@ public class SecurityConfig {
 }
 
 }
+
+
+//old converter
+
+
+//@Bean
+//JwtAuthenticationConverter jwtAuthenticationConverter(){
+//    JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
+//    converter.setJwtGrantedAuthoritiesConverter(jwt -> {
+//        String username = jwt.getSubject();
+//        List<GrantedAuthority> roleAuthorities = new ArrayList<>();
+//
+//        String roles = jwt.getClaimAsString("role");
+//        if (roles != null) {
+//            Arrays.stream(roles.split(" "))
+//                    .map(r ->
+//                            new SimpleGrantedAuthority("ROLE_"+r))
+//                    .forEach(roleAuthorities::add);
+//
+//        }
+//        User user = userRepository.findUserWithRolesAndPermissions(username)
+//                .orElseThrow();
+//        Stream<GrantedAuthority> permissionAuthorities = user.getRoles().stream()
+//                .flatMap(userRole ->
+//                        userRole.getRole()
+//                                .getPermissions()
+//                                .stream()
+//                                .map(rolePermission ->
+//                                        new SimpleGrantedAuthority(
+//                                                rolePermission.getPermission().getName()
+//                                        ))
+//                );
+//        return Stream.concat(roleAuthorities.stream(),permissionAuthorities).collect(Collectors.toSet());
+//
+//    });
+//
+//    return converter;
+//}

@@ -289,3 +289,44 @@
 2026-03-25 08:40:31,693 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
 2026-03-25 08:40:42,142 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
 2026-03-25 08:40:42,145 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-8] admin7
+2026-03-25 09:59:15,613 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 23668 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-25 09:59:15,615 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-25 09:59:15,615 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-25 09:59:22,234 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-25 09:59:22,453 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-25 09:59:23,353 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.495 seconds (process running for 9.444)
+2026-03-25 10:02:51,697 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 7740 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-25 10:02:51,699 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-25 10:02:51,700 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-25 10:02:58,622 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-25 10:02:58,888 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-25 10:02:59,965 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.859 seconds (process running for 9.697)
+2026-03-25 10:08:51,407 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 11204 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-25 10:08:51,408 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-25 10:08:51,409 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-25 10:08:57,672 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-25 10:08:57,902 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-25 10:08:58,747 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.948 seconds (process running for 8.837)
+2026-03-25 10:09:17,994 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:09:18,034 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-25 10:11:02,260 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 9856 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-25 10:11:02,262 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-25 10:11:02,262 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-25 10:11:08,732 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-25 10:11:08,939 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-25 10:11:10,547 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.969 seconds (process running for 9.872)
+2026-03-25 10:11:11,509 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:11,556 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-25 10:11:12,652 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:13,567 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:14,508 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:15,276 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:16,069 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:16,813 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:39,253 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:39,995 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:40,639 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:41,227 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:41,837 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:42,580 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-25 10:11:43,215 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc

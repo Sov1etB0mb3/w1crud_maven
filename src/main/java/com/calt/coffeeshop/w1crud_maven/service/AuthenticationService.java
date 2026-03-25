@@ -4,6 +4,7 @@ import com.calt.coffeeshop.w1crud_maven.dto.request.AuthRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.IntrospectRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.LogoutRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.request.RefreshRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.response.AuthInforResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.AuthenticationResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.IntrospectResponse;
 import com.calt.coffeeshop.w1crud_maven.dto.response.RefreshResponse;
@@ -31,6 +32,9 @@ import org.hibernate.mapping.Collection;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -77,6 +81,8 @@ public class AuthenticationService {
     protected String publicKey;
     @Value("${rsa.key.private}")
     protected String privateKey;
+    @Autowired
+    private CacheManager cacheManager;
 
     public AuthenticationResponse authenicate(AuthRequest authRequest,String dpopHeader)
             throws Exception {
@@ -333,6 +339,35 @@ public class AuthenticationService {
         JWK jwk = header.getJWK();                       // extract JWK
         return jwk.computeThumbprint().toString();      // compute thumbprint
     }
+
+    @Cacheable("authCache")
+    public AuthInforResponse getAuthInfor(String userName){
+
+//        Cache cache = cacheManager.getCache("authCache");
+//        AuthInforResponse cached = cache.get(userName, AuthInforResponse.class);
+//        if( cached != null){
+//            return cached;
+//        }
+        User user = userRepository.findUserWithRolesAndPermissions(userName)
+                .orElseThrow(()-> new AppException(ErrorCode.USER_NOTFOUND));
+        //get roles
+        Set<String> roles = user.getRoles().stream()
+                .map(userRole -> userRole.getRole().getName()).collect(Collectors.toSet());
+        //get permissions
+        Set<String> permissions = user.getRoles().stream()
+                .flatMap(userRole -> userRole.getRole().getPermissions().stream())
+                        .map(rolePermission -> rolePermission.getPermission()
+                                .getName()).collect(Collectors.toSet());
+
+        AuthInforResponse authInforResponse = AuthInforResponse.builder()
+                .username(user.getUsername())
+                .id(user.getId())
+                .roles(roles)
+                .permissions(permissions)
+                .build();
+        return authInforResponse;
+    }
+
 }
 //String permission = user.getRoles().stream().flatMap(
 //                userRole -> userRole.getRole()
