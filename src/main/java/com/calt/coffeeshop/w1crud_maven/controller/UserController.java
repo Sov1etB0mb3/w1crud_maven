@@ -134,4 +134,15 @@ public class UserController {
                 .build();
         return apiResponse;
     }
+    @GetMapping("/test/{username}")
+    //return String becase the whole html site are Strings!!!
+    public ApiResponse<String> getTest(@PathVariable("username") String username){
+
+        String result = userService.testCache(username);
+        return ApiResponse.<String>builder()
+                .result(result)
+                .code(StatusCode.FOUND.getCode())
+                .message(StatusCode.FOUND.getMessage())
+                .build();
+    }
 }

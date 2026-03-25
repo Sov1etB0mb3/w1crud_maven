@@ -8,6 +8,7 @@ import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.mapper.ProductMapper;
 import com.calt.coffeeshop.w1crud_maven.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -51,7 +52,7 @@ public class ProductService {
         return productRepository.findAll(pageable);
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('READ_PRODUCT')")
-
+    @Cacheable(value = "products",key = "#id")
     public Product getProductByID(String id){
         return productRepository.findById(id).orElseThrow(()->new RuntimeException("Product not found!"));
         //productRepository.findById(id) will return an Optional<Type>

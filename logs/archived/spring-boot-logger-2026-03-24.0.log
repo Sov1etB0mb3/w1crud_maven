@@ -1,0 +1,1240 @@
+2026-03-24 08:47:18,440 INFO o.s.b.StartupInfoLogger. [main] Starting W1crudMavenApplicationTests using Java 21 with PID 12764 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 08:47:18,443 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 08:47:18,444 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 08:47:30,604 INFO o.s.b.StartupInfoLogger. [main] Started W1crudMavenApplicationTests in 12.675 seconds (process running for 14.009)
+2026-03-24 09:44:50,898 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26780 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 09:44:50,899 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 09:44:50,900 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 09:44:57,521 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 09:44:58,849 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.972 seconds (process running for 11.222)
+2026-03-24 11:05:39,252 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21208 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:05:39,253 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:05:39,254 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:05:55,270 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 1548 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:05:55,271 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:05:55,271 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:06:58,788 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8648 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:06:58,788 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:06:58,789 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:07:05,145 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:07:06,183 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.149 seconds (process running for 9.079)
+2026-03-24 11:07:58,078 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8648 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:07:58,079 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:07:58,079 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:08:00,376 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:08:01,883 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 3.858 seconds (process running for 64.779)
+2026-03-24 11:10:18,738 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:10:18,742 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTU expected: /api/auth/logout
+2026-03-24 11:10:18,742 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTM expected: POST
+2026-03-24 11:10:18,742 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:10:18,747 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] Parsed OK: com.nimbusds.jwt.SignedJWT@6ebcdc9c
+2026-03-24 11:10:18,747 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTM actual: POST
+2026-03-24 11:10:18,747 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 11:10:18,774 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] RT: M1wssdga9ceURte-3iT0GV4A9opeOut0SGLe0U3uEtc
+2026-03-24 11:11:23,849 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5720 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:11:23,850 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:11:23,850 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:11:31,596 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:11:32,835 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.559 seconds (process running for 10.41)
+2026-03-24 11:12:11,078 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:15:54,237 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 3568 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:15:54,239 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:15:54,239 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:16:00,481 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:16:01,582 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.913 seconds (process running for 8.734)
+2026-03-24 11:16:12,179 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:18:36,253 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:19:48,366 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:20:14,283 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:20:14,292 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] HTU expected: /api/auth/logout
+2026-03-24 11:20:14,293 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] HTM expected: POST
+2026-03-24 11:20:14,293 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:20:14,299 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] Parsed OK: com.nimbusds.jwt.SignedJWT@4deb8517
+2026-03-24 11:20:14,300 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] HTM actual: POST
+2026-03-24 11:20:14,300 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 11:20:14,326 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] RT: M1wssdga9ceURte-3iT0GV4A9opeOut0SGLe0U3uEtc
+2026-03-24 11:20:29,421 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:21:03,108 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:26:37,738 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 13212 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:26:37,739 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:26:37,740 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:26:44,050 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:26:45,118 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.003 seconds (process running for 8.903)
+2026-03-24 11:27:22,348 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:29:44,343 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26124 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:29:44,344 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:29:44,345 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:29:51,008 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:29:52,334 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.653 seconds (process running for 9.613)
+2026-03-24 11:30:04,780 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:31:33,085 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 11068 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:31:33,086 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:31:33,088 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:31:40,819 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:31:42,611 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.203 seconds (process running for 11.295)
+2026-03-24 11:31:43,568 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:31:45,673 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:32:09,460 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:32:09,506 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] HTU expected: /api/auth/logout
+2026-03-24 11:32:09,507 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] HTM expected: POST
+2026-03-24 11:32:09,507 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:32:09,509 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] Current id from current signedJWT: 46e5b80a-95ff-4523-a7b1-d9c339db7a0f
+2026-03-24 11:32:09,512 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] Parsed OK: com.nimbusds.jwt.SignedJWT@5958b569
+2026-03-24 11:32:09,512 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] HTM actual: POST
+2026-03-24 11:32:09,512 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 11:32:09,513 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 11:32:09,541 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-3] RT: M1wssdga9ceURte-3iT0GV4A9opeOut0SGLe0U3uEtc
+2026-03-24 11:34:46,592 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:35:21,668 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:35:21,670 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU expected: /api/auth/logout
+2026-03-24 11:35:21,671 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM expected: POST
+2026-03-24 11:35:21,672 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:35:21,674 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Current id from current signedJWT: 1870cb8e-da08-4557-a475-9cb447c3d5af
+2026-03-24 11:35:21,676 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Parsed OK: com.nimbusds.jwt.SignedJWT@174b6f69
+2026-03-24 11:35:21,676 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM actual: POST
+2026-03-24 11:35:21,676 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 11:35:21,677 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 11:35:21,687 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] RT: O-qssmZr_XaLwDqXBo-EYKcC1g_X_w_1zqvzBe10JqI
+2026-03-24 11:35:30,334 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:38:52,840 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8980 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:38:52,841 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:38:52,843 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:38:59,563 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:39:01,000 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.823 seconds (process running for 9.712)
+2026-03-24 11:39:13,695 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:39:13,775 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] HTU expected: /api/auth/logout
+2026-03-24 11:39:13,775 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] HTM expected: POST
+2026-03-24 11:39:13,776 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:39:13,777 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] Current id from current signedJWT: 1870cb8e-da08-4557-a475-9cb447c3d5af
+2026-03-24 11:39:13,780 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] Parsed OK: com.nimbusds.jwt.SignedJWT@20f5390f
+2026-03-24 11:39:13,780 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] HTM actual: POST
+2026-03-24 11:39:13,780 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 11:39:13,781 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 11:39:13,807 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] RT: O-qssmZr_XaLwDqXBo-EYKcC1g_X_w_1zqvzBe10JqI
+2026-03-24 11:40:41,152 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8980 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:40:41,152 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:40:41,152 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:41:39,989 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8980 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:41:39,989 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:41:39,989 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:41:41,352 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:41:41,957 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.003 seconds (process running for 170.67)
+2026-03-24 11:41:49,838 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8980 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:41:49,838 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:41:49,838 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:41:53,259 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8980 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:41:53,260 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:41:53,260 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:41:54,521 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:41:55,382 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.166 seconds (process running for 184.094)
+2026-03-24 11:44:30,163 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 16312 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:44:30,164 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:44:30,165 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:44:37,841 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:44:39,084 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.626 seconds (process running for 10.479)
+2026-03-24 11:45:03,515 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:47:04,749 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:47:04,786 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTU expected: /api/auth/logout
+2026-03-24 11:47:04,786 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTM expected: POST
+2026-03-24 11:47:04,787 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:47:04,788 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] Current id from current signedJWT: 1870cb8e-da08-4557-a475-9cb447c3d5af
+2026-03-24 11:48:04,489 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-6] HTU expected: /api/auth/logout
+2026-03-24 11:48:04,490 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-6] HTM expected: POST
+2026-03-24 11:48:17,702 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] HTU expected: /api/auth/logout
+2026-03-24 11:48:17,703 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] HTM expected: POST
+2026-03-24 11:49:04,112 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTU expected: /api/auth/logout
+2026-03-24 11:49:04,112 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTM expected: POST
+2026-03-24 11:49:12,007 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] HTU expected: /api/auth/logout
+2026-03-24 11:49:12,007 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] HTM expected: POST
+2026-03-24 11:49:21,803 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:49:21,807 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] HTU expected: /api/auth/logout
+2026-03-24 11:49:21,807 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] HTM expected: POST
+2026-03-24 11:49:21,808 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:49:21,808 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-10] Current id from current signedJWT: 1870cb8e-da08-4557-a475-9cb447c3d5af
+2026-03-24 11:49:45,778 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:50:18,831 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:50:18,834 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU expected: /api/auth/logout
+2026-03-24 11:50:18,834 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM expected: POST
+2026-03-24 11:50:18,835 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:52:43,213 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:52:43,216 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTU expected: /api/auth/logout
+2026-03-24 11:52:43,216 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTM expected: POST
+2026-03-24 11:52:43,217 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:52:43,219 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] Current id from current signedJWT: 591945a5-ba18-4572-a288-e5b201d9b078
+2026-03-24 11:52:43,225 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] Parsed OK: com.nimbusds.jwt.SignedJWT@4bf3a70f
+2026-03-24 11:52:43,226 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTM actual: POST
+2026-03-24 11:52:43,226 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 11:52:43,227 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 11:52:43,249 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-8] RT: wV5tGp6MKxJRIRWmb1g0INT7SCjcUtuDW06W1DkZzcQ
+2026-03-24 11:53:19,893 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:53:44,683 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:53:52,632 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:53:52,634 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU expected: /api/auth/logout
+2026-03-24 11:53:52,635 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM expected: POST
+2026-03-24 11:53:52,635 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:53:52,636 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Current id from current signedJWT: 591945a5-ba18-4572-a288-e5b201d9b078
+2026-03-24 11:56:28,356 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8780 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:56:28,357 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:56:28,359 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:56:34,715 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:56:35,754 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.019 seconds (process running for 8.893)
+2026-03-24 11:56:48,351 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 11:58:41,556 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 25268 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 11:58:41,557 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 11:58:41,558 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:58:48,066 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 11:58:49,220 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.257 seconds (process running for 9.112)
+2026-03-24 12:03:37,196 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 25268 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:03:37,197 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:03:37,197 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:03:39,877 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 25268 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:03:39,877 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:03:39,877 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:03:41,371 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:03:42,353 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.505 seconds (process running for 302.263)
+2026-03-24 12:03:53,512 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 15904 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:03:53,513 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:03:53,514 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:04:01,197 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:04:02,407 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.528 seconds (process running for 10.417)
+2026-03-24 12:04:25,811 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:04:25,883 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU expected: /api/auth/logout
+2026-03-24 12:04:25,885 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM expected: POST
+2026-03-24 12:04:25,885 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] SAVED JTI = [eyJraWQiOiJaNG96OXhURVgzTzBPWHFWN04tSmpPTmJjMmljSUhkVXphMThlV0kzc05jIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJhZG1pbjciLCJyb2xlIjoiQURNSU4iLCJpc3MiOiJtcnguY29tIiwiY25mIjp7ImprdCI6Ilo0b3o5eFRFWDNPME9YcVY3Ti1Kak9OYmMyaWNJSGRVemExOGVXSTNzTmMifSwiZXhwIjoxNzc0MzI4Nzk3LCJpYXQiOjE3NzQzMjc4OTcsImp0aSI6IjU5MTk0NWE1LWJhMTgtNDU3Mi1hMjg4LWU1YjIwMWQ5YjA3OCJ9.mjpyduRhTQWLrWMPnyzQe-sCL2YYb5febyt0z5iz7Geq2KNUOkL7upM4TuxNSshapIKQliLMviLO6t1mvk89cNVYvtKKdHIF5ifk8GpccYMw2FnVpm61flkfTrVYBwspIr-1DRPrhTPwZNunfkBLKB-T7c3E4jvUdi5zyuxl4wTMFjDr1t3OWsA0u712F8c8IDSUUevXcdE0o7i0qSc9pc1IFMrO4XiXpr6TuhAhCj_e7PBUjhCnLWC4q_OiT0zsFyClDtoH0_6z1NXFJLUu-sMF-kn0hKojc_8bwI7lF1mi5Vb35m31oSAMieCrxt0lx7VNb32UrHwtObLZ7oOt-g]
+2026-03-24 12:04:25,886 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:04:25,887 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] CHECK JTI = [591945a5-ba18-4572-a288-e5b201d9b078]
+2026-03-24 12:04:25,888 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Current id from current signedJWT: 591945a5-ba18-4572-a288-e5b201d9b078
+2026-03-24 12:04:25,922 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Current id exist?: true
+2026-03-24 12:05:57,175 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21492 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:05:57,176 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:05:57,177 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:06:03,266 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:06:04,382 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.812 seconds (process running for 8.675)
+2026-03-24 12:06:07,734 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:06:07,827 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] HTU expected: /api/auth/logout
+2026-03-24 12:06:07,827 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] HTM expected: POST
+2026-03-24 12:06:07,827 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] SAVED JTI = [admin7]
+2026-03-24 12:06:07,827 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:06:07,829 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] CHECK JTI = [591945a5-ba18-4572-a288-e5b201d9b078]
+2026-03-24 12:06:07,829 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] Current id from current signedJWT: 591945a5-ba18-4572-a288-e5b201d9b078
+2026-03-24 12:06:07,858 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-1] Current id exist?: true
+2026-03-24 12:07:20,033 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21492 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:07:20,034 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:07:20,034 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:07:42,943 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 16556 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:07:42,944 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:07:42,945 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:07:49,005 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:07:50,050 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.761 seconds (process running for 8.605)
+2026-03-24 12:10:11,447 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:10:53,676 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:10:53,684 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] HTU expected: /api/auth/logout
+2026-03-24 12:10:53,693 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] HTM expected: POST
+2026-03-24 12:10:53,693 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] SAVED JTI = [c4fe79ec-cdce-4c06-8182-86c1a031d257]
+2026-03-24 12:10:53,694 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:10:53,695 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] CHECK JTI = [c4fe79ec-cdce-4c06-8182-86c1a031d257]
+2026-03-24 12:10:53,695 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] Current id from current signedJWT: c4fe79ec-cdce-4c06-8182-86c1a031d257
+2026-03-24 12:10:53,702 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] Current id exist?: false
+2026-03-24 12:10:53,706 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] Parsed OK: com.nimbusds.jwt.SignedJWT@30130364
+2026-03-24 12:10:53,706 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] HTM actual: POST
+2026-03-24 12:10:53,706 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 12:10:53,707 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 12:10:53,737 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-9] RT: gEd7gzOShHGuWSZ6ONM7RfZ0u3W8MBUe3eX-cuWNmac
+2026-03-24 12:11:04,644 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:12:12,501 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 22636 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:12:12,502 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:12:12,503 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:12:18,756 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:12:19,831 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.969 seconds (process running for 8.922)
+2026-03-24 12:12:28,310 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:12:33,905 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:12:33,939 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU expected: /api/auth/logout
+2026-03-24 12:12:33,940 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM expected: POST
+2026-03-24 12:12:33,940 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] SAVED JTI = [c4fe79ec-cdce-4c06-8182-86c1a031d257]
+2026-03-24 12:12:33,940 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:12:33,942 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] CHECK JTI = [c4fe79ec-cdce-4c06-8182-86c1a031d257]
+2026-03-24 12:12:33,942 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Current id from current signedJWT: c4fe79ec-cdce-4c06-8182-86c1a031d257
+2026-03-24 12:12:33,961 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Current id exist?: true
+2026-03-24 12:12:33,963 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] Parsed OK: com.nimbusds.jwt.SignedJWT@479fce7c
+2026-03-24 12:12:33,963 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTM actual: POST
+2026-03-24 12:12:33,964 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 12:12:33,964 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 12:12:33,978 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-2] RT: gEd7gzOShHGuWSZ6ONM7RfZ0u3W8MBUe3eX-cuWNmac
+2026-03-24 12:12:56,840 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:14:47,065 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 22636 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:14:47,065 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:14:47,065 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:15:39,372 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 4460 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:15:39,374 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:15:39,375 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:15:45,451 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:15:46,532 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.771 seconds (process running for 8.628)
+2026-03-24 12:16:32,946 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:17:05,882 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:17:05,918 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTU expected: /api/auth/logout
+2026-03-24 12:17:05,918 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTM expected: POST
+2026-03-24 12:17:05,918 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] SAVED JTI = [c4fe79ec-cdce-4c06-8182-86c1a031d257]
+2026-03-24 12:17:05,918 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:17:05,920 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] CHECK JTI = [c4fe79ec-cdce-4c06-8182-86c1a031d257]
+2026-03-24 12:17:05,920 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] Current id from current signedJWT: c4fe79ec-cdce-4c06-8182-86c1a031d257
+2026-03-24 12:17:05,940 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] Current id exist?: true
+2026-03-24 12:36:57,485 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 13604 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:36:57,486 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:36:57,487 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:37:38,422 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 3816 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:37:38,424 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:37:38,424 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:37:44,660 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:37:45,713 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.865 seconds (process running for 8.678)
+2026-03-24 12:39:53,798 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:40:02,420 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:40:02,428 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTU expected: /api/auth/logout
+2026-03-24 12:40:02,428 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTM expected: POST
+2026-03-24 12:40:02,428 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] SAVED JTI = [2e6ff1b8-5597-4d9a-b984-d3335349afea]
+2026-03-24 12:40:02,429 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:40:02,430 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] CHECK JTI = [2e6ff1b8-5597-4d9a-b984-d3335349afea]
+2026-03-24 12:40:02,430 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] Current id from current signedJWT: 2e6ff1b8-5597-4d9a-b984-d3335349afea
+2026-03-24 12:40:02,437 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] Current id exist?: false
+2026-03-24 12:40:02,439 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] Parsed OK: com.nimbusds.jwt.SignedJWT@6e2cb3b8
+2026-03-24 12:40:02,440 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTM actual: POST
+2026-03-24 12:40:02,440 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 12:40:02,441 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 12:40:02,466 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-5] RT: JukhDsR8-rQj9JwpBMWGdl5TRiXKGWO65kWpLQD8yKk
+2026-03-24 12:40:27,227 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:44:10,854 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 11400 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 12:44:10,856 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 12:44:10,857 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 12:44:18,584 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 12:44:20,145 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.072 seconds (process running for 11.136)
+2026-03-24 12:47:31,688 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:47:31,706 INFO c.c.c.w.c.UserController. [http-nio-6969-exec-6] ROLE_ADMIN
+2026-03-24 12:47:55,637 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:47:55,645 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] HTU expected: /api/auth/logout
+2026-03-24 12:47:55,645 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] HTM expected: POST
+2026-03-24 12:47:55,647 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] SAVED JTI = [2f14ffb1-5c89-4498-a46c-8ce1a9b8404d]
+2026-03-24 12:47:55,647 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 12:47:55,649 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] CHECK JTI = [2f14ffb1-5c89-4498-a46c-8ce1a9b8404d]
+2026-03-24 12:47:55,649 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] Current id from current signedJWT: 2f14ffb1-5c89-4498-a46c-8ce1a9b8404d
+2026-03-24 12:47:55,652 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] Current id exist?: false
+2026-03-24 12:47:55,656 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] Parsed OK: com.nimbusds.jwt.SignedJWT@3b5f06db
+2026-03-24 12:47:55,656 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] HTM actual: POST
+2026-03-24 12:47:55,656 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] HTU actual: http://localhost:6969/api/auth/logout
+2026-03-24 12:47:55,657 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] REpo class: class jdk.proxy4.$Proxy157
+2026-03-24 12:47:55,676 INFO c.c.c.w.s.AuthenticationService. [http-nio-6969-exec-7] RT: aV2pR3-QdoQDlDr_mXfUJC1VOtDGROXfCDK0w8gt_wA
+2026-03-24 13:43:12,573 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 13280 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 13:43:12,574 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 13:43:12,576 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 13:43:20,269 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 13:43:21,554 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.951 seconds (process running for 11.171)
+2026-03-24 13:51:40,258 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 23840 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 13:51:40,259 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 13:51:40,259 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 13:51:46,559 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 13:51:47,821 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.239 seconds (process running for 9.098)
+2026-03-24 13:54:52,026 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:54:52,036 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 13:54:54,847 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:54:54,848 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-1] admin7
+2026-03-24 13:54:55,835 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:54:55,837 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 13:54:56,525 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:54:56,527 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-4] admin7
+2026-03-24 13:54:57,256 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:54:57,258 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 13:54:57,921 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:54:57,923 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-6] admin7
+2026-03-24 13:54:59,180 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:54:59,181 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-7] admin7
+2026-03-24 13:55:33,775 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:55:33,776 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-8] admin7
+2026-03-24 13:55:36,446 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:55:36,447 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-9] admin7
+2026-03-24 13:55:38,541 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:55:38,542 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-10] admin7
+2026-03-24 13:55:39,221 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:55:39,222 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 13:55:39,808 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:55:39,810 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-1] admin7
+2026-03-24 13:55:40,352 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:55:40,354 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 13:55:40,912 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:55:40,914 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-4] admin7
+2026-03-24 13:55:41,466 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:55:41,467 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 13:55:51,934 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:55:51,936 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-6] admin7
+2026-03-24 13:57:18,980 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 2052 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 13:57:18,981 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 13:57:18,982 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 13:57:25,860 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 13:57:27,018 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.781 seconds (process running for 9.891)
+2026-03-24 13:57:30,078 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:57:30,112 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-1] admin7
+2026-03-24 13:57:31,118 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:57:31,120 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 13:57:32,372 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:57:32,374 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-4] admin7
+2026-03-24 13:57:33,353 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:57:33,356 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 13:57:34,069 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:57:34,071 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-6] admin7
+2026-03-24 13:57:34,850 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:57:34,851 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-7] admin7
+2026-03-24 13:57:35,579 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:57:35,580 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-8] admin7
+2026-03-24 13:57:36,255 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:57:36,258 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-9] admin7
+2026-03-24 13:57:36,999 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:57:37,001 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-10] admin7
+2026-03-24 13:57:37,593 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:57:37,594 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 13:57:55,059 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26352 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 13:57:55,061 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 13:57:55,064 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 13:58:01,503 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 13:58:02,654 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.326 seconds (process running for 9.386)
+2026-03-24 13:58:08,968 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:58:09,004 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 13:58:10,018 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:58:10,021 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 13:58:10,875 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:58:10,877 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-4] admin7
+2026-03-24 13:58:11,679 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:58:11,681 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 13:58:12,377 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 13:58:12,378 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-6] admin7
+2026-03-24 14:01:01,846 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26352 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:01:01,846 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:01:01,846 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:01:03,351 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:01:05,119 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26352 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:01:05,119 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:01:05,119 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:01:05,988 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:01:06,519 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 1.422 seconds (process running for 193.252)
+2026-03-24 14:01:51,367 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 28128 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:01:51,369 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:01:51,371 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:01:58,036 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:01:59,067 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.339 seconds (process running for 9.189)
+2026-03-24 14:02:20,275 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:02:20,302 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 14:02:22,862 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:02:22,863 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-4] admin7
+2026-03-24 14:02:23,720 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:02:23,722 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 14:02:24,362 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:02:24,365 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-6] admin7
+2026-03-24 14:02:24,984 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:02:24,985 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-7] admin7
+2026-03-24 14:02:25,576 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:02:25,577 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-8] admin7
+2026-03-24 14:04:49,582 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 10372 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:04:49,583 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:04:49,585 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:04:55,882 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:04:57,022 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.15 seconds (process running for 9.037)
+2026-03-24 14:05:01,161 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:05:01,194 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 14:05:02,779 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:05:02,781 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 14:05:03,604 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:05:03,606 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-4] admin7
+2026-03-24 14:05:04,473 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:05:04,475 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 14:06:00,929 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:06:00,931 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-6] admin7
+2026-03-24 14:06:01,708 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:06:01,710 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-7] admin7
+2026-03-24 14:10:50,129 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21348 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:10:50,132 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:10:50,133 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:11:00,119 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:11:01,859 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 12.658 seconds (process running for 13.766)
+2026-03-24 14:12:30,490 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:12:30,501 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-6] admin7
+2026-03-24 14:12:32,622 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:12:32,625 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-7] admin7
+2026-03-24 14:12:33,420 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:12:33,422 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-8] admin7
+2026-03-24 14:12:34,089 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:12:34,091 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-9] admin7
+2026-03-24 14:12:34,706 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:12:34,708 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-10] admin7
+2026-03-24 14:12:35,831 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:12:35,832 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-1] admin7
+2026-03-24 14:13:58,941 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26792 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:13:58,943 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:13:58,944 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:14:05,647 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:14:06,944 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.714 seconds (process running for 9.753)
+2026-03-24 14:14:10,886 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:14:10,918 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-1] admin7
+2026-03-24 14:14:12,023 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:14:12,024 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 14:14:12,781 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:14:12,782 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-4] admin7
+2026-03-24 14:16:33,381 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26792 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:16:33,382 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:16:33,382 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:16:35,682 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:16:37,658 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26792 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:16:37,658 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:16:37,658 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:16:38,707 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:16:39,392 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 1.767 seconds (process running for 162.202)
+2026-03-24 14:17:47,998 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26792 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:17:47,998 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:17:47,998 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:17:49,644 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:17:51,527 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26792 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:17:51,528 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:17:51,528 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:17:52,524 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:17:53,205 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 1.703 seconds (process running for 236.015)
+2026-03-24 14:26:24,331 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 4372 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:26:24,332 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:26:24,333 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:26:31,070 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:26:32,519 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.874 seconds (process running for 9.933)
+2026-03-24 14:26:36,620 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:26:36,674 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-1] admin7
+2026-03-24 14:27:01,363 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:27:01,367 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-4] admin7
+2026-03-24 14:28:49,588 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 23388 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:28:49,590 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:28:49,591 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:28:57,050 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:28:58,507 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.774 seconds (process running for 11.595)
+2026-03-24 14:29:37,328 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:29:37,347 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-4] admin7
+2026-03-24 14:29:39,981 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:29:59,088 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:29:59,995 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:34:52,051 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 15892 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:34:52,052 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:34:52,053 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:34:58,806 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:34:59,996 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.658 seconds (process running for 9.676)
+2026-03-24 14:35:30,327 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:37:09,223 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 12444 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:37:09,225 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:37:09,226 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:37:16,232 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:37:17,480 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.979 seconds (process running for 10.078)
+2026-03-24 14:37:22,186 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:37:22,231 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 14:40:46,516 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 27848 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:40:46,518 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:40:46,519 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:40:55,711 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:40:56,979 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 11.273 seconds (process running for 13.21)
+2026-03-24 14:41:17,662 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:41:17,729 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 14:42:20,244 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 22412 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:42:20,245 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:42:20,246 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:42:29,608 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:42:31,931 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 12.428 seconds (process running for 13.51)
+2026-03-24 14:43:21,878 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:43:21,918 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 14:46:41,923 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5768 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:46:41,926 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:46:41,928 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:46:48,988 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:46:50,262 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.152 seconds (process running for 10.537)
+2026-03-24 14:48:09,603 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:48:09,624 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 14:48:12,510 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:48:13,369 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:48:16,141 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:52:05,474 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5768 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:52:05,475 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:52:05,475 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:52:06,934 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:52:07,803 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.379 seconds (process running for 328.085)
+2026-03-24 14:52:09,356 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5768 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:52:09,357 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:52:09,357 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:52:10,199 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:52:10,790 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 1.479 seconds (process running for 331.072)
+2026-03-24 14:52:15,523 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5768 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:52:15,524 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:52:15,524 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:52:16,849 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:52:17,690 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.205 seconds (process running for 337.972)
+2026-03-24 14:52:19,220 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5768 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:52:19,220 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:52:19,220 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:52:20,324 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:52:20,964 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 1.777 seconds (process running for 341.247)
+2026-03-24 14:57:10,524 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 19520 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 14:57:10,525 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 14:57:10,528 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 14:57:17,930 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 14:57:19,214 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.491 seconds (process running for 10.695)
+2026-03-24 14:57:54,560 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:58:24,142 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 14:58:24,148 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 14:58:28,370 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:03:04,510 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 19520 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:03:04,510 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:03:04,510 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:03:06,528 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:03:07,479 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 3.054 seconds (process running for 358.975)
+2026-03-24 15:03:09,130 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 19520 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:03:09,130 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:03:09,131 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:03:10,372 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:03:11,156 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.071 seconds (process running for 362.652)
+2026-03-24 15:05:01,673 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 19520 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:05:01,673 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:05:01,673 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:05:03,100 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:05:03,935 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.312 seconds (process running for 475.436)
+2026-03-24 15:07:18,877 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26788 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:07:18,880 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:07:18,882 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:07:26,846 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:07:28,310 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.231 seconds (process running for 11.34)
+2026-03-24 15:08:18,100 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:08:18,118 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 15:08:19,319 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:08:20,366 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:08:21,320 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:08:24,113 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:08:24,820 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:08:25,458 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:08:26,124 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:08:26,823 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:08:27,394 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:08:27,974 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:08:47,120 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:08:48,090 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:09:22,540 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21312 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:09:22,541 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:09:22,541 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:09:30,302 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:09:32,058 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.255 seconds (process running for 11.291)
+2026-03-24 15:10:53,207 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:10:54,681 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:10:55,411 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:10:56,032 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:10:56,692 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:10:57,066 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:10:57,766 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:10:58,379 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:11:09,131 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:11:10,168 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:11:10,889 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:12:13,400 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 23440 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:12:13,402 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:12:13,403 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:12:21,642 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:12:22,859 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.191 seconds (process running for 11.517)
+2026-03-24 15:12:27,969 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:12:28,025 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-1] admin7
+2026-03-24 15:12:29,621 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:12:30,640 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:12:31,488 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:12:32,172 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:12:34,160 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:12:44,279 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:16:50,968 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 28144 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:16:50,970 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:16:50,971 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:16:58,246 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:16:59,555 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.333 seconds (process running for 10.465)
+2026-03-24 15:17:35,852 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:17:35,891 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 15:17:39,977 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:17:41,163 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:17:46,853 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:18:00,142 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:20:03,150 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 23780 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:20:03,152 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:20:03,153 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:20:10,091 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:20:11,656 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.228 seconds (process running for 10.342)
+2026-03-24 15:20:14,698 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:20:16,385 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:20:17,443 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:20:23,664 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:25:17,402 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 23780 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:25:17,402 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:25:17,403 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:25:20,039 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:25:21,989 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 23780 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:25:21,989 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:25:21,989 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:25:22,896 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:25:23,564 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 1.599 seconds (process running for 322.253)
+2026-03-24 15:25:34,685 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 23780 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:25:34,686 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:25:34,686 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:25:36,308 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:25:46,418 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 23780 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:25:46,418 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:25:46,418 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:25:48,405 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:25:49,172 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.802 seconds (process running for 347.861)
+2026-03-24 15:26:07,192 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 10028 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:26:07,196 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:26:07,197 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:26:15,084 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:26:16,344 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.009 seconds (process running for 11.734)
+2026-03-24 15:27:49,654 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:27:49,674 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-6] admin7
+2026-03-24 15:27:52,451 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:27:53,792 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:28:45,883 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 10228 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:28:45,885 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:28:45,886 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:28:52,402 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:28:53,672 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.594 seconds (process running for 9.771)
+2026-03-24 15:29:03,540 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:29:03,591 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 15:29:04,977 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:29:05,763 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:29:06,684 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:29:07,385 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:29:09,030 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:29:09,665 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:29:28,516 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:30:23,631 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 10160 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:30:23,632 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:30:23,634 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:30:30,334 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:30:31,576 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.661 seconds (process running for 9.664)
+2026-03-24 15:30:39,276 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:30:39,321 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 15:30:40,350 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:30:41,379 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:30:42,070 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:30:43,000 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:40:01,076 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 28564 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:40:01,077 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:40:01,079 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:40:07,318 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:40:07,594 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 15:40:08,591 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.198 seconds (process running for 9.237)
+2026-03-24 15:40:57,165 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:40:57,203 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 15:40:59,324 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:41:00,278 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:41:00,946 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:41:01,579 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:41:02,110 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:45:09,323 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 27756 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:45:09,324 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:45:09,326 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:45:16,435 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:45:16,691 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 15:45:17,664 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.506 seconds (process running for 10.709)
+2026-03-24 15:46:22,660 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:46:22,679 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 15:46:24,793 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:46:25,630 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:46:26,848 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:46:27,528 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:46:28,333 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:46:29,037 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:47:14,826 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21092 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:47:14,827 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:47:14,830 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:47:24,144 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:47:24,418 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 15:47:25,539 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 11.664 seconds (process running for 12.704)
+2026-03-24 15:48:01,945 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 14576 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:48:01,946 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:48:01,947 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:48:08,514 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:48:08,785 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 15:48:09,809 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.617 seconds (process running for 9.866)
+2026-03-24 15:48:13,494 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:48:13,536 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 15:48:16,043 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:49:00,807 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 14576 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:49:00,807 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:49:00,808 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:49:02,102 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:49:02,354 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 15:49:02,919 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.189 seconds (process running for 62.975)
+2026-03-24 15:49:12,586 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 15608 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:49:12,587 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:49:12,588 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:49:20,272 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:49:20,562 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 15:49:21,635 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.835 seconds (process running for 10.985)
+2026-03-24 15:49:33,431 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:49:33,474 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-1] admin7
+2026-03-24 15:49:34,544 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:49:35,538 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:49:36,342 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:51:33,802 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 11528 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:51:33,804 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:51:33,805 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:51:41,816 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:51:42,389 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 15:51:44,084 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 11.033 seconds (process running for 12.137)
+2026-03-24 15:52:00,067 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:52:00,115 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 15:52:02,701 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:53:27,867 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:53:27,872 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-6] admin7
+2026-03-24 15:53:28,639 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 15:59:11,060 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 11528 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:59:11,060 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:59:11,062 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:59:13,360 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:59:15,297 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 11528 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 15:59:15,298 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 15:59:15,299 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 15:59:16,551 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 15:59:16,803 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 15:59:17,465 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.306 seconds (process running for 465.52)
+2026-03-24 16:02:07,541 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 2648 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 16:02:07,543 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 16:02:07,544 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 16:02:15,644 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 16:02:15,924 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 16:02:16,947 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.152 seconds (process running for 11.235)
+2026-03-24 16:03:21,360 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:03:21,382 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 16:03:22,494 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:03:23,354 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:03:24,670 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:08:54,599 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21160 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 16:08:54,600 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 16:08:54,601 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 16:09:01,630 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 16:09:01,927 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 16:09:02,951 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.057 seconds (process running for 10.121)
+2026-03-24 16:09:31,098 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:09:31,135 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 16:09:32,475 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:09:33,628 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:10:04,294 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 10668 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 16:10:04,295 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 16:10:04,296 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 16:10:11,148 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 16:10:11,523 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 16:10:12,604 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.03 seconds (process running for 10.175)
+2026-03-24 16:10:18,697 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:10:18,738 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 16:10:20,947 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:14:01,040 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 10668 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 16:14:01,040 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 16:14:01,041 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 16:14:03,052 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 16:14:04,906 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 10668 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 16:14:04,907 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 16:14:04,907 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 16:14:06,743 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 16:14:07,078 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 16:14:07,718 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.838 seconds (process running for 245.298)
+2026-03-24 16:17:52,726 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 18000 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 16:17:53,115 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 16:17:53,119 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 16:18:00,585 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 16:18:00,932 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 16:18:02,054 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.654 seconds (process running for 11.949)
+2026-03-24 16:18:11,745 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:19:34,790 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:19:37,415 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:20:31,334 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 27772 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 16:20:31,336 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 16:20:31,337 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 16:20:37,458 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 16:20:37,723 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 16:20:38,603 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.915 seconds (process running for 8.789)
+2026-03-24 16:20:49,935 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:20:51,700 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:20:53,234 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:23:56,420 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 20820 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 16:23:56,420 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 16:23:56,420 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 16:24:06,853 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 16:24:07,554 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 16:24:09,604 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 13.903 seconds (process running for 15.222)
+2026-03-24 16:43:04,921 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 28244 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 16:43:04,922 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 16:43:04,925 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 16:43:13,141 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 16:43:13,476 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 16:43:14,583 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.388 seconds (process running for 11.641)
+2026-03-24 16:44:38,601 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:44:38,621 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 16:44:40,543 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:44:41,382 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:44:42,083 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:44:42,749 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 16:59:28,474 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 12800 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 16:59:28,475 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 16:59:28,476 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 16:59:35,503 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 16:59:35,929 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 16:59:36,963 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.111 seconds (process running for 10.071)
+2026-03-24 17:00:46,895 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 17:00:46,911 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 17:00:48,513 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 17:02:44,535 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 12896 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 17:02:44,537 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 17:02:44,538 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 17:02:51,076 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 17:02:51,342 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 17:02:52,265 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.418 seconds (process running for 9.267)
+2026-03-24 17:02:54,937 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 17:02:54,974 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 17:02:59,988 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 17:03:01,206 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 17:03:02,018 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 17:03:07,049 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 17:03:07,668 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 17:03:08,432 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 17:03:09,102 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 17:03:24,030 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 17:07:02,141 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 12896 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 17:07:02,142 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 17:07:02,142 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 17:07:03,712 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 18:17:33,200 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 23844 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 18:17:33,201 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 18:17:33,202 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 18:17:40,350 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 18:17:40,611 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 18:17:41,591 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.132 seconds (process running for 10.473)
+2026-03-24 18:18:05,003 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 10312 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 18:18:05,005 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 18:18:05,006 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 18:18:10,936 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 18:18:11,202 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 18:18:12,075 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.719 seconds (process running for 8.624)
+2026-03-24 18:20:01,350 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 18:20:01,379 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 18:20:07,818 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 18:20:11,143 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 18:20:11,792 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 18:20:12,407 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 18:20:13,020 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 18:37:47,314 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 25328 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 18:37:47,315 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 18:37:47,317 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 18:37:54,758 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 18:37:55,047 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 18:37:56,726 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.306 seconds (process running for 11.52)
+2026-03-24 18:39:18,397 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 18:39:18,417 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-4] admin7
+2026-03-24 18:39:19,770 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 18:39:35,328 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 18:45:19,540 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 23052 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 18:45:19,542 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 18:45:19,543 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 18:45:26,916 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 18:45:27,204 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 18:45:28,141 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.34 seconds (process running for 10.6)
+2026-03-24 18:45:51,337 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 18:55:28,375 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 7272 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 18:55:28,377 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 18:55:28,379 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 18:55:34,968 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 18:55:35,244 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 18:55:36,188 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.52 seconds (process running for 9.558)
+2026-03-24 18:56:39,769 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 18:58:19,847 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5844 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 18:58:19,848 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 18:58:19,849 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 18:58:27,004 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 18:58:27,280 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 18:58:28,365 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.286 seconds (process running for 10.671)
+2026-03-24 18:58:35,392 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 18:58:35,436 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 18:58:36,549 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:02:12,953 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5844 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 19:02:12,954 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 19:02:12,954 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 19:02:14,313 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 19:02:16,034 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5844 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 19:02:16,034 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 19:02:16,034 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 19:02:17,294 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 19:02:17,622 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 19:02:18,218 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.206 seconds (process running for 240.523)
+2026-03-24 19:02:32,344 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5844 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 19:02:32,344 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 19:02:32,345 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 19:02:33,918 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 19:02:42,475 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 27500 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 19:02:42,477 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 19:02:42,478 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 19:02:49,225 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 19:02:49,516 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 19:02:50,519 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.729 seconds (process running for 9.852)
+2026-03-24 19:03:09,990 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:03:28,874 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:03:28,877 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 19:03:30,242 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:08:37,376 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5848 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 19:08:37,376 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 19:08:37,381 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 19:08:44,508 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 19:08:44,804 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 19:08:45,803 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.2 seconds (process running for 10.347)
+2026-03-24 19:48:05,715 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21788 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 19:48:05,717 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 19:48:05,717 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 19:48:12,022 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 19:48:12,273 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 19:48:13,129 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.008 seconds (process running for 8.822)
+2026-03-24 19:49:13,612 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:49:13,627 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 19:49:14,793 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:50:20,980 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21788 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 19:50:20,980 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 19:50:20,980 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 19:50:22,527 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 19:50:44,296 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5680 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 19:50:44,298 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 19:50:44,298 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 19:50:50,486 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 19:50:50,759 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 19:50:51,658 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.951 seconds (process running for 8.826)
+2026-03-24 19:51:01,430 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:51:01,465 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-1] admin7
+2026-03-24 19:51:03,031 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:51:03,034 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-4] admin7
+2026-03-24 19:54:04,103 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 13484 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 19:54:04,104 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 19:54:04,106 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 19:54:11,137 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 19:54:11,462 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 19:54:12,437 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.096 seconds (process running for 10.157)
+2026-03-24 19:54:39,349 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:54:39,397 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 19:55:23,699 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 14920 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 19:55:23,700 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 19:55:23,703 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 19:55:30,776 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 19:55:31,309 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 19:55:32,841 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.885 seconds (process running for 10.897)
+2026-03-24 19:55:34,072 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:55:34,116 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-1] admin7
+2026-03-24 19:55:36,181 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:55:38,950 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:55:39,667 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:55:40,372 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:56:29,406 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 24328 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 19:56:29,407 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 19:56:29,408 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 19:56:36,016 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 19:56:36,307 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 19:56:37,439 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.765 seconds (process running for 9.888)
+2026-03-24 19:56:43,131 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:56:43,179 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-1] admin7
+2026-03-24 19:56:44,846 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:56:45,921 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:56:46,701 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:56:47,412 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:56:48,065 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:56:48,672 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 19:57:03,704 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:02:32,415 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 13548 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:02:32,416 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:02:32,416 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:02:39,478 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:02:39,836 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:02:40,861 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.022 seconds (process running for 9.853)
+2026-03-24 20:17:48,859 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:17:48,881 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-9] admin7
+2026-03-24 20:18:19,263 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:21:27,763 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 17512 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:21:27,764 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:21:27,765 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:21:34,884 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:21:35,203 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:21:36,211 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.152 seconds (process running for 10.173)
+2026-03-24 20:21:41,211 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:21:41,257 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-1] admin7
+2026-03-24 20:22:36,064 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:22:38,052 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:22:38,902 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:24:04,424 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 3504 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:24:04,425 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:24:04,426 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:24:10,489 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:24:10,733 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:24:11,575 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.795 seconds (process running for 8.726)
+2026-03-24 20:24:32,022 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:24:32,058 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 20:24:42,769 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:24:44,590 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:25:54,914 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 28276 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:25:54,916 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:25:54,916 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:26:01,242 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:26:01,534 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:26:02,483 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.222 seconds (process running for 9.13)
+2026-03-24 20:28:16,129 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21172 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:28:16,130 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:28:16,131 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:28:23,372 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:28:23,642 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:28:24,668 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.299 seconds (process running for 10.372)
+2026-03-24 20:29:38,156 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 18088 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:29:38,158 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:29:38,159 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:29:44,501 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:29:44,784 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:29:45,831 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.637 seconds (process running for 9.979)
+2026-03-24 20:30:19,621 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:30:19,658 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 20:30:21,612 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:30:22,934 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:31:56,935 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:31:56,939 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-8] admin7
+2026-03-24 20:31:57,831 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:34:11,489 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 12328 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:34:11,491 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:34:11,492 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:34:17,770 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:34:18,114 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:34:19,124 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.425 seconds (process running for 9.47)
+2026-03-24 20:35:03,623 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:35:03,644 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-5] admin7
+2026-03-24 20:35:05,983 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:35:07,001 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:36:06,740 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 28232 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:36:06,741 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:36:06,742 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:36:17,233 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:36:17,686 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:36:19,418 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 13.406 seconds (process running for 14.425)
+2026-03-24 20:36:50,822 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:36:50,869 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 20:36:52,811 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:36:53,729 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:37:42,985 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:40:25,359 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 5216 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:40:25,361 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:40:25,362 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:40:31,774 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:40:32,052 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:40:33,291 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.426 seconds (process running for 18.756)
+2026-03-24 20:40:37,180 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:40:37,228 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 20:40:38,850 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:40:39,657 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:40:41,619 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:40:42,259 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:44:13,571 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 25892 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:44:13,572 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:44:13,574 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:44:20,914 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:44:21,381 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:44:22,662 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.786 seconds (process running for 10.791)
+2026-03-24 20:44:39,080 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:44:39,119 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 20:44:41,201 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:44:42,128 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:47:18,326 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 24068 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:47:18,329 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:47:18,330 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:47:25,720 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:47:26,099 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:47:27,179 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.666 seconds (process running for 10.771)
+2026-03-24 20:47:35,573 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:47:35,617 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 20:47:37,663 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:47:38,497 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:49:07,793 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 20264 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:49:07,795 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:49:07,795 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:49:14,351 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:49:14,636 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:49:15,592 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.506 seconds (process running for 9.514)
+2026-03-24 20:49:18,606 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:49:18,648 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 20:49:19,698 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:49:20,523 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:49:29,574 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26200 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:49:29,575 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:49:29,576 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:49:37,305 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:49:37,697 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:49:39,075 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.287 seconds (process running for 11.611)
+2026-03-24 20:50:15,783 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26200 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:50:15,783 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:50:15,783 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:50:17,776 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:50:19,696 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 26200 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:50:19,696 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:50:19,696 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:50:20,801 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:50:21,020 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:50:21,455 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 1.789 seconds (process running for 53.991)
+2026-03-24 20:50:27,075 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 7068 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:50:27,077 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:50:27,078 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:50:33,350 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:50:33,642 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:50:34,560 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.16 seconds (process running for 9.517)
+2026-03-24 20:51:37,247 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:51:37,266 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-6] admin7
+2026-03-24 20:51:39,442 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:51:40,207 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:52:20,367 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:52:21,149 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:52:59,456 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 27216 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:52:59,458 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:52:59,459 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:53:06,715 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:53:07,004 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:53:07,958 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.228 seconds (process running for 10.834)
+2026-03-24 20:53:12,534 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:53:12,589 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 20:53:13,832 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:53:14,654 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:53:15,513 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:53:16,238 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-6] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:53:16,916 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-7] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:53:17,689 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-8] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:53:18,380 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-9] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:53:19,468 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-10] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:53:20,137 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-1] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:55:02,472 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 27216 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:55:02,473 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:55:02,474 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:55:04,297 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:55:06,121 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 27216 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:55:06,121 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:55:06,121 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:55:07,176 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:55:07,400 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:55:07,974 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 1.888 seconds (process running for 130.85)
+2026-03-24 20:55:53,333 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 24464 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:55:53,334 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:55:53,335 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:56:01,139 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:56:01,453 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:56:02,426 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.811 seconds (process running for 10.883)
+2026-03-24 20:56:38,129 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:56:38,168 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-3] admin7
+2026-03-24 20:56:39,572 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:56:40,689 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:58:30,827 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 10540 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:58:30,829 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:58:30,830 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:58:37,860 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:58:38,156 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:58:39,247 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.27 seconds (process running for 10.415)
+2026-03-24 20:58:43,887 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 15196 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-24 20:58:43,889 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-24 20:58:43,890 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-24 20:58:50,221 DEBUG o.s.w.f.GenericFilterBean. [restartedMain] Filter 'DPoPFilter' configured for use
+2026-03-24 20:58:50,535 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-24 20:58:51,674 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.609 seconds (process running for 9.628)
+2026-03-24 20:58:57,019 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-2] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:58:57,079 INFO c.c.c.w.s.UserService. [http-nio-6969-exec-2] admin7
+2026-03-24 20:58:58,628 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-3] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:58:59,594 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-4] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc
+2026-03-24 20:59:00,451 INFO c.c.c.w.s.DPoPService. [http-nio-6969-exec-5] Z4oz9xTEX3O0OXqV7N-JjONbc2icIHdUza18eWI3sNc

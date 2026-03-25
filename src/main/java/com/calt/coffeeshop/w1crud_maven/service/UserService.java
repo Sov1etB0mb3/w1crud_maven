@@ -12,10 +12,13 @@ import com.calt.coffeeshop.w1crud_maven.mapper.UserMapper;
 import com.calt.coffeeshop.w1crud_maven.repository.RoleRepository;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRepository;
 import com.calt.coffeeshop.w1crud_maven.repository.UserRoleRepository;
+import jakarta.annotation.PostConstruct;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -51,6 +54,14 @@ public class UserService {
     @Autowired
     private RoleRepository roleRepository;
     @Autowired
+    CacheManager cacheManager;
+
+    @PostConstruct
+    public void checkCacheManager() {
+        log.info("Cache manager in use: {}", cacheManager.getClass());
+    }
+    @Autowired
+
     private UserMapper userMapper;
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")
     @CacheEvict(value = "users",allEntries = true)
@@ -80,12 +91,13 @@ public class UserService {
                 .orElseThrow(()->new RuntimeException("User not found!"));
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('READ_USER')")
-    @Cacheable(value = "users",key = "#userName")
+    @Cacheable(value = "users",key = "#userName",cacheManager = "redisCacheManager")
     public UserResponse getUserByUsername(String userName){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         UserService.log.info(auth.getName());
          User user=userRepository.findUserByUsername(userName)
                 .orElseThrow(()->new RuntimeException("User not found!"));
+
         return getUserWithRole(user);
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")
@@ -143,7 +155,7 @@ public class UserService {
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('UPDATE_USER')")
     @Transactional
-    @CacheEvict(value = "users",key = "#username")
+    @CachePut(value = "users",key = "#username")
     public UserResponse updateUser(String username, UserRequest request){
         User user=userRepository.findUserByUsername(username).get();
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
@@ -171,7 +183,6 @@ public class UserService {
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('CREATE_USER')")
     @Transactional
-    @CacheEvict(value = "users",key ="#userName" )
     public void addRoleToUser(String roleName, String userName){
         Role role = roleRepository.findRoleByName(roleName).get();
         if(role == null){
@@ -186,7 +197,6 @@ public class UserService {
 
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('DELETE_USER')")
-    @CacheEvict(value = "users",allEntries = true)
     public void deleteRoleFromUser(String userName, String roleName){
         User user = userRepository.findUserByUsername(userName)
                 .orElseThrow(()->new AppException(ErrorCode.NOT_FOUND));
@@ -198,8 +208,14 @@ public class UserService {
         userRepository.save(user);
     }
 
+
+    @Cacheable(value = "users", key = "#userName", cacheManager = "redisCacheManager")
+    public String testCache(String userName) {
+        System.out.println("Method executed for " + userName);
+        return userName;
+    }
     public UserResponse getUserWithRole(User user){
-        log("DATA: " + user.toString());
+//        log("DATA: " + user.toString());
         UserResponse userResponse = userMapper.toUserResponse(user);
         Set<String> roles =
                 user.getRoles()
