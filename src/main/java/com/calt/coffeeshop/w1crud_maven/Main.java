@@ -4,9 +4,12 @@ import org.mapstruct.Mapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
+@EnableJpaAuditing
+
 // This include all notations like @Component, @Service, @Reposistory
 // Automatically Inject Dependencies to corresponded classes
 //@EnableAutoConfiguration: Automatically new, config: JPA/hibernate, tomcat, MVC, etcerete.

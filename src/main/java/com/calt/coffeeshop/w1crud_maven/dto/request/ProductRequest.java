@@ -3,17 +3,14 @@ package com.calt.coffeeshop.w1crud_maven.dto.request;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.Instant;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter @Setter
-
+@Builder
 public class ProductRequest {
     @NotNull
     private String id;

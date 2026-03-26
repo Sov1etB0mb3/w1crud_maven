@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.Instant;
 
@@ -12,7 +15,10 @@ import java.time.Instant;
 @AllArgsConstructor
 @ToString
 @Entity
+@Builder
 @Getter @Setter
+@EntityListeners(AuditingEntityListener.class)
+
 @Table(name="tbl_product")
 public class Product {
     @Id
@@ -33,8 +39,10 @@ public class Product {
     @Column(name="price")
     private double price;
     @Column(name="created_at",updatable = false)
+    @CreatedDate
     private Instant created_at;
     @Column(name="updated_at")
+    @LastModifiedDate
     private Instant updated_at;
     @ManyToOne
     @JoinColumn(name = "categoryid")

@@ -1,7 +1,10 @@
 package com.calt.coffeeshop.w1crud_maven.controller;
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.CategoryRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.response.ApiResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.response.CategoryResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.Category;
+import com.calt.coffeeshop.w1crud_maven.enums.StatusCode;
 import com.calt.coffeeshop.w1crud_maven.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,25 +30,27 @@ public class CategoryController {
 
         return ResponseEntity.ok(categoryList);
     }
-    @GetMapping("/{id}")
+    @GetMapping("/{cateName}")
     //return String becase the whole html site are Strings!!!
-    public ResponseEntity<Category> getProduct(@PathVariable("id") Long id){
+    public ApiResponse<CategoryResponse> getCategory(@PathVariable("cateName") String cateName){
 
-        Category rProduct= categoryService.getCategoryByID(id);
+        CategoryResponse categoryResponse= categoryService.getCategoryRByName(cateName);
+        ApiResponse apiResponse= ApiResponse.<CategoryResponse>builder()
+                .result(categoryResponse)
+                .message(StatusCode.FOUND.getMessage())
+                .code(StatusCode.FOUND.getCode())
+                .build();
 
-        if(isNull( categoryService.getCategoryByID(id))){
-            return ResponseEntity.noContent().build();
-        }
-
-        return ResponseEntity.ok(rProduct);
+        return apiResponse;
     }
 
     @PutMapping("/{id}")
     //return String becase the whole html site are Strings!!!
-    public String editProduct(@PathVariable("id") Long id){
+    public String editCategory(@PathVariable("id") Long id,
+                               @RequestBody CategoryRequest categoryRequest){
 
-
-        return "product-form";
+        categoryService.updateCategory(categoryRequest);
+        return "OK";
     }
 
     @PostMapping("")

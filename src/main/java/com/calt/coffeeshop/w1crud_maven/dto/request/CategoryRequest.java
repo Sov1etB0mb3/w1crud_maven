@@ -14,12 +14,8 @@ import java.util.List;
 public class CategoryRequest {
 
     private Long id;
-
     private String name;
     private String description;
-    private Instant created_at;
-    private Instant updated_at;
-    List<Product> listProduct = new ArrayList<>();
 
     public CategoryRequest(String name, String description) {
         this.name = name;

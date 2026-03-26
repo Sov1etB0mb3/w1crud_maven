@@ -1,6 +1,7 @@
 package com.calt.coffeeshop.w1crud_maven.service;
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.ProductRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.response.CategoryResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.Category;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;

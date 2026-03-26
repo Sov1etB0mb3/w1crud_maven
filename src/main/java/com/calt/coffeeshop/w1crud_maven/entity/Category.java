@@ -6,6 +6,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -15,6 +18,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@EntityListeners(AuditingEntityListener.class)
+
 @Table(name="tbl_category")
 
 public class Category {
@@ -29,8 +34,11 @@ public class Category {
     @Column(name = "description",columnDefinition = "VARCHAR(100)")
     private String description;
     @Column(name="created_at",updatable = false)
+    @CreatedDate
     private Instant created_at;
     @Column(name="updated_at")
+    @LastModifiedDate
+
     private Instant updated_at;
     @JsonIgnore
     @OneToMany(mappedBy = "category",cascade = CascadeType.ALL,fetch = FetchType.LAZY)

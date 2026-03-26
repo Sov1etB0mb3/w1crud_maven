@@ -19,7 +19,7 @@ public class CategoryResponse {
     private String description;
     private Instant created_at;
     private Instant updated_at;
-    List<Product> listProduct = new ArrayList<>();
+    List<String> listProduct = new ArrayList<>();
 
     public CategoryResponse(String name, String description) {
         this.name = name;
