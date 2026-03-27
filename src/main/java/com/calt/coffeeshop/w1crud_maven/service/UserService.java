@@ -163,10 +163,12 @@ public class UserService {
         userMapper.updateUser(request,user);
 
         user.setUpdated_at(Instant.now());
-        String role= request.getRoles().stream().collect(Collectors.joining(","));
-
+//        String role= request.getRoles().stream().collect(Collectors.joining(","));
+        for(String role : request.getRoles()){
+            addRoleToUser(role,username);
+        }
         UserResponse result =userMapper.toUserResponse(userRepository.save(user));
-        addRoleToUser(role,username);
+
         return result;
 
     }
