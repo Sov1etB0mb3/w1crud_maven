@@ -11,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter @Setter
 @ToString
+@Builder
 public class CategoryRequest {
 
     private Long id;

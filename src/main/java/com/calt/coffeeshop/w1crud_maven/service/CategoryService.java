@@ -29,9 +29,9 @@ public class CategoryService {
     private ProductMapper productMapper;
 
     //no need to add autowire because there is only way to inject is through constructor with only one parameter
-    public CategoryService(CategoryRepository categoryRepository){
-        this.categoryRepository=categoryRepository;
-    }
+//    public CategoryService(CategoryRepository categoryRepository){
+//        this.categoryRepository=categoryRepository;
+//    }
 
     public void saveCategory(Category category){
         categoryRepository.save(category);
