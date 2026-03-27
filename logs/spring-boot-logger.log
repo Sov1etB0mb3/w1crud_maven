@@ -104,3 +104,75 @@
 2026-03-27 09:35:14,490 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
 2026-03-27 09:35:25,762 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
 2026-03-27 09:35:28,322 INFO o.s.b.StartupInfoLogger. [main] Started CategoryServiceTest in 14.395 seconds (process running for 16.364)
+2026-03-27 09:52:45,545 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 6104 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 09:52:45,546 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 09:52:45,547 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 09:52:54,883 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 09:52:56,990 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 11.969 seconds (process running for 13.725)
+2026-03-27 09:58:33,432 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 5988 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 09:58:33,434 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 09:58:33,434 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 09:58:42,564 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 09:58:44,636 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 11.728 seconds (process running for 13.683)
+2026-03-27 10:02:06,318 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 6560 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 10:02:06,320 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 10:02:06,321 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 10:02:15,220 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 10:02:17,336 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 11.604 seconds (process running for 13.556)
+2026-03-27 10:03:37,376 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 15660 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 10:03:37,377 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 10:03:37,378 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 10:03:46,487 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 10:03:48,583 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 11.749 seconds (process running for 13.585)
+2026-03-27 10:03:57,244 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 9564 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 10:03:57,247 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 10:03:57,248 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 10:04:05,981 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 10:04:08,170 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 11.435 seconds (process running for 13.104)
+2026-03-27 10:04:08,952 INFO c.c.c.w.s.UserService. [main] user
+2026-03-27 10:04:09,071 INFO c.c.c.w.s.UserService. [main] user
+2026-03-27 10:19:42,467 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 28588 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 10:19:42,469 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 10:19:42,470 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 10:19:52,169 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 10:19:54,409 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 12.448 seconds (process running for 14.165)
+2026-03-27 10:20:43,509 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 16360 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 10:20:43,511 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 10:20:43,511 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 10:20:52,938 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 10:20:55,125 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 12.154 seconds (process running for 14.126)
+2026-03-27 10:23:55,865 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 1868 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 10:23:55,867 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 10:23:55,869 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 10:24:06,283 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 10:24:08,877 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 13.797 seconds (process running for 15.618)
+2026-03-27 10:26:49,359 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 13372 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 10:26:49,362 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 10:26:49,362 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 10:26:58,844 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 10:27:00,967 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 12.193 seconds (process running for 14.275)
+2026-03-27 10:34:27,788 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 28556 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 10:34:27,790 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 10:34:27,791 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 10:34:37,090 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 10:34:39,100 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 11.868 seconds (process running for 13.764)
+2026-03-27 10:35:31,030 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 27520 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 10:35:31,032 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 10:35:31,034 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 10:35:41,517 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 10:35:44,282 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 13.807 seconds (process running for 15.544)
+2026-03-27 10:39:28,793 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 9808 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 10:39:28,794 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 10:39:28,795 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 10:39:38,076 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 10:39:39,824 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 11.616 seconds (process running for 13.459)
+2026-03-27 10:45:11,525 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 29388 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 10:45:11,527 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 10:45:11,528 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 10:45:20,659 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 10:45:22,815 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 11.817 seconds (process running for 13.596)
+2026-03-27 10:50:26,593 INFO o.s.b.StartupInfoLogger. [main] Starting UserServiceTest using Java 21 with PID 19688 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 10:50:26,596 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 10:50:26,597 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 10:50:35,452 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 10:50:37,596 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 11.536 seconds (process running for 13.364)
