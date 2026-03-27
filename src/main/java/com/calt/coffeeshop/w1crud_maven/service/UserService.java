@@ -94,7 +94,7 @@ public class UserService {
     @Cacheable(value = "users",key = "#userName",cacheManager = "redisCacheManager")
     public UserResponse getUserByUsername(String userName){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        UserService.log.info(auth.getName());
+//        UserService.log.info(auth.getName());
          User user=userRepository.findUserByUsername(userName)
                 .orElseThrow(()->new RuntimeException("User not found!"));
 

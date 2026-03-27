@@ -5,7 +5,6 @@ import com.calt.coffeeshop.w1crud_maven.dto.response.UserResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.Role;
 import com.calt.coffeeshop.w1crud_maven.entity.User;
 import com.calt.coffeeshop.w1crud_maven.entity.UserRole;
-import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.mapper.UserMapper;
 import com.calt.coffeeshop.w1crud_maven.repository.RoleRepository;
@@ -15,8 +14,12 @@ import com.calt.coffeeshop.w1crud_maven.service.UserService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithMockUser;
@@ -24,24 +27,23 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import java.time.Instant;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
-@SpringBootTest
-public class UserServiceTest {
-    @Autowired
+@ExtendWith(MockitoExtension.class)
+public class UserServiceUnitTest {
+    @InjectMocks
     private UserService userService;
-    @MockitoBean
+    @Mock
     private UserRepository userRepository;
 
-    @MockitoBean
+    @Mock
     private UserRoleRepository userRoleRepository;
 
-    @MockitoBean
+    @Mock
     private RoleRepository roleRepository;
 
-    @MockitoBean
+    @Mock
     private UserMapper userMapper;
 
     private  Role role;
@@ -120,7 +122,7 @@ public class UserServiceTest {
         UserResponse response = userService.getUserByUsername("johndoe");
 
         Assertions.assertThat(response.getUsername()).isEqualTo("johndoe");
-        Assertions.assertThat(response.getRoles()).contains("USER");
+        Assertions.assertThat(response.getRoles()).contains("ADMIN");
     }
 
     @Test

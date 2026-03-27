@@ -12,7 +12,11 @@ import com.calt.coffeeshop.w1crud_maven.mapper.ProductMapper;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -27,18 +31,18 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 
-@SpringBootTest
-public class CategoryServiceTest {
-    @Autowired
+@ExtendWith(MockitoExtension.class)
+public class CategoryServiceUnitTest {
+    @InjectMocks
     private CategoryService categoryService;
 
-    @MockitoBean
+    @Mock
     private CategoryRepository categoryRepository;
 
-    @MockitoBean
+    @Mock
     private CategoryMapper categoryMapper;
 
-    @MockitoBean
+    @Mock
     private ProductMapper productMapper;
 
     private Category validCategory;

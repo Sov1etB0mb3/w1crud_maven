@@ -16,12 +16,13 @@ import com.calt.coffeeshop.w1crud_maven.repository.RoleRepository;
 import com.calt.coffeeshop.w1crud_maven.service.RoleService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.*;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.web.server.ResponseStatusException;
@@ -29,20 +30,21 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-@SpringBootTest
-class RoleServiceTest {
-    @Autowired
+@ExtendWith(MockitoExtension.class)
+
+class RoleServiceUnitTest {
+    @InjectMocks
     private RoleService roleService;
-    @MockitoBean
+    @Mock
     private RoleRepository roleRepository;
 
-    @MockitoBean
+    @Mock
     private RolePermissionRepository rolePermissionRepository;
 
-    @MockitoBean
+    @Mock
     private PermissionRepository permissionRepository;
 
-    @MockitoBean
+    @Mock
     private RoleMapper roleMapper;
 
 
@@ -173,7 +175,7 @@ class RoleServiceTest {
 
     void testDeleteRole_ByName_Conflict() {
         doThrow(DataIntegrityViolationException.class).when(roleRepository).deleteByName("ADMIN");
-        when(roleRepository.findRoleByName("ADMIN")).thenReturn(Optional.of(new Role()));
+//        when(roleRepository.findRoleByName("ADMIN")).thenReturn(Optional.of(new Role()));
 
         ResponseStatusException ex = assertThrows(ResponseStatusException.class,
                 () -> roleService.deleteRole("ADMIN"));
@@ -256,7 +258,7 @@ class RoleServiceTest {
     @WithMockUser(roles = {"ADMIN"})
 
     void testDeletePermissionFromRole_RoleOrPermissionNotFound() {
-        when(roleRepository.findRoleByName("ADMIN")).thenReturn(Optional.empty());
+//        when(roleRepository.findRoleByName("ADMIN")).thenReturn(Optional.empty());
         when(permissionRepository.findPermissionByName("READ")).thenReturn(Optional.empty());
 
         assertThrows(AppException.class, () -> roleService.deletePermissionFromRole("READ", "ADMIN"));
