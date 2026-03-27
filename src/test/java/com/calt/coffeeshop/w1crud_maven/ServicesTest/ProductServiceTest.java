@@ -174,7 +174,7 @@ public class ProductServiceTest {
         Page<Product> page = new PageImpl<>(List.of(validProduct));
         Mockito.when(productRepository.findAll(PageRequest.of(0,5))).thenReturn(page);
 
-        Page<Product> result = productService.getAllProducts(PageRequest.of(0,5));
+        Page<ProductResponse> result = productService.getAllProducts(PageRequest.of(0,5));
 
         Assertions.assertThat(result.getContent()).hasSize(1);
     }

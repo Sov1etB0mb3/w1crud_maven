@@ -2,17 +2,20 @@ package com.calt.coffeeshop.w1crud_maven.service;
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.ProductRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.CategoryResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.response.ProductResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.Category;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
 import com.calt.coffeeshop.w1crud_maven.enums.ErrorCode;
 import com.calt.coffeeshop.w1crud_maven.mapper.ProductMapper;
 import com.calt.coffeeshop.w1crud_maven.repository.ProductRepository;
+import com.calt.coffeeshop.w1crud_maven.specs.ProductSpecs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -49,8 +52,25 @@ public class ProductService {
     public void saveProduct(Product rProduct) {
             productRepository.save(rProduct);
     }
-    public Page<Product> getAllProducts(Pageable pageable){
-        return productRepository.findAll(pageable);
+    public Page<ProductResponse> getAllProducts(Pageable pageable){
+        Page<Product> productPage =productRepository.findAll(pageable);
+        return productPage.map(product -> {
+            String category = product.getCategory().getName();
+            ProductResponse productResponse= productMapper.toProductResponse(product);
+            productResponse.setCategory(category);
+            return  productResponse;
+        });
+    }
+
+    public Page<ProductResponse> searchProduct(String keyword, Pageable pageable){
+        Page<Product> productPage =productRepository.findAll(ProductSpecs.hasKeyword(keyword),pageable);
+
+        return productPage.map(product -> {
+            String category = product.getCategory().getName();
+            ProductResponse productResponse= productMapper.toProductResponse(product);
+            productResponse.setCategory(category);
+            return  productResponse;
+        });
     }
     @PreAuthorize("hasRole('ADMIN') or hasAuthority('READ_PRODUCT')")
     @Cacheable(value = "products",key = "#id")

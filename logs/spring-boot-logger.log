@@ -231,3 +231,61 @@
 2026-03-27 12:05:08,700 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
 2026-03-27 12:05:21,178 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
 2026-03-27 12:05:23,817 INFO o.s.b.StartupInfoLogger. [main] Started ProductServiceTest in 15.649 seconds (process running for 17.664)
+2026-03-27 14:01:21,386 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 19280 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 14:01:21,387 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 14:01:21,388 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 14:01:28,289 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 14:01:29,279 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.533 seconds (process running for 9.535)
+2026-03-27 14:16:10,543 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 28348 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 14:16:10,546 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 14:16:10,546 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 14:16:17,166 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 14:16:18,055 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.051 seconds (process running for 8.875)
+2026-03-27 14:18:22,694 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21324 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 14:18:22,696 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 14:18:22,697 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 14:18:29,086 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 14:18:30,072 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.945 seconds (process running for 8.763)
+2026-03-27 14:18:45,096 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 7072 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 14:18:45,098 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 14:18:45,099 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 14:18:51,384 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 14:18:52,273 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.821 seconds (process running for 8.859)
+2026-03-27 14:19:29,909 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 7072 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 14:19:29,910 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 14:19:29,910 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 14:19:31,932 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 14:19:32,726 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 2.881 seconds (process running for 49.312)
+2026-03-27 14:19:34,463 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 7072 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 14:19:34,463 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 14:19:34,463 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 14:20:04,298 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 8 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 14:20:04,299 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 14:20:04,300 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 14:20:12,374 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 14:20:13,427 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.769 seconds (process running for 10.701)
+2026-03-27 14:21:14,867 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 23576 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 14:21:14,868 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 14:21:14,869 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 14:21:22,583 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 14:21:23,669 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.436 seconds (process running for 10.355)
+2026-03-27 14:28:21,172 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 9356 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 14:28:21,173 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 14:28:21,174 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 14:28:29,646 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 14:28:30,932 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 10.374 seconds (process running for 11.265)
+2026-03-27 14:30:28,506 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21904 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 14:30:28,508 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 14:30:28,508 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 14:30:35,142 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 14:30:36,064 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 8.107 seconds (process running for 8.925)
+2026-03-27 14:32:49,735 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 21064 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 14:32:49,736 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 14:32:49,737 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 14:32:56,785 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 14:32:58,201 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 9.078 seconds (process running for 9.899)
+2026-03-27 14:37:44,292 INFO o.s.b.StartupInfoLogger. [restartedMain] Starting Main using Java 21 with PID 22692 (D:\java\spring-base\w1crud_maven\target\classes started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 14:37:44,293 DEBUG o.s.b.StartupInfoLogger. [restartedMain] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 14:37:44,293 INFO o.s.b.SpringApplication. [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 14:37:50,552 INFO c.c.c.w.s.UserService. [restartedMain] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 14:37:51,443 INFO o.s.b.StartupInfoLogger. [restartedMain] Started Main in 7.697 seconds (process running for 8.477)

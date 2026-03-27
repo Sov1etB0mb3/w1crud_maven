@@ -2,6 +2,7 @@ package com.calt.coffeeshop.w1crud_maven.controller;
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.ProductRequest;
 import com.calt.coffeeshop.w1crud_maven.dto.response.ApiResponse;
+import com.calt.coffeeshop.w1crud_maven.dto.response.ProductResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
 import com.calt.coffeeshop.w1crud_maven.enums.StatusCode;
 import com.calt.coffeeshop.w1crud_maven.service.ProductService;
@@ -25,7 +26,7 @@ public class ProductController {
     private ProductService productService;
     @GetMapping("")
     //return String becase the whole html site are Strings!!!
-    public ApiResponse<List<Product>> getProduct(
+    public ApiResponse<List<ProductResponse>> getProduct(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "5") int pageSize,
             @RequestParam(defaultValue = "id") String sortBy,
@@ -37,6 +38,24 @@ public class ProductController {
         apiResponse.setResult(productService.getAllProducts(pageable));
         apiResponse.setCode(703);
         apiResponse.setMessage("GOT!");
+
+        return apiResponse;
+    }
+    @GetMapping("/search")
+    //return String becase the whole html site are Strings!!!
+    public ApiResponse<List<ProductResponse>> getProduct(
+            @RequestParam String keyword,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int pageSize,
+            @RequestParam(defaultValue = "id") String sortBy,
+            @RequestParam(defaultValue = "true") boolean ascending){
+        //List<Product> productList= productService.getAllProducts();
+        Sort sort= ascending ? Sort.by(sortBy).ascending():Sort.by(sortBy).descending();
+        Pageable pageable = PageRequest.of(page,pageSize,sort);
+        ApiResponse apiResponse = ApiResponse.builder().build();
+        apiResponse.setResult(productService.searchProduct(keyword,pageable));
+        apiResponse.setCode(StatusCode.FOUND.getCode());
+        apiResponse.setMessage(StatusCode.FOUND.getMessage());
 
         return apiResponse;
     }

@@ -2,6 +2,7 @@ package com.calt.coffeeshop.w1crud_maven.ServicesTest;
 
 
 import com.calt.coffeeshop.w1crud_maven.dto.request.ProductRequest;
+import com.calt.coffeeshop.w1crud_maven.dto.response.ProductResponse;
 import com.calt.coffeeshop.w1crud_maven.entity.Category;
 import com.calt.coffeeshop.w1crud_maven.entity.Product;
 import com.calt.coffeeshop.w1crud_maven.exception.AppException;
@@ -120,7 +121,7 @@ public class ProductServiceUnitTest {
     void getAllProducts_returnsPage() {
         Page<Product> page = new PageImpl<>(List.of(validProduct));
         Mockito.when(productRepository.findAll(any(PageRequest.class))).thenReturn(page);
-        Page<Product> result = productService.getAllProducts(PageRequest.of(0, 5));
+        Page<ProductResponse> result = productService.getAllProducts(PageRequest.of(0, 5));
         Assertions.assertThat(result.getContent()).hasSize(1);
     }
 
