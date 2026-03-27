@@ -152,6 +152,9 @@ public class UserServiceTest {
 
         Assertions.assertThat(response.getUsername()).isEqualTo("johndoe");
         Assertions.assertThat(response.getRoles()).contains("ADMIN");
+//
+//        Assertions.assertThat(response.getRoles())
+//                .containsExactlyInAnyOrder("ADMIN", "USER");
     }
 
     @Test

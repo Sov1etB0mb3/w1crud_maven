@@ -176,3 +176,28 @@
 2026-03-27 10:50:26,597 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
 2026-03-27 10:50:35,452 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
 2026-03-27 10:50:37,596 INFO o.s.b.StartupInfoLogger. [main] Started UserServiceTest in 11.536 seconds (process running for 13.364)
+2026-03-27 11:25:27,064 INFO o.s.b.StartupInfoLogger. [main] Starting RoleServiceTest using Java 21 with PID 26580 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 11:25:27,067 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 11:25:27,068 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 11:25:37,199 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 11:25:39,539 INFO o.s.b.StartupInfoLogger. [main] Started RoleServiceTest in 13.026 seconds (process running for 15.231)
+2026-03-27 11:30:38,884 INFO o.s.b.StartupInfoLogger. [main] Starting RoleServiceTest using Java 21 with PID 26336 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 11:30:38,887 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 11:30:38,888 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 11:30:48,765 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 11:30:50,806 INFO o.s.b.StartupInfoLogger. [main] Started RoleServiceTest in 12.466 seconds (process running for 14.389)
+2026-03-27 11:31:50,856 INFO o.s.b.StartupInfoLogger. [main] Starting RoleServiceTest using Java 21 with PID 16668 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 11:31:50,858 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 11:31:50,859 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 11:32:00,220 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 11:32:02,428 INFO o.s.b.StartupInfoLogger. [main] Started RoleServiceTest in 12.161 seconds (process running for 14.284)
+2026-03-27 11:32:50,355 INFO o.s.b.StartupInfoLogger. [main] Starting RoleServiceTest using Java 21 with PID 3260 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 11:32:50,358 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 11:32:50,359 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 11:33:00,003 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 11:33:02,170 INFO o.s.b.StartupInfoLogger. [main] Started RoleServiceTest in 12.44 seconds (process running for 14.645)
+2026-03-27 11:33:34,175 INFO o.s.b.StartupInfoLogger. [main] Starting RoleServiceTest using Java 21 with PID 26584 (started by khanhnt in D:\java\spring-base\w1crud_maven)
+2026-03-27 11:33:34,178 DEBUG o.s.b.StartupInfoLogger. [main] Running with Spring Boot v3.4.3, Spring v6.2.3
+2026-03-27 11:33:34,179 INFO o.s.b.SpringApplication. [main] No active profile set, falling back to 1 default profile: "default"
+2026-03-27 11:33:44,135 INFO c.c.c.w.s.UserService. [main] Cache manager in use: class org.springframework.data.redis.cache.RedisCacheManager
+2026-03-27 11:33:46,496 INFO o.s.b.StartupInfoLogger. [main] Started RoleServiceTest in 12.852 seconds (process running for 14.672)
