@@ -10,6 +10,8 @@ public enum ErrorCode {
     USERNAME_INVALID(400, "Username must be at least {min} characters", HttpStatus.BAD_REQUEST),
     INVALID_PASSWORD(400, "Password must be at least {min} characters", HttpStatus.BAD_REQUEST),
     EXISTED(409,"Existed!", HttpStatus.CONFLICT),
+    CANNOT_DELETE(409,"Cannot delete!", HttpStatus.CONFLICT),
+
     NOT_FOUND(404,"Not found!",HttpStatus.NOT_FOUND),
     UNAUTHENTICATED(401,"Unauthenticated!",HttpStatus.UNAUTHORIZED),
     UNAUTHORIZED (403,"You do not have permission!",HttpStatus.FORBIDDEN),

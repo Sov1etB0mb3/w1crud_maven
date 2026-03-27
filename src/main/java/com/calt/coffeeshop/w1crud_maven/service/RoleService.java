@@ -77,7 +77,7 @@ public class RoleService {
             roleRepository.deleteById(id);
             rolePermissionRepository.deleteRolePermissionByRole_Id(id);
         }catch (DataIntegrityViolationException exception){
-            throw new ResponseStatusException(HttpStatus.CONFLICT,"Can't delete!");
+            throw new ResponseStatusException(HttpStatus.CONFLICT,ErrorCode.CANNOT_DELETE.getMessage());
 
         }
     }
@@ -90,7 +90,7 @@ public class RoleService {
                     roleRepository.findRoleByName(roleName).orElseThrow().getId()
             );
         }catch (DataIntegrityViolationException exception){
-            throw new ResponseStatusException(HttpStatus.CONFLICT,"Can't delete!");
+            throw new ResponseStatusException(HttpStatus.CONFLICT,ErrorCode.CANNOT_DELETE.getMessage());
 
         }
     }
